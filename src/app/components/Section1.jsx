@@ -55,7 +55,7 @@ const Section1 = () => {
                   alt="/"
                   width={300}
                   height={300}
-                  className="w-[260px] h-[100px] lg:w-[300px] lg:h-[110px]"
+                  className="w-[260px] h-[90px] lg:w-[300px] lg:h-[100px]"
                 />
         <p className="text-center mb-4 font-bold">
              Nuestros aliados de sostenibilidad 
