@@ -1,5 +1,6 @@
 import { Roboto_Mono } from "next/font/google";
 import "./globals.css";
+import Footer from "./components/Footer";
 
 const robotoMono = Roboto_Mono({
   subsets: ['latin'], // Subconjuntos de caracteres (opcional)
@@ -20,6 +21,7 @@ export default function RootLayout({ children }) {
         className={robotoMono.className}
       >
         {children}
+        <Footer/>
       </body>
     </html>
   );

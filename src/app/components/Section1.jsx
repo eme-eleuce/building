@@ -4,7 +4,7 @@ import { IoDocumentTextOutline } from "react-icons/io5";
 
 const Section1 = () => {
   return (
-    <section id="section1" className="w-full h-screen py-8">
+    <section id="section1" className="w-full min-h-screen py-8">
     <h2 className="text-center text-5xl font-bold  mt-1 mb-8">Links</h2>
     <div className="flex flex-col items-center pb-10 space-y-8 px-5">
       {/* Primer Documento */}
