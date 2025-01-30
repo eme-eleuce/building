@@ -5,7 +5,7 @@ import Link from 'next/link';
 import {IoIosArrowDown} from 'react-icons/io';
 import fondo from '@/app/photos/fondoi.jpg';
 import { MdOutlineConstruction } from "react-icons/md";
-
+import logo from '@/app/photos/landing.png';
 
 const Hero = () => {
   return (
@@ -27,18 +27,21 @@ const Hero = () => {
       {/* Logo */}
       <div className="relative z-10">
         <Image
-          src="/pacchar.jpg"
+          src={logo}
           alt="/"
           width={400}
           height={400}
-          className="w-[300px] h-[300px] md:w-78 md:h-78 lg:w-[450px] lg:h-[450px] mb-5 lg:mb-12"
+          className="w-[370px] h-[230px] md:w-78 md:h-78 lg:w-[620px] lg:h-[350px] mb-10 lg:mb-[10rem]"
         />
       </div>
-      <div className='absolute justify-center mt-[26rem] lg:mt-[29rem] md:mt-[34rem] px-3'>
-      <p className='text-white text-xl font-bold flex items-center gap-2'>
+      <div className='absolute justify-center mt-[20rem] lg:mt-[25rem] md:mt-[34rem] px-3'>
+      <p className='text-white text-2xl font-bold flex items-center gap-2 text-center'>
             Sitio en construcción <MdOutlineConstruction size={47} />
       </p>
       </div>
+      <div className='absolute justify-center mt-[26rem] lg:mt-[30rem] md:mt-[34rem] px-3'>
+        <p className='text-white text-2xl font-bold flex items-center gap-2 '>¡Pronto habrá mucho más para ti!</p>
+        </div>
       <div className='absolute justify-center mt-[36rem] lg:mt-[37rem] md:mt-[34rem] text-white cursor-pointer'>
             <Link href='#section1' scroll={true}>
                <IoIosArrowDown size={60}/>
