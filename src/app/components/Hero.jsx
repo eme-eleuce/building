@@ -31,16 +31,16 @@ const Hero = () => {
           alt="/"
           width={400}
           height={400}
-          className="w-[370px] h-[230px] md:w-78 md:h-78 lg:w-[620px] lg:h-[350px] mb-10 lg:mb-[10rem]"
+          className="w-[350px] h-[200px] md:w-78 md:h-78 lg:w-[620px] lg:h-[350px] mb-10 lg:mb-[10rem]"
         />
       </div>
       <div className='absolute justify-center mt-[20rem] lg:mt-[25rem] md:mt-[34rem] px-3'>
-      <p className='text-white text-2xl font-bold flex items-center gap-2 text-center'>
+      <p className='text-white text-xl md:text-2xl font-bold flex items-center gap-2 text-center'>
             Sitio en construcción <MdOutlineConstruction size={47} />
       </p>
       </div>
       <div className='absolute justify-center mt-[26rem] lg:mt-[30rem] md:mt-[34rem] px-3'>
-        <p className='text-white text-2xl font-bold flex items-center gap-2 '>¡Pronto habrá mucho más para ti!</p>
+        <p className='text-white text-xl md:text-2xl font-bold flex items-center text-center gap-2 '>¡Pronto habrá mucho más para ti!</p>
         </div>
       <div className='absolute justify-center mt-[36rem] lg:mt-[37rem] md:mt-[34rem] text-white cursor-pointer'>
             <Link href='#section1' scroll={true}>
