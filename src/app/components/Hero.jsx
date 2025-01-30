@@ -3,10 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import {IoIosArrowDown} from 'react-icons/io';
-<<<<<<< HEAD
 import fondo from '@/app/photos/fondoi.jpg';
-=======
->>>>>>> 54d6bfab51bdf31fb646e0018adada258b4df666
 
 
 
@@ -16,7 +13,6 @@ const Hero = () => {
       {/* Imagen de fondo */}
       <div className="absolute inset-0">
         <Image
-<<<<<<< HEAD
           src={fondo}
           alt="/"
           fill
@@ -24,13 +20,6 @@ const Hero = () => {
           priority
           quality={70}
           placeholder='blur'
-=======
-          src="/fondoi.jpg"
-          alt="/"
-          layout="fill"
-          objectFit="cover"
-          quality={100}
->>>>>>> 54d6bfab51bdf31fb646e0018adada258b4df666
         />
         <div className="absolute inset-0 bg-black opacity-30"></div>
       </div>
