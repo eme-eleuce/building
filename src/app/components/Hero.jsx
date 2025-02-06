@@ -8,19 +8,20 @@ import foto1 from '@/app/photos/1.jpg';
 import foto2 from '@/app/photos/2.jpg';
 import foto3 from '@/app/photos/3.jpg';
 import foto4 from '@/app/photos/4.jpg';
+import foto5 from '@/app/photos/5.jpg';
 import { MdOutlineConstruction } from "react-icons/md";
 import logo from '@/app/photos/landing.png';
 
 const Hero = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const images = [fondo, foto4, foto2, foto3, foto1];
+  const images = [fondo, foto5, foto2, foto3, foto1, foto4];
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => 
         prevIndex === images.length - 1 ? 0 : prevIndex + 1
       );
-    }, 5000); // Cambia imagen cada 5 segundos
+    }, 4000); // Cambia imagen cada 5 segundos
 
     return () => clearInterval(interval);
   }, []);
