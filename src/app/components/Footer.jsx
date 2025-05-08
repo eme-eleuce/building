@@ -5,6 +5,7 @@ import { MdEmail } from 'react-icons/md';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import logoPacchar from '../../../public/photos/pacchar3.png';
 
 const Footer = ({ dict }) => {
     const pathname = usePathname();
@@ -23,11 +24,12 @@ const Footer = ({ dict }) => {
                     <div className="flex flex-col md:flex-row justify-between items-start">
                         <div>
                             <Image
-                                src="/pachar-h.png"
+                                src={logoPacchar}
                                 alt="Pacchar Logo"
                                 width={300}
-                                height={300}
-                                className="w-[230px] h-[130px] lg:w-[270px] lg:h-[150px]"
+                                height={100}
+                                className="w-[220px] h-auto lg:w-[250px] object-contain"
+                                priority
                             />
                             <p className="text-gray-600 mt-2 max-w-md font-body">
                                 {lang === 'es' ? 'Soluciones climáticas escalables y sostenibles para un futuro mejor.' : 'Scalable and sustainable climate solutions for a better future.'}

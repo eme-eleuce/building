@@ -8,6 +8,8 @@ import { IoMdClose } from 'react-icons/io';
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 import { FaInstagram, FaLinkedin } from 'react-icons/fa';
 import LanguageSwitcher from './LanguageSwitcher';
+import logoPacchar1 from '../../../public/photos/pacchar1.png';
+import logoPacchar3 from '../../../public/photos/pacchar3.png';
 
 const Navbar = ({ dict }) => {
   const pathname = usePathname();
@@ -119,11 +121,12 @@ const Navbar = ({ dict }) => {
       <div className="flex justify-between items-center px-4 md:px-12 py-3 md:py-2 max-w-7xl mx-auto relative">
         <Link href="/" className="flex items-center">
           <Image 
-            src={scrolled || !isHomePage ? "/photos/pacchar3.png" : "/photos/pacchar1.png"} 
+            src={scrolled || !isHomePage ? logoPacchar3 : logoPacchar1} 
             alt="Logo" 
             width={250} 
             height={74} 
             className="object-contain w-[220px] h-auto md:w-[220px] lg:w-[240px] transition-all duration-300"
+            priority
           />
         </Link>
 

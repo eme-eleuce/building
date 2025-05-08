@@ -5,15 +5,23 @@ import Link from 'next/link';
 import {IoIosArrowDown} from 'react-icons/io';
 import { MdOutlineConstruction } from "react-icons/md";
 
+// Importando imágenes
+import fondoImage from '../../../public/photos/fondoi.jpg';
+import image1 from '../../../public/photos/1.jpg';
+import image2 from '../../../public/photos/2.jpg';
+import image3 from '../../../public/photos/3.jpg';
+import image4 from '../../../public/photos/4.jpg';
+import image5 from '../../../public/photos/5.jpg';
+
 const Hero = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const images = [
-    '/photos/fondoi.jpg',
-    '/photos/5.jpg',
-    '/photos/2.jpg',
-    '/photos/3.jpg',
-    '/photos/1.jpg',
-    '/photos/4.jpg'
+    fondoImage,
+    image5,
+    image2,
+    image3,
+    image1,
+    image4
   ];
 
   useEffect(() => {
