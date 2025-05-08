@@ -3,9 +3,111 @@
 @tailwind utilities;
 
 html {
-    
   color: black;
   background-color: #f8f8f8;
   scroll-behavior: smooth;
-  ;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-quattrocento), system-ui, serif;
+}
+
+.content-wrapper {
+  flex: 1;
+  width: 100%;
+}
+
+/* Font Classes */
+.font-title {
+  font-family: var(--font-oswald), sans-serif;
+}
+
+.font-body {
+  font-family: var(--font-quattrocento), serif;
+}
+
+/* Estilos para el carrusel infinito de logos */
+.logos-container {
+  position: relative;
+  margin: 20px 0;
+  overflow: hidden;
+}
+
+.logos-row-wrapper {
+  position: relative;
+  width: 100%;
+  padding: 10px 0;
+  overflow: hidden;
+}
+
+.logos-row {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  width: 100%;
+}
+
+.logos-row::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.logo-container {
+  flex: 0 0 auto;
+  transition: transform 0.3s ease;
+}
+
+.logo-container:hover {
+  transform: scale(1.05);
+}
+
+/* Animaciones para el carrusel infinito */
+.infinite-scroll {
+  animation: scroll-left 60s linear infinite;
+  animation-play-state: running; /* Siempre activo */
+  display: inline-flex; /* Asegura que todos los elementos estén en línea */
+  flex-wrap: nowrap; /* Evita que los elementos se envuelvan */
+  width: max-content; /* Asegura que el ancho sea el necesario para mostrar todos los elementos */
+}
+
+.infinite-scroll-reverse {
+  animation: scroll-right 60s linear infinite;
+  animation-play-state: running; /* Siempre activo */
+  display: inline-flex; /* Asegura que todos los elementos estén en línea */
+  flex-wrap: nowrap; /* Evita que los elementos se envuelvan */
+  width: max-content; /* Asegura que el ancho sea el necesario para mostrar todos los elementos */
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.logos-row-wrapper:hover .infinite-scroll,
+.logos-row-wrapper:hover .infinite-scroll-reverse {
+  animation-play-state: paused;
+}
+
+/* Estilos de botones de navegación eliminados */
+
+/* Text Shadow for Stats */
+.text-shadow-sm {
+  text-shadow: 1px 1px 2px rgba(100, 100, 100, 0.5);
 }

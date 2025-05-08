@@ -1,6 +1,5 @@
 import { Roboto_Mono } from "next/font/google";
 import "./globals.css";
-import Footer from "./components/Footer";
 
 const robotoMono = Roboto_Mono({
   subsets: ['latin'], // Subconjuntos de caracteres (opcional)
@@ -9,19 +8,19 @@ const robotoMono = Roboto_Mono({
 });
 
 export const metadata = {
-  title: "Pacchar",
+  title: "Pacchar | Biochar Solutions",
   description: "Building",
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/favicon.ico'
+  }
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-    
-      <body
-        className={robotoMono.className}
-      >
+      <body className={robotoMono.className}>
         {children}
-        <Footer/>
       </body>
     </html>
   );

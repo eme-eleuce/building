@@ -1,0 +1,24 @@
+{
+  "navbar": {
+    "biochar": "Biochar",
+    "productos": "Productos",
+    "permisos_ambientales": "Permisos Ambientales",
+    "soil_admendments": "Enmienda de Suelos",
+    "combi": "COMBI",
+    "biochar_product": "Biochar",
+    "active_compost": "Active Compost",
+    "pirolysis_tech": "Pirolysis Tech",
+    "co2_removal": "Compensación de CO2",
+    "cfn": "Red de Carbono",
+    "join_network": "Únete a la red",
+    "biochar_points": "Biochar Points",
+    "nosotros": "Nosotros",
+    "historia": "Historia",
+    "equipo": "Equipo",
+    "rainforest_enterprise": "Rainforest Enterprise",
+    "contacto": "Contacto"
+  },
+  "language_switcher": {
+    "switch_to": "Cambiar a Inglés"
+  }
+}
