@@ -163,9 +163,9 @@ const Navbar = ({ dict }) => {
                 </button>
                 
                 <div className={`bg-gray-50 transition-all duration-300 overflow-hidden rounded-lg origin-top ${soilOpen ? 'max-h-60 scale-y-100 opacity-100' : 'max-h-0 scale-y-90 opacity-0'}`}>
-                  <Link href={`/${lang}/productos/soil-admendments/combi`} onClick={handleNavLinkClick} className="block px-8 py-2 text-base font-medium text-black hover:text-green-600 hover:bg-gray-50 transition-all duration-300 font-body">{navbarDict.combi || 'COMBI'}</Link>
-                  <Link href={`/${lang}/productos/soil-admendments/biochar`} onClick={handleNavLinkClick} className="block px-8 py-2 text-base font-medium text-black hover:text-green-600 hover:bg-gray-50 transition-all duration-300 font-body">{navbarDict.biochar_product || 'Biochar'}</Link>
-                  <Link href={`/${lang}/productos/soil-admendments/active-compost`} onClick={handleNavLinkClick} className="block px-8 py-2 text-base font-medium text-black hover:text-green-600 hover:bg-gray-50 transition-all duration-300 font-body">{navbarDict.active_compost || 'Active Compost'}</Link>
+                  <Link href={`/${lang}/products/soil-admendments/pacchar-pure`} onClick={handleNavLinkClick} className="block px-8 py-2 text-base font-medium text-black hover:text-green-600 hover:bg-gray-50 transition-all duration-300 font-body">{navbarDict.pacchar_pure || 'Pacchar Pure'}</Link>
+                  <Link href={`/${lang}/products/soil-admendments/combi`} onClick={handleNavLinkClick} className="block px-8 py-2 text-base font-medium text-black hover:text-green-600 hover:bg-gray-50 transition-all duration-300 font-body">{navbarDict.combi || 'COMBI'}</Link>
+                  <Link href={`/${lang}/products/soil-admendments/active-compost`} onClick={handleNavLinkClick} className="block px-8 py-2 text-base font-medium text-black hover:text-green-600 hover:bg-gray-50 transition-all duration-300 font-body">{navbarDict.active_compost || 'Active Compost'}</Link>
                 </div>
               </div>
               
@@ -290,9 +290,9 @@ const Navbar = ({ dict }) => {
                 
                 {mobileSoilOpen && (
                   <div className="pl-4">
-                    <Link href={`/${lang}/productos/soil-admendments/combi`} className="block text-black text-lg font-medium py-2 transition-all duration-300 hover:pl-2 hover:text-green-600 font-body" onClick={handleNavLinkClick}>{navbarDict.combi || 'COMBI'}</Link>
-                    <Link href={`/${lang}/productos/soil-admendments/biochar`} className="block text-black text-lg font-medium py-2 transition-all duration-300 hover:pl-2 hover:text-green-600 font-body" onClick={handleNavLinkClick}>{navbarDict.biochar_product || 'Biochar'}</Link>
-                    <Link href={`/${lang}/productos/soil-admendments/active-compost`} className="block text-black text-lg font-medium py-2 transition-all duration-300 hover:pl-2 hover:text-green-600 font-body" onClick={handleNavLinkClick}>{navbarDict.active_compost || 'Active Compost'}</Link>
+                    <Link href={`/${lang}/products/soil-admendments/pacchar-pure`} className="block text-black text-lg font-medium py-2 transition-all duration-300 hover:pl-2 hover:text-green-600 font-body" onClick={handleNavLinkClick}>{navbarDict.pacchar_pure || 'Pacchar Pure'}</Link>
+                    <Link href={`/${lang}/products/soil-admendments/combi`} className="block text-black text-lg font-medium py-2 transition-all duration-300 hover:pl-2 hover:text-green-600 font-body" onClick={handleNavLinkClick}>{navbarDict.combi || 'COMBI'}</Link>
+                    <Link href={`/${lang}/products/soil-admendments/active-compost`} className="block text-black text-lg font-medium py-2 transition-all duration-300 hover:pl-2 hover:text-green-600 font-body" onClick={handleNavLinkClick}>{navbarDict.active_compost || 'Active Compost'}</Link>
                   </div>
                 )}
               </div>

@@ -82,7 +82,7 @@ const Team = ({ params }) => {
         {/* Encabezado */}
         <div className="text-center mb-16">
           <motion.h1 
-            className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold text-gray-800 mb-6 font-title"
+            className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-extrabold text-gray-800 mb-6 font-title"
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
