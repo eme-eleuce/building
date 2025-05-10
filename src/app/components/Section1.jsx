@@ -282,9 +282,12 @@ const Section1 = () => {
               {t.section1Description}
             </p>
             <div className="mt-8 self-center md:self-start">
-              <button className="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300 shadow-lg font-body">
+              <Link 
+                href={`/${pathname.includes('/en') ? 'en/biochar' : 'es/biochar'}`}
+                className="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300 shadow-lg font-body"
+              >
                 {t.section1Button}
-              </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -661,14 +664,14 @@ const Section1 = () => {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center">
           {/* Imagen del lado izquierdo */}
           <div className="w-full md:w-1/2 p-4 md:p-8">
-            <div className="relative w-full h-[500px] rounded-xl overflow-hidden shadow-xl">
+            <div className="relative w-full h-[300px] md:h-[400px] rounded-xl overflow-hidden shadow-xl">
               <Image 
                 src={Team} 
                 alt="Biochar Team" 
                 fill
                 priority
                 quality={70}
-                className="object-cover"
+                className="object-cover object-center"
               />
             </div>
           </div>
@@ -678,10 +681,10 @@ const Section1 = () => {
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-8 font-title">
               {t.section5Title}
             </h2>
-            <p className="text-lg md:text-xl leading-relaxed mb-8 font-body">
+            <p className="text-lg md:text-xl leading-relaxed mb-8 font-body text-justify">
               {t.section5Description1}
             </p>
-            <p className="text-lg md:text-xl leading-relaxed mb-8 font-body">
+            <p className="text-lg md:text-xl leading-relaxed mb-8 font-body text-justify">
               {t.section5Description2}
             </p>
             <div className="mt-4">

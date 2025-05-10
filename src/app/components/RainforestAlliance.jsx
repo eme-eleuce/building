@@ -45,8 +45,8 @@ const RainforestAlliance = () => {
             
             {/* Logo superpuesto (mitad del círculo) */}
             <div className="absolute top-[90%] left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-              <div className="bg-white bg-opacity-90 rounded-t-full p-4 w-[250px] h-[220px] flex items-center justify-center overflow-hidden border-b-0">
-                <div className="relative w-full h-[250px]  mt-3">
+              <div className="bg-white rounded-t-full p-4 w-[250px] h-[220px] flex items-center justify-center overflow-hidden border-b-0">
+                <div className="relative w-full h-[250px] mt-3 bg-white">
                   <Image
                     src={reLogo}
                     alt="Rainforest Enterprise Logo"

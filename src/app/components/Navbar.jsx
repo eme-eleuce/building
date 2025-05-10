@@ -118,7 +118,7 @@ const Navbar = ({ dict }) => {
 
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled || !isHomePage ? 'bg-white/30 backdrop-blur-md shadow-md' : 'bg-transparent'}`}>
-      <div className="flex justify-between items-center px-4 md:px-12 py-3 md:py-2 max-w-7xl mx-auto relative">
+      <div className="flex justify-between items-center px-4 md:px-6 py-3 md:py-2 max-w-7xl mx-auto relative">
         <Link href="/" className="flex items-center">
           <Image 
             src={scrolled || !isHomePage ? logoPacchar3 : logoPacchar1} 
@@ -131,13 +131,13 @@ const Navbar = ({ dict }) => {
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex gap-8 px-8 py-3 absolute right-0 z-10 mt-2">
-          <Link href={`/${lang}/biochar`} onClick={handleNavLinkClick} className={`font-bold text-2xl hover:text-green-600 relative after:content-[''] after:absolute after:bottom-[-5px] after:left-0 after:w-0 after:h-0.5 after:bg-green-600 after:transition-all after:duration-300 hover:after:w-full font-title ${scrolled || !isHomePage ? 'text-black' : 'text-white'}`}>{navbarDict.biochar || 'Biochar'}</Link>
+        <div className="hidden md:flex items-center gap-6 px-4 py-3 absolute right-0 z-10 mt-2">
+          <Link href={`/${lang}/biochar`} onClick={handleNavLinkClick} className={`font-bold text-3xl hover:text-green-600 relative flex items-center transition-colors duration-300 font-title ${scrolled || !isHomePage ? 'text-black' : 'text-white'}`}>{navbarDict.biochar || 'Biochar'}</Link>
           
           {/* Productos Dropdown */}
           <div className="relative group" ref={productosRef}>
             <button 
-              className={`font-bold text-2xl hover:text-green-600 relative flex items-center gap-1 after:content-[''] after:absolute after:bottom-[-5px] after:left-0 after:w-0 after:h-0.5 after:bg-green-600 after:transition-all after:duration-300 group-hover:after:w-full font-title ${scrolled || !isHomePage ? 'text-black' : 'text-white'}`}
+              className={`font-bold text-3xl hover:text-green-600 relative flex items-center gap-1 transition-colors duration-300 font-title ${scrolled || !isHomePage ? 'text-black' : 'text-white'}`}
               onClick={() => setProductosOpen(!productosOpen)}
             >
               {navbarDict.productos || 'Productos'}
@@ -152,7 +152,7 @@ const Navbar = ({ dict }) => {
               {/* Nested Soil Admendments Dropdown */}
               <div className="relative" ref={soilRef}>
                 <button 
-                  className="flex items-center justify-between w-full px-4 py-3 text-lg font-bold text-black hover:text-green-600 hover:bg-gray-50 transition-all duration-300 font-body"
+                  className="flex items-center justify-between w-full px-4 py-3 text-xl font-bold text-black hover:text-green-600 hover:bg-gray-50 transition-all duration-300 font-body"
                   onClick={(e) => {
                     e.stopPropagation();
                     setSoilOpen(!soilOpen);
@@ -163,16 +163,16 @@ const Navbar = ({ dict }) => {
                 </button>
                 
                 <div className={`bg-gray-50 transition-all duration-300 overflow-hidden rounded-lg origin-top ${soilOpen ? 'max-h-60 scale-y-100 opacity-100' : 'max-h-0 scale-y-90 opacity-0'}`}>
-                  <Link href={`/${lang}/products/soil-admendments/pacchar-pure`} onClick={handleNavLinkClick} className="block px-8 py-2 text-base font-medium text-black hover:text-green-600 hover:bg-gray-50 transition-all duration-300 font-body">{navbarDict.pacchar_pure || 'Pacchar Pure'}</Link>
-                  <Link href={`/${lang}/products/soil-admendments/combi`} onClick={handleNavLinkClick} className="block px-8 py-2 text-base font-medium text-black hover:text-green-600 hover:bg-gray-50 transition-all duration-300 font-body">{navbarDict.combi || 'COMBI'}</Link>
-                  <Link href={`/${lang}/products/soil-admendments/active-compost`} onClick={handleNavLinkClick} className="block px-8 py-2 text-base font-medium text-black hover:text-green-600 hover:bg-gray-50 transition-all duration-300 font-body">{navbarDict.active_compost || 'Active Compost'}</Link>
+                  <Link href={`/${lang}/products/soil-admendments/pacchar-pure`} onClick={handleNavLinkClick} className="block px-8 py-2 text-lg font-medium text-black hover:text-green-600 hover:bg-gray-50 transition-all duration-300 font-body">{navbarDict.pacchar_pure || 'Pacchar Pure'}</Link>
+                  <Link href={`/${lang}/products/soil-admendments/combi`} onClick={handleNavLinkClick} className="block px-8 py-2 text-lg font-medium text-black hover:text-green-600 hover:bg-gray-50 transition-all duration-300 font-body">{navbarDict.combi || 'COMBI'}</Link>
+                  <Link href={`/${lang}/products/soil-admendments/active-compost`} onClick={handleNavLinkClick} className="block px-8 py-2 text-lg font-medium text-black hover:text-green-600 hover:bg-gray-50 transition-all duration-300 font-body">{navbarDict.active_compost || 'Active Compost'}</Link>
                 </div>
               </div>
               
               {/* Nested Pirolysis Tech Dropdown */}
               <div className="relative" ref={pirolysisRef}>
                 <button 
-                  className="flex items-center justify-between w-full px-4 py-3 text-lg font-bold text-black hover:text-green-600 hover:bg-gray-50 transition-all duration-300 font-body"
+                  className="flex items-center justify-between w-full px-4 py-3 text-xl font-bold text-black hover:text-green-600 hover:bg-gray-50 transition-all duration-300 font-body"
                   onClick={(e) => {
                     e.stopPropagation();
                     setPirolysisOpen(!pirolysisOpen);
@@ -183,18 +183,18 @@ const Navbar = ({ dict }) => {
                 </button>
                 
                 <div className={`bg-gray-50 transition-all duration-300 overflow-hidden rounded-lg origin-top ${pirolysisOpen ? 'max-h-60 scale-y-100 opacity-100' : 'max-h-0 scale-y-90 opacity-0'}`}>
-                  <Link href={`/${lang}/productos/pirolysis-tech/artisan-pro`} onClick={handleNavLinkClick} className="block px-8 py-2 text-base font-medium text-black hover:text-green-600 hover:bg-gray-50 transition-all duration-300 font-body">Artisan Pro</Link>
-                  <Link href={`/${lang}/productos/pirolysis-tech/industrial`} onClick={handleNavLinkClick} className="block px-8 py-2 text-base font-medium text-black hover:text-green-600 hover:bg-gray-50 transition-all duration-300 font-body">Industrial</Link>
+                  <Link href={`/${lang}/productos/pirolysis-tech/artisan-pro`} onClick={handleNavLinkClick} className="block px-8 py-2 text-lg font-medium text-black hover:text-green-600 hover:bg-gray-50 transition-all duration-300 font-body">Artisan Pro</Link>
+                  <Link href={`/${lang}/productos/pirolysis-tech/industrial`} onClick={handleNavLinkClick} className="block px-8 py-2 text-lg font-medium text-black hover:text-green-600 hover:bg-gray-50 transition-all duration-300 font-body">Industrial</Link>
                 </div>
               </div>
-              <Link href={`/${lang}/productos/co2-removal`} onClick={handleNavLinkClick} className="block px-4 py-3 text-lg font-bold text-black hover:text-green-600 hover:bg-gray-50 transition-all duration-300 font-body">{navbarDict.co2_removal || 'Compensación de CO2'}</Link>
+              <Link href={`/${lang}/productos/co2-removal`} onClick={handleNavLinkClick} className="block px-4 py-3 text-xl font-bold text-black hover:text-green-600 hover:bg-gray-50 transition-all duration-300 font-body">{navbarDict.co2_removal || 'Compensación de CO2'}</Link>
             </div>
           </div>
           
           {/* CFN Dropdown */}
           <div className="relative group" ref={cfnRef}>
             <button 
-              className={`font-bold text-2xl hover:text-green-600 relative flex items-center gap-1 after:content-[''] after:absolute after:bottom-[-5px] after:left-0 after:w-0 after:h-0.5 after:bg-green-600 after:transition-all after:duration-300 group-hover:after:w-full font-title ${scrolled || !isHomePage ? 'text-black' : 'text-white'}`}
+              className={`font-bold text-3xl hover:text-green-600 relative flex items-center gap-1 transition-colors duration-300 font-title ${scrolled || !isHomePage ? 'text-black' : 'text-white'}`}
               onClick={() => setCfnOpen(!cfnOpen)}
             >
               {navbarDict.cfn || 'Red de Carbono'}
@@ -205,15 +205,15 @@ const Navbar = ({ dict }) => {
               )}
             </button>
             <div className={`absolute left-0 mt-2 w-64 bg-white shadow-lg rounded-lg overflow-hidden transition-all duration-300 origin-top ${cfnOpen ? 'opacity-100 visible scale-y-100 translate-y-0' : 'opacity-0 invisible scale-y-75 -translate-y-4'}`}>
-              <Link href={`/${lang}/cfn/biochar-points`} onClick={handleNavLinkClick} className="block px-4 py-3 text-lg font-bold text-black hover:text-green-600 hover:bg-gray-50 transition-all duration-300 font-body">{navbarDict.biochar_points || 'Biochar Points'}</Link>
-              <Link href={`/${lang}/cfn/join-network`} onClick={handleNavLinkClick} className="block px-4 py-3 text-lg font-bold text-black hover:text-green-600 hover:bg-gray-50 transition-all duration-300 font-body">{navbarDict.join_network || 'Únete a la red'}</Link>
+              <Link href={`/${lang}/cfn/biochar-points`} onClick={handleNavLinkClick} className="block px-4 py-3 text-xl font-bold text-black hover:text-green-600 hover:bg-gray-50 transition-all duration-300 font-body">{navbarDict.biochar_points || 'Biochar Points'}</Link>
+              <Link href={`/${lang}/cfn/join-network`} onClick={handleNavLinkClick} className="block px-4 py-3 text-xl font-bold text-black hover:text-green-600 hover:bg-gray-50 transition-all duration-300 font-body">{navbarDict.join_network || 'Únete a la red'}</Link>
             </div>
           </div>
           
           {/* Nosotros Dropdown */}
           <div className="relative group" ref={nosotrosRef}>
             <button 
-              className={`font-bold text-2xl hover:text-green-600 relative flex items-center gap-1 after:content-[''] after:absolute after:bottom-[-5px] after:left-0 after:w-0 after:h-0.5 after:bg-green-600 after:transition-all after:duration-300 group-hover:after:w-full font-title ${scrolled || !isHomePage ? 'text-black' : 'text-white'}`}
+              className={`font-bold text-3xl hover:text-green-600 relative flex items-center gap-1 transition-colors duration-300 font-title ${scrolled || !isHomePage ? 'text-black' : 'text-white'}`}
               onClick={() => setNosotrosOpen(!nosotrosOpen)}
             >
               {navbarDict.nosotros || 'Nosotros'}
@@ -230,7 +230,7 @@ const Navbar = ({ dict }) => {
             </div>
           </div>
           
-          <Link href={`/${lang === 'es' ? 'es/contacto' : 'en/contact'}`} onClick={handleNavLinkClick} className={`font-bold text-2xl hover:text-green-600 relative after:content-[''] after:absolute after:bottom-[-5px] after:left-0 after:w-0 after:h-0.5 after:bg-green-600 after:transition-all after:duration-300 hover:after:w-full font-title ${scrolled || !isHomePage ? 'text-black' : 'text-white'}`}>{navbarDict.contacto || 'Contacto'}</Link>
+          <Link href={`/${lang === 'es' ? 'es/contacto' : 'en/contact'}`} onClick={handleNavLinkClick} className={`font-bold text-3xl hover:text-green-600 relative flex items-center transition-colors duration-300 font-title ${scrolled || !isHomePage ? 'text-black' : 'text-white'}`}>{navbarDict.contacto || 'Contacto'}</Link>
           
           {/* Language Switcher */}
           <div className="flex items-center ml-4">
@@ -263,12 +263,12 @@ const Navbar = ({ dict }) => {
           </div>
         </div>
         
-        <Link href={`/${lang}/biochar`} className="block text-black text-2xl font-bold py-4 border-b border-gray-200 transition-all duration-300 hover:pl-2 hover:text-green-600 font-title" onClick={handleNavLinkClick}>{navbarDict.biochar || 'Biochar'}</Link>
+        <Link href={`/${lang}/biochar`} className="block text-black text-3xl font-bold py-4 border-b border-gray-200 transition-all duration-300 hover:pl-2 hover:text-green-600 font-title" onClick={handleNavLinkClick}>{navbarDict.biochar || 'Biochar'}</Link>
         
         {/* Mobile Productos Dropdown */}
         <div className="border-b border-gray-200">
           <button 
-            className="flex items-center justify-between w-full text-black text-2xl font-bold py-4 transition-all duration-300 hover:pl-2 hover:text-green-600 font-title"
+            className="flex items-center justify-between w-full text-black text-3xl font-bold py-4 transition-all duration-300 hover:pl-2 hover:text-green-600 font-title"
             onClick={() => setMobileProductosOpen(!mobileProductosOpen)}
           >
             <span>{navbarDict.productos || 'Productos'}</span>
@@ -322,7 +322,7 @@ const Navbar = ({ dict }) => {
         {/* Mobile CFN Dropdown */}
         <div className="border-b border-gray-200">
           <button 
-            className="flex items-center justify-between w-full text-black text-2xl font-bold py-4 transition-all duration-300 hover:pl-2 hover:text-green-600 font-title"
+            className="flex items-center justify-between w-full text-black text-3xl font-bold py-4 transition-all duration-300 hover:pl-2 hover:text-green-600 font-title"
             onClick={() => setMobileCfnOpen(!mobileCfnOpen)}
           >
             <span>{navbarDict.cfn || 'Red de Carbono'}</span>
@@ -340,7 +340,7 @@ const Navbar = ({ dict }) => {
         {/* Mobile Nosotros Dropdown */}
         <div className="border-b border-gray-200">
           <button 
-            className="flex items-center justify-between w-full text-black text-2xl font-bold py-4 transition-all duration-300 hover:pl-2 hover:text-green-600 font-title"
+            className="flex items-center justify-between w-full text-black text-3xl font-bold py-4 transition-all duration-300 hover:pl-2 hover:text-green-600 font-title"
             onClick={() => setMobileNosotrosOpen(!mobileNosotrosOpen)}
           >
             <span>{navbarDict.nosotros || 'Nosotros'}</span>
@@ -356,7 +356,7 @@ const Navbar = ({ dict }) => {
           )}
         </div>
         
-        <Link href={`/${lang === 'es' ? 'es/contacto' : 'en/contact'}`} className="block text-black text-2xl font-bold py-4 border-b border-gray-200 transition-all duration-300 hover:pl-2 hover:text-green-600 font-title" onClick={handleNavLinkClick}>{navbarDict.contacto || 'Contacto'}</Link>
+        <Link href={`/${lang === 'es' ? 'es/contacto' : 'en/contact'}`} className="block text-black text-3xl font-bold py-4 border-b border-gray-200 transition-all duration-300 hover:pl-2 hover:text-green-600 font-title" onClick={handleNavLinkClick}>{navbarDict.contacto || 'Contacto'}</Link>
         
         {/* Social Media Links */}
         <div className="mt-6 mb-20 border-t-2 border-blue-600 pt-6">

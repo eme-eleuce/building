@@ -85,20 +85,20 @@ const PaccharPure = () => {
   };
   
   const fadeInLeft = {
-    hidden: { opacity: 0, x: -60 },
+    hidden: { opacity: 0, y: 40 },
     visible: { 
       opacity: 1, 
-      x: 0,
-      transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] }
+      y: 0,
+      transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.1 }
     }
   };
   
   const fadeInRight = {
-    hidden: { opacity: 0, x: 60 },
+    hidden: { opacity: 0, y: 40 },
     visible: { 
       opacity: 1, 
-      x: 0,
-      transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] }
+      y: 0,
+      transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.2 }
     }
   };
   
@@ -152,7 +152,7 @@ const PaccharPure = () => {
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <motion.div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
             <motion.div 
-              className="w-full md:w-1/2 h-[300px] md:h-[500px] relative rounded-lg overflow-hidden"
+              className="w-full md:w-1/2 h-[300px] md:h-[500px] relative rounded-lg overflow-hidden border-4 border-yellow-800 p-2"
               variants={fadeInLeft}
             >
               <Image

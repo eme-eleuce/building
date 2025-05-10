@@ -96,7 +96,7 @@ const Biochar = () => {
   const isEnglish = pathname.includes('/en');
   const t = isEnglish ? texts.en : texts.es;
   
-  // Variantes para animaciones
+  // Variantes para animaciones (todas verticales para evitar problemas en móvil)
   const fadeInUp = {
     hidden: { opacity: 0, y: 60 },
     visible: { 
@@ -106,21 +106,22 @@ const Biochar = () => {
     }
   };
   
+  // Reemplazamos las animaciones horizontales por verticales con diferentes retrasos
   const fadeInLeft = {
-    hidden: { opacity: 0, x: -60 },
+    hidden: { opacity: 0, y: 40 },
     visible: { 
       opacity: 1, 
-      x: 0,
-      transition: { duration: 0.6, ease: "easeOut" }
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut", delay: 0.1 }
     }
   };
   
   const fadeInRight = {
-    hidden: { opacity: 0, x: 60 },
+    hidden: { opacity: 0, y: 40 },
     visible: { 
       opacity: 1, 
-      x: 0,
-      transition: { duration: 0.6, ease: "easeOut" }
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut", delay: 0.2 }
     }
   };
   
