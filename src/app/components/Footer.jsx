@@ -37,7 +37,7 @@ const Footer = ({ dict }) => {
                         </div>
                         
                         {/* Línea de separación vertical (solo en escritorio) */}
-                        <div className="hidden md:block h-28 w-1 bg-green-600 mx-6 self-center mt-4"></div>
+                        <div className="hidden md:block h-28 w-1 mx-6 self-center mt-4" style={{ backgroundColor: '#854d0e' }}></div>
                         
                         {/* Direcciones (versión escritorio) */}
                         <div className="hidden md:flex md:flex-row md:space-x-12 md:self-end mt-8">
@@ -69,7 +69,7 @@ const Footer = ({ dict }) => {
                     </div>
 
                     {/* Direcciones (versión móvil) */}
-                    <div className="md:hidden flex flex-col bg-green-50 p-6 rounded-xl shadow-sm">
+                    <div className="md:hidden flex flex-col p-6 rounded-xl shadow-sm">
                         <h3 className="text-xl font-bold text-green-700 mb-4 font-title">
                             {lang === 'es' ? 'Nuestras oficinas' : 'Our offices'}
                         </h3>
@@ -100,31 +100,13 @@ const Footer = ({ dict }) => {
                         </div>
                     </div>
 
-                    {/* Contacto y redes sociales */}
-                    <div className="flex flex-col md:flex-row justify-between items-start pt-2">
-                        {/* Información de contacto */}
-                        <div>
-                            <h3 className="text-xl font-bold text-green-700 mb-4 font-title">
-                                {lang === 'es' ? 'Contacto' : 'Contact'}
-                            </h3>
-                            <div className="space-y-3">
-                                <div className="flex items-center">
-                                    <FaPhoneSquareAlt className="text-green-600 mr-3 text-xl" />
-                                    <p className="text-gray-700 font-body">+593 99 123 4567</p>
-                                </div>
-                                <div className="flex items-center">
-                                    <MdEmail className="text-green-600 mr-3 text-xl" />
-                                    <p className="text-gray-700 font-body">info@pacchar.com</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        {/* Redes sociales */}
-                        <div className="mt-8 md:mt-0">
+                    {/* Redes sociales (centrado) */}
+                    <div className="flex justify-center items-center pt-6">
+                        <div className="text-center">
                             <h3 className="text-xl font-bold text-green-700 mb-4 font-title">
                                 {lang === 'es' ? 'Síguenos' : 'Follow us'}
                             </h3>
-                            <div className="flex space-x-4">
+                            <div className="flex space-x-6 justify-center">
                                 <a
                                     href="https://www.linkedin.com/company/pacchar/"
                                     rel="noreferrer"
@@ -132,7 +114,7 @@ const Footer = ({ dict }) => {
                                     className="p-2 text-gray-700 hover:text-green-600 transition-all duration-300"
                                     aria-label="LinkedIn"
                                 >
-                                    <BsLinkedin size={22} />
+                                    <BsLinkedin size={26} />
                                 </a>
                                 <a
                                     href="https://www.instagram.com/pacchar.ec/"
@@ -141,7 +123,7 @@ const Footer = ({ dict }) => {
                                     className="p-2 text-gray-700 hover:text-green-600 transition-all duration-300"
                                     aria-label="Instagram"
                                 >
-                                    <BsInstagram size={22} />
+                                    <BsInstagram size={26} />
                                 </a>
                             </div>
                         </div>

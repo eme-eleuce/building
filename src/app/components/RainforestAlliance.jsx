@@ -28,7 +28,7 @@ const RainforestAlliance = () => {
   const t = isEnglish ? texts.en : texts.es;
 
   return (
-    <section className="py-20 bg-gradient-to-br from-green-50 to-emerald-100 mt-12">
+    <section className="py-20 bg-gradient-to-br from-green-50 to-emerald-100 mt-20">
       <div className="max-w-7xl mx-auto px-4 md:px-12">
         <div className="flex flex-col items-center bg-white rounded-2xl shadow-xl overflow-hidden">
           {/* Imagen de fondo con logo superpuesto */}

@@ -86,8 +86,8 @@ const Contact = ({ params }) => {
           {/* Sección Guayaquil */}
           <motion.div 
             className="bg-[#f8f8f8] rounded-xl shadow-xl p-8 flex flex-col"
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.7 }}
           >
             <div className="flex items-center mb-6">
@@ -135,8 +135,8 @@ const Contact = ({ params }) => {
           {/* Sección Quito */}
           <motion.div 
             className="bg-[#f8f8f8] rounded-xl shadow-xl p-8 flex flex-col"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.9 }}
           >
             <div className="flex items-center mb-6">

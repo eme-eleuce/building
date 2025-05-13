@@ -8,7 +8,7 @@ import { MdOutlineConstruction } from "react-icons/md";
 // Importando imágenes
 import fondoImage from '../../../public/photos/mano.jpg';
 import image1 from '../../../public/photos/humo.jpg';
-import image3 from '../../../public/photos/worker.jpg';
+import image3 from '../../../public/photos/3.jpg';
 import image4 from '../../../public/photos/4.jpg';
 import image5 from '../../../public/photos/fuego.jpg';
 

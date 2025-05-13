@@ -6,6 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import pureImage from '../../../public/products/pure.png';
+import aliadoImage from '../../../public/photos/aliado.jpg';
 
 // Textos para internacionalización
 const texts = {
@@ -271,23 +272,38 @@ const PaccharPure = () => {
 
       {/* Llamada a la acción */}
       <motion.section 
-        className="py-16 md:py-20 bg-green-700 text-white"
+        className="py-24 md:py-32 relative text-white"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-50px" }}
+        viewport={{ once: true }}
         variants={staggerContainer}
       >
-        <div className="max-w-4xl mx-auto px-4 text-center">
+        <div className="absolute inset-0 z-0 h-full w-full">
+          <Image 
+            src={aliadoImage} 
+            alt="Background" 
+            fill
+            className="object-cover brightness-50"
+            priority
+          />
+        </div>
+        <div className="max-w-5xl mx-auto px-4 md:px-8 text-center relative z-10">
           <motion.h2 
-            className="text-3xl md:text-4xl font-extrabold mb-8 font-title"
+            className="text-5xl md:text-6xl font-bold mb-8 font-title"
             variants={fadeInUp}
           >
             {isEnglish ? "Ready to improve your soil?" : "¿Listo para mejorar tu suelo?"}
           </motion.h2>
+          <motion.p 
+            className="text-xl md:text-2xl mb-10 font-body max-w-3xl mx-auto"
+            variants={fadeInUp}
+          >
+            {isEnglish ? "Contact us today to learn more about Pacchar Pure and how it can benefit your soil." : "Contáctanos hoy para conocer más sobre Pacchar Pure y cómo puede beneficiar tu suelo."}
+          </motion.p>
           <motion.div variants={fadeInUp}>
             <Link 
               href={`/${isEnglish ? 'en/contact' : 'es/contacto'}`}
-              className="inline-block bg-white text-green-700 font-bold text-lg py-4 px-10 rounded-full transition-all duration-300 shadow-lg hover:bg-gray-100 hover:scale-105 font-body"
+              className="px-10 py-5 bg-white text-green-700 rounded-lg hover:bg-gray-100 transition-colors font-bold text-xl inline-block shadow-lg"
             >
               {t.contactButton}
             </Link>

@@ -8,6 +8,7 @@ import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 import biocharImage from '../../../public/photos/biochar.jpg';
 import Comunidad from '../../../public/photos/comunidad.jpg';
 import Team from '../../../public/photos/equipo.jpg';
+import Aliado from '../../../public/photos/aliado.jpg';
 
 // Importando todos los logos
 import artiLogo from '../../../public/photos/logos/arti.jpg';
@@ -630,26 +631,26 @@ const Section1 = () => {
           </div>
           
           {/* Sección de contacto */}
-          <div className="text-center mt-16 mb-8 relative rounded-xl shadow-lg overflow-hidden max-w-4xl mx-auto">
+          <div className="text-center mt-24 mb-16 relative rounded-xl shadow-xl overflow-hidden max-w-6xl mx-auto">
             <div className="absolute inset-0 z-0">
               <Image 
-                src={biocharImage} 
+                src={Aliado} 
                 alt="Biochar Background" 
                 fill
                 className="object-cover brightness-50"
               />
             </div>
-            <div className="relative z-10 p-10 md:p-12 text-[#f8f8f8]">
-              <h3 className="text-4xl md:text-5xl font-extrabold mb-8 text-cente font-title">
+            <div className="relative z-10 p-16 md:p-20 text-[#f8f8f8]">
+              <h3 className="text-5xl md:text-6xl font-extrabold mb-10 text-center font-title">
                 {t.section4ContactTitle}
               </h3>
-              <p className="text-xl md:text-2xl leading-relaxed mb-10 text-center font-body max-w-2xl mx-auto">
+              <p className="text-xl md:text-2xl leading-relaxed mb-12 text-center font-body max-w-3xl mx-auto">
                 {t.section4ContactDescription}
               </p>
               <div className="flex justify-center">
                 <Link 
                   href={`/${pathname.includes('/en') ? 'en/contact' : 'es/contacto'}`}
-                  className="bg-[#f8f8f8] text-green-600 font-bold text-lg py-4 px-10 rounded-full transition-all duration-300 shadow-lg hover:bg-green-600 hover:text-[#f8f8f8] hover:scale-105 font-body"
+                  className="bg-[#f8f8f8] text-green-600 font-bold text-xl py-5 px-12 rounded-full transition-all duration-300 shadow-lg hover:bg-green-600 hover:text-[#f8f8f8] hover:scale-105 font-body"
                 >
                   {t.section4ContactButton}
                 </Link>

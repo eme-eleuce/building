@@ -8,8 +8,8 @@ import { IoMdClose } from 'react-icons/io';
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 import { FaInstagram, FaLinkedin } from 'react-icons/fa';
 import LanguageSwitcher from './LanguageSwitcher';
-import logoPacchar1 from '../../../public/photos/pacchar1.png';
-import logoPacchar3 from '../../../public/photos/pacchar3.png';
+import logoPacchar1 from '../../../public/photos/logo1.png';
+import logoPacchar3 from '../../../public/photos/logo3.png';
 
 const Navbar = ({ dict }) => {
   const pathname = usePathname();
@@ -125,7 +125,7 @@ const Navbar = ({ dict }) => {
             alt="Logo" 
             width={250} 
             height={74} 
-            className="object-contain w-[220px] h-auto md:w-[220px] lg:w-[240px] transition-all duration-300"
+            className="object-contain w-[220px] h-auto md:w-[220px] lg:w-[220px] transition-all duration-300"
             priority
           />
         </Link>
@@ -183,8 +183,8 @@ const Navbar = ({ dict }) => {
                 </button>
                 
                 <div className={`bg-gray-50 transition-all duration-300 overflow-hidden rounded-lg origin-top ${pirolysisOpen ? 'max-h-60 scale-y-100 opacity-100' : 'max-h-0 scale-y-90 opacity-0'}`}>
-                  <Link href={`/${lang}/productos/pirolysis-tech/artisan-pro`} onClick={handleNavLinkClick} className="block px-8 py-2 text-lg font-medium text-black hover:text-green-600 hover:bg-gray-50 transition-all duration-300 font-body">Artisan Pro</Link>
-                  <Link href={`/${lang}/productos/pirolysis-tech/industrial`} onClick={handleNavLinkClick} className="block px-8 py-2 text-lg font-medium text-black hover:text-green-600 hover:bg-gray-50 transition-all duration-300 font-body">Industrial</Link>
+                  <Link href={`/${lang}/products/pirolysis-tech/artisan-pro`} onClick={handleNavLinkClick} className="block px-8 py-2 text-lg font-medium text-black hover:text-green-600 hover:bg-gray-50 transition-all duration-300 font-body">Artisan Pro</Link>
+                  <Link href={`/${lang}/products/pirolysis-tech/industrial`} onClick={handleNavLinkClick} className="block px-8 py-2 text-lg font-medium text-black hover:text-green-600 hover:bg-gray-50 transition-all duration-300 font-body">Industrial</Link>
                 </div>
               </div>
               <Link href={`/${lang}/productos/co2-removal`} onClick={handleNavLinkClick} className="block px-4 py-3 text-xl font-bold text-black hover:text-green-600 hover:bg-gray-50 transition-all duration-300 font-body">{navbarDict.co2_removal || 'Compensación de CO2'}</Link>
@@ -241,7 +241,7 @@ const Navbar = ({ dict }) => {
         {/* Mobile Menu Button */}
         <div className="md:hidden">
           <button 
-            className={`fixed md:relative right-4 top-[26px] md:top-auto z-50 w-12 h-12 flex items-center justify-center ${scrolled || !isHomePage ? 'text-black' : 'text-green-600'}`} 
+            className={`fixed md:relative right-4 top-[26px] md:top-auto mt-8 z-50 w-12 h-12 flex items-center justify-center ${scrolled || !isHomePage ? 'text-black' : 'text-green-600'}`} 
             onClick={toggleMenu}
             aria-label="Toggle menu"
           >
@@ -309,8 +309,8 @@ const Navbar = ({ dict }) => {
                 
                 {mobilePirolysisOpen && (
                   <div className="pl-4">
-                    <Link href={`/${lang}/productos/pirolysis-tech/artisan-pro`} className="block text-black text-lg font-medium py-2 transition-all duration-300 hover:pl-2 hover:text-green-600 font-body" onClick={handleNavLinkClick}>Artisan Pro</Link>
-                    <Link href={`/${lang}/productos/pirolysis-tech/industrial`} className="block text-black text-lg font-medium py-2 transition-all duration-300 hover:pl-2 hover:text-green-600 font-body" onClick={handleNavLinkClick}>Industrial</Link>
+                    <Link href={`/${lang}/products/pirolysis-tech/artisan-pro`} className="block text-black text-lg font-medium py-2 transition-all duration-300 hover:pl-2 hover:text-green-600 font-body" onClick={handleNavLinkClick}>Artisan Pro</Link>
+                    <Link href={`/${lang}/products/pirolysis-tech/industrial`} className="block text-black text-lg font-medium py-2 transition-all duration-300 hover:pl-2 hover:text-green-600 font-body" onClick={handleNavLinkClick}>Industrial</Link>
                   </div>
                 )}
               </div>
