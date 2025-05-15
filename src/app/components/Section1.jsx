@@ -41,31 +41,31 @@ const texts = {
     
     // Sección 2
     section2Title: "Nuestro Modelo de Trabajo con Comunidades",
-    section2Description: "Trabajamos directamente con comunidades agrícolas locales, mejorando la salud del suelo al restaurar su carbono orgánico y biodiversidad. Nuestro modelo de negocio inclusivo mejora la producción agrícola, genera alimentos más saludables, agua limpia y reduce la huella de carbono de nuestros aliados.",
+    section2Description: "Colaboramos con comunidades agropecuarias de Ecuador, transformando sus residuos oportunidades para revitalizar los suelos, mejorar las cosechas y capturar carbono. Nuestro enfoque inclusivo impulsa una producción sostenible de alimentos conservando los recursos suelo y agua, fortaleciendo así la resiliencia ambiental y el desarrollo rural.",
     
     // Sección 3 - Stats
     section3Title: "Nuestro Impacto",
-    section3Description: "Desde nuestra fundación, hemos logrado hitos significativos en nuestra misión de combatir el cambio climático. Nuestra trayectoria demuestra un crecimiento constante en la captura de carbono, beneficiando a comunidades agrícolas y ecosistemas locales.",
+    section3Description: "Nuestra filosofía de triple impacto, que promueve una agricultura climáticamente inteligente para enfrentar el cambio climático y beneficiar la calidad de vida de las comunidades rurales y sus ecosistemas, se reflejan en las siguientes cifras:",
     section3Stat1Label: "Toneladas de CO₂ removidas",
     section3Stat2Label: "Agricultores activos",
     section3Stat3Label: "Número de hectáreas beneficiadas",
-    section3Timeline1: "Fundación",
+    section3Timeline1: "2021",
     section3Timeline2: "10 tCO₂",
     section3Timeline3: "500 tCO₂",
     section3Timeline4: "10.000 tCO₂",
     section3Timeline5: "100.000 tCO₂",
     section3Timeline6: "10m tCO₂",
     section3AchievementTitle: "La evolución de Pacchar",
-    section3Achievement1: "Iniciamos operaciones con tecnología de pirólisis a pequeña escala",
-    section3Achievement2: "Alcanzamos nuestras primeras 10 toneladas de CO₂ capturadas",
-    section3Achievement3: "Expandimos nuestro impacto a 500 toneladas y comenzamos a trabajar con comunidades agrícolas",
-    section3Achievement4: "Meta: 10.000 toneladas y expansión a nuevas regiones",
-    section3Achievement5: "Meta: 100.000 toneladas y reconocimiento internacional",
-    section3Achievement6: "Visión a largo plazo: 10 millones de toneladas de CO₂ capturadas",
+    section3Achievement1: "Fundación. Iniciamos operaciones de biochar artesanal en Piñas, El Oro. Con la confianza y apoyo de Hacienda Rovall.",
+    section3Achievement2: "R&D. Se realizaron pruebas agronómicas en diversos cultivos de Ecuador, incluyendo Rosas, Cannabis, Cacao, Brócoli, Bananas, para validar la funcionalidad del biochar en el suelo.",
+    section3Achievement3: "Primeras Ventas. Pacchar Biochar entra al mercado agrícola ecuatoriano y recibe reconocimientos \"Premios Verdes X Edición\" en Categoría \"Agricultura y Alimentos Sostenibles\" y el primer lugar en la Cumbre de Emprendimiento de EAP Zamorano.",
+    section3Achievement4: "Crecimiento. Juntamos esfuerzos con Rainforest Enterprise formalizando un joint-venture de apoyo técnico y financiero para la captura de carbono con biochar y ecosistemas. Creación de la red de agricultores. Ventas corporativas.",
+    section3Achievement5: "Establecimiento y Diversificación. Certificación de Captura de Carbono. Agregación de productos y Servicios. Reconocimiento de 2do lugar Cumbre de sostenibilidad. Emprendimientos con idea de negocio validada.",
+    section3Achievement6: "Contar con al menos 10 comunidades en nuestra red de carbono. Producir 5000 toneladas de biochar artesanal por año para capturar más de 10000 toneladas de CO₂-eq. Y beneficiar diversos cultivos.",
     
     // Sección 4 - Aliados
     section4Title: "Nuestra red de valor",
-    section4Description: "Trabajamos junto a empresas, gobiernos, ONGs y corporaciones para crear un impacto positivo en el medio ambiente y las comunidades locales.",
+    section4Description: "Trabajamos junto a empresas, gobiernos, ONGs y corporaciones para crear un impacto positivo en el medio ambiente y las comunidades del Ecuador.",
     section4Category1: "Empresas",
     section4Category2: "GADs",
     section4Category3: "ONGs",
@@ -89,31 +89,31 @@ const texts = {
     
     // Section 2
     section2Title: "Our Community Work Model",
-    section2Description: "We work directly with local agricultural communities, enhancing soil health by restoring its organic carbon and biodiversity. Our inclusive business model improves agricultural production, generates healthier food, clean water, and reduces the carbon footprint of our allies.",
+    section2Description: "We collaborate with farming communities in Ecuador to transform agricultural waste into opportunities by revitalizing soils, improving harvests, and capturing carbon. Our inclusive approach promotes sustainable food production while preserving soil and water resources, strengthening both environmental resilience and rural development.",
     
     // Section 3 - Stats
     section3Title: "Our Impact",
-    section3Description: "Since our foundation, we have achieved significant milestones in our mission to combat climate change. Our journey demonstrates consistent growth in carbon capture, benefiting agricultural communities and local ecosystems.",
+    section3Description: "Driven by our triple-impact philosophy, we foster climate-smart agriculture that benefits people, nature, and the planet. Here's how our impact is growing:",
     section3Stat1Label: "Tonnes of CO₂ removed",
     section3Stat2Label: "Active farmers",
     section3Stat3Label: "Number of benefited hectares",
-    section3Timeline1: "Founded",
+    section3Timeline1: "2021",
     section3Timeline2: "10 tCO₂",
     section3Timeline3: "500 tCO₂",
     section3Timeline4: "10,000 tCO₂",
     section3Timeline5: "100,000 tCO₂",
     section3Timeline6: "10m tCO₂",
     section3AchievementTitle: "The Pacchar Evolution",
-    section3Achievement1: "Started operations with small-scale pyrolysis technology",
-    section3Achievement2: "Reached our first 10 tonnes of CO₂ captured",
-    section3Achievement3: "Expanded our impact to 500 tonnes and began working with farming communities",
-    section3Achievement4: "Goal: 10,000 tonnes and expansion to new regions",
-    section3Achievement5: "Goal: 100,000 tonnes and international recognition",
-    section3Achievement6: "Long-term vision: 10 million tonnes of CO₂ captured",
+    section3Achievement1: "Foundation. We started artisanal biochar operations in Piñas, El Oro. With the trust and support of Hacienda Rovall.",
+    section3Achievement2: "R&D. Agronomic tests were conducted on various crops in Ecuador, including Roses, Cannabis, Cacao, Broccoli, Bananas, to validate the functionality of biochar in the soil.",
+    section3Achievement3: "First Sales. Pacchar Biochar enters the Ecuadorian agricultural market and receives recognition \"Premios Verdes X Edition\" in the \"Sustainable Agriculture and Food\" Category and first place at the EAP Zamorano Entrepreneurship Summit.",
+    section3Achievement4: "Growth. We joined forces with Rainforest Enterprise, formalizing a joint venture for technical and financial support for carbon capture with biochar and ecosystems. Creation of the farmer network. Corporate sales.",
+    section3Achievement5: "Establishment and Diversification. Carbon Capture Certification. Product and Service Aggregation. Recognition of 2nd place at the Sustainability Summit. Ventures with validated business ideas.",
+    section3Achievement6: "Have at least 10 communities in our carbon network. Produce 5000 tons of artisanal biochar per year to capture more than 10000 tons of CO₂-eq. And benefit various crops.",
     
     // Section 4 - Allies
     section4Title: "Stakeholder Network",
-    section4Description: "We work together with companies, governments, NGOs, and corporations to create a positive impact on the environment and local communities.",
+    section4Description: "We work together with companies, governments, NGOs, and corporations to create a positive impact on the environment and communities across Ecuador.",
     section4Category1: "Companies",
     section4Category2: "GADs",
     section4Category3: "NGOs",
@@ -279,7 +279,7 @@ const Section1 = () => {
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-green-600 mb-8 font-title text-center md:text-left">
               {t.section1Title}
             </h2>
-            <p className="text-lg md:text-xl lg:text-2xl text-gray-700 leading-relaxed font-body text-justify">
+            <p className="text-lg md:text-xl lg:text-2xl leading-relaxed font-body text-justify">
               {t.section1Description}
             </p>
             <div className="mt-8 self-center md:self-start">
@@ -302,7 +302,7 @@ const Section1 = () => {
             <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-green-600 mb-8 text-center md:text-left font-title">
               {t.section2Title}
             </h2>
-            <p className="text-lg md:text-xl text-gray-700 leading-relaxed font-body text-justify mb-8">
+            <p className="text-lg md:text-xl leading-relaxed font-body text-justify mb-8">
               {t.section2Description}
             </p>
             
@@ -343,7 +343,7 @@ const Section1 = () => {
           <h2 className={`text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold text-center text-green-600 mb-12 transition-all duration-1000 font-title ${isStatsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             {t.section3Title}
           </h2>
-          <p className="text-lg text-center mb-10 max-w-3xl mx-auto font-body">
+          <p className="text-lg md:text-xl text-center mb-10 max-w-3xl mx-auto font-body">
             {t.section3Description}
           </p>
           <div className={`bg-yellow-950 rounded-3xl p-8 shadow-lg text-white transition-all duration-1000 ${isStatsVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
@@ -467,16 +467,16 @@ const Section1 = () => {
             {t.section3AchievementTitle}
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-green-600 transform transition-all duration-300 hover:scale-105">
+            <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-yellow-800 transform transition-all duration-300 hover:scale-105">
               <div className="flex items-center mb-3">
-                <div className="w-4 h-4 bg-green-600 rounded-full mr-3"></div>
+                <div className="w-4 h-4 bg-yellow-800 rounded-full mr-3"></div>
                 <p className="font-semibold text-lg">2020 - {t.section3Timeline1}</p>
               </div>
               <p className="text-gray-700 font-body">{t.section3Achievement1}</p>
             </div>
-            <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-green-600 transform transition-all duration-300 hover:scale-105">
+            <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-yellow-800 transform transition-all duration-300 hover:scale-105">
               <div className="flex items-center mb-3">
-                <div className="w-4 h-4 bg-green-600 rounded-full mr-3"></div>
+                <div className="w-4 h-4 bg-yellow-800 rounded-full mr-3"></div>
                 <p className="font-semibold text-lg">2022 - {t.section3Timeline2.split('CO₂').map((part, i, arr) => 
                   i < arr.length - 1 ? 
                     <React.Fragment key={i}>{part}CO<sub>2</sub></React.Fragment> : 
@@ -485,9 +485,9 @@ const Section1 = () => {
               </div>
               <p className="text-gray-700 font-body">{t.section3Achievement2}</p>
             </div>
-            <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-green-600 transform transition-all duration-300 hover:scale-105">
+            <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-yellow-800 transform transition-all duration-300 hover:scale-105">
               <div className="flex items-center mb-3">
-                <div className="w-4 h-4 bg-green-600 rounded-full mr-3"></div>
+                <div className="w-4 h-4 bg-yellow-800 rounded-full mr-3"></div>
                 <p className="font-semibold text-lg">2023 - {t.section3Timeline3.split('CO₂').map((part, i, arr) => 
                   i < arr.length - 1 ? 
                     <React.Fragment key={i}>{part}CO<sub>2</sub></React.Fragment> : 
@@ -496,9 +496,9 @@ const Section1 = () => {
               </div>
               <p className="text-gray-700 font-body">{t.section3Achievement3}</p>
             </div>
-            <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-yellow-600 transform transition-all duration-300 hover:scale-105">
+            <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-green-600 transform transition-all duration-300 hover:scale-105">
               <div className="flex items-center mb-3">
-                <div className="w-4 h-4 bg-yellow-600 rounded-full mr-3"></div>
+                <div className="w-4 h-4 bg-green-600 rounded-full mr-3"></div>
                 <p className="font-semibold text-lg">2024 - {t.section3Timeline4.split('CO₂').map((part, i, arr) => 
                   i < arr.length - 1 ? 
                     <React.Fragment key={i}>{part}CO<sub>2</sub></React.Fragment> : 
@@ -507,9 +507,9 @@ const Section1 = () => {
               </div>
               <p className="text-gray-700 font-body">{t.section3Achievement4}</p>
             </div>
-            <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-yellow-600 transform transition-all duration-300 hover:scale-105">
+            <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-green-600 transform transition-all duration-300 hover:scale-105">
               <div className="flex items-center mb-3">
-                <div className="w-4 h-4 bg-yellow-600 rounded-full mr-3"></div>
+                <div className="w-4 h-4 bg-green-600 rounded-full mr-3"></div>
                 <p className="font-semibold text-lg">2025 - {t.section3Timeline5.split('CO₂').map((part, i, arr) => 
                   i < arr.length - 1 ? 
                     <React.Fragment key={i}>{part}CO<sub>2</sub></React.Fragment> : 
@@ -518,9 +518,9 @@ const Section1 = () => {
               </div>
               <p className="text-gray-700 font-body">{t.section3Achievement5}</p>
             </div>
-            <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-yellow-600 transform transition-all duration-300 hover:scale-105">
+            <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-green-600 transform transition-all duration-300 hover:scale-105">
               <div className="flex items-center mb-3">
-                <div className="w-4 h-4 bg-yellow-600 rounded-full mr-3"></div>
+                <div className="w-4 h-4 bg-green-600 rounded-full mr-3"></div>
                 <p className="font-semibold text-lg">2030 - {t.section3Timeline6.split('CO₂').map((part, i, arr) => 
                   i < arr.length - 1 ? 
                     <React.Fragment key={i}>{part}CO<sub>2</sub></React.Fragment> : 
@@ -539,7 +539,7 @@ const Section1 = () => {
           <h2 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold text-center text-green-600 mb-12 font-title">
             {t.section4Title}
           </h2>
-          <p className="text-xl text-center text-gray-700 mb-12 max-w-4xl mx-auto font-body">
+          <p className="text-lg md:text-xl text-center mb-12 max-w-4xl mx-auto font-body">
             {t.section4Description}
           </p>
           
