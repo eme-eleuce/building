@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import pureImage from '../../../public/products/pure.png'; // Usando la imagen de Pure como placeholder
+import activeImage from '../../../public/products/active.png';
 import aliadoImage from '../../../public/photos/aliado.jpg';
 
 // Textos para internacionalización
@@ -158,18 +158,14 @@ const ActiveCompost = () => {
               className="w-full md:w-1/2 h-[300px] md:h-[500px] relative rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center border-4 border-yellow-800 p-2"
               variants={fadeInLeft}
             >
-              {/* Usando la imagen de Pure como placeholder para Active Compost */}
               <Image
-                src={pureImage}
+                src={activeImage}
                 alt="Active Compost"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-contain opacity-70"
                 priority
               />
-              <div className="absolute inset-0 flex items-center justify-center bg-black/10">
-                <p className="text-lg font-medium bg-white/80 px-4 py-2 rounded">Active Compost</p>
-              </div>
             </motion.div>
             <motion.div 
               className="w-full md:w-1/2 mb-8 md:mb-0"
@@ -309,7 +305,7 @@ const ActiveCompost = () => {
           <motion.div variants={fadeInUp}>
             <Link 
               href={`/${isEnglish ? 'en/contact' : 'es/contacto'}`}
-              className="px-10 py-5 bg-white text-green-700 rounded-lg hover:bg-gray-100 transition-colors font-bold text-xl inline-block shadow-lg"
+              className="px-10 py-5 bg-white text-green-700 rounded-lg hover:bg-gray-100 transition-colors font-bold font-body text-xl inline-block shadow-lg"
             >
               {t.contactButton}
             </Link>

@@ -10,6 +10,7 @@ import biocharHandImage from '../../../public/photos/mano.jpg';
 import pyrolysisImage from '../../../public/photos/fuego.jpg';
 import verdeImage from '../../../public/photos/verde.jpg';
 import aliadoImage from '../../../public/photos/aliado.jpg';
+import biocharGif from '../../../public/gif/muestra.gif';
 
 // Textos para internacionalización
 const texts = {
@@ -284,21 +285,17 @@ const Biochar = () => {
               </motion.p>
             </motion.div>
             <motion.div 
-              className="w-full md:w-1/2 relative rounded-lg overflow-hidden h-[250px] md:h-[300px]"
+              className="w-full md:w-1/2 relative rounded-lg overflow-hidden h-[250px] md:h-[500px]"
               variants={fadeInRight}
             >
-              <div className="relative w-full h-full bg-black flex items-center justify-center">
-                <video
-                  className="w-full h-full object-contain"
-                  controls
-                  autoPlay
-                  playsInline
-                  muted
-                  loop
-                >
-                  <source src="/videos/biochar.mp4" type="video/mp4" />
-                  {isEnglish ? "Your browser does not support the video tag." : "Tu navegador no soporta el tag de video."}
-                </video>
+              <div className="relative w-full h-full flex items-center justify-center bg-white">
+                <Image
+                  src={biocharGif}
+                  alt="Biochar structure animation"
+                  fill
+                  className="object-contain"
+                  priority
+                />
               </div>
             </motion.div>
           </motion.div>

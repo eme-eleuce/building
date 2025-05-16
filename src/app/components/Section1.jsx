@@ -37,7 +37,7 @@ const texts = {
     // Sección 1
     section1Title: "En Pacchar creamos valor a partir de residuos agroforestales",
     section1Description: "Nuestras tecnologías de Pirólisis y Compostaje nos permiten producir biochar, compost y otros productos agroecológicos de alta calidad con materias primas de fuentes responsables.",
-    section1Button: "Conoce más sobre el Biochar aquí",
+    section1Button: "Conoce más",
     
     // Sección 2
     section2Title: "Nuestro Modelo de Trabajo con Comunidades",
@@ -85,7 +85,7 @@ const texts = {
     // Section 1
     section1Title: "At Pacchar we create value from agroforestry waste",
     section1Description: "Our Pyrolysis and Composting technologies allow us to produce biochar, compost, and other high-quality agroecological products with raw materials from responsible sources.",
-    section1Button: "Learn more about Biochar",
+    section1Button: "Learn more",
     
     // Section 2
     section2Title: "Our Community Work Model",

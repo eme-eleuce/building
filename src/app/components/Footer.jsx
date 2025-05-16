@@ -5,7 +5,7 @@ import { MdEmail } from 'react-icons/md';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import logoPacchar from '../../../public/photos/pacchar3.png';
+import logoPacchar from '../../../public/photos/logos/logo-nuevo.png';
 
 const Footer = ({ dict }) => {
     const pathname = usePathname();
@@ -22,16 +22,16 @@ const Footer = ({ dict }) => {
                 <div className="flex flex-col space-y-8">
                     {/* Logo y direcciones */}
                     <div className="flex flex-col md:flex-row justify-between items-start">
-                        <div>
+                        <div className="w-full md:w-auto flex flex-col items-center md:items-start">
                             <Image
                                 src={logoPacchar}
                                 alt="Pacchar Logo"
                                 width={300}
                                 height={100}
-                                className="w-[220px] h-auto lg:w-[250px] object-contain"
+                                className="w-[270px] h-auto lg:w-[300px] object-contain"
                                 priority
                             />
-                            <p className="text-gray-600 mt-2 max-w-md font-body">
+                            <p className="text-gray-600 mt-2 max-w-md font-body text-center md:text-left">
                                 {lang === 'es' ? 'Soluciones climáticas escalables y sostenibles para un futuro mejor.' : 'Scalable and sustainable climate solutions for a better future.'}
                             </p>
                         </div>
@@ -101,7 +101,7 @@ const Footer = ({ dict }) => {
                     </div>
 
                     {/* Redes sociales (centrado) */}
-                    <div className="flex justify-center items-center pt-6">
+                    <div className="flex justify-center items-center">
                         <div className="text-center">
                             <h3 className="text-xl font-bold text-green-700 mb-4 font-title">
                                 {lang === 'es' ? 'Síguenos' : 'Follow us'}
@@ -130,8 +130,8 @@ const Footer = ({ dict }) => {
                     </div>
 
                     {/* Copyright */}
-                    <div className="border-t border-gray-200 pt-4 mt-2">
-                        <p className="text-sm text-gray-600 font-body text-center">
+                    <div className="border-t border-gray-200 mt-2">
+                        <p className="text-sm text-gray-600 pt-2 font-body text-center">
                             &copy; {currentYear} Pacchar. {lang === 'es' ? 'Todos los derechos reservados.' : 'All rights reserved.'}
                         </p>
                     </div>

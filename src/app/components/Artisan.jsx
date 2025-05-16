@@ -301,7 +301,7 @@ const Artisan = () => {
           <motion.div variants={fadeInUp}>
             <Link 
               href={`/${pathname.includes('/en') ? 'en/contact' : 'es/contacto'}`}
-              className="px-10 py-5 bg-white text-green-700 rounded-lg hover:bg-gray-100 transition-colors font-bold text-xl inline-block shadow-lg"
+              className="px-10 py-5 bg-white font-body text-green-700 rounded-lg hover:bg-gray-100 transition-colors font-bold text-xl inline-block shadow-lg"
             >
               {t.contactButton}
             </Link>

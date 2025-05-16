@@ -8,8 +8,8 @@ import { IoMdClose } from 'react-icons/io';
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 import { FaInstagram, FaLinkedin } from 'react-icons/fa';
 import LanguageSwitcher from './LanguageSwitcher';
-import logoPacchar1 from '../../../public/photos/logo1.png';
-import logoPacchar3 from '../../../public/photos/logo3.png';
+import logoPacchar1 from '../../../public/photos/logos/logo-nuevo3.png';
+import logoPacchar3 from '../../../public/photos/logos/logo-nuevo2.png';
 
 const Navbar = ({ dict }) => {
   const pathname = usePathname();
@@ -123,9 +123,9 @@ const Navbar = ({ dict }) => {
           <Image 
             src={scrolled || !isHomePage ? logoPacchar3 : logoPacchar1} 
             alt="Logo" 
-            width={250} 
-            height={74} 
-            className="object-contain w-[220px] h-auto md:w-[220px] lg:w-[220px] transition-all duration-300"
+            width={270} 
+            height={78} 
+            className="object-contain w-[220px] h-auto md:w-[220px] lg:w-[250px] transition-all duration-300"
             priority
           />
         </Link>
@@ -205,8 +205,8 @@ const Navbar = ({ dict }) => {
               )}
             </button>
             <div className={`absolute left-0 mt-2 w-64 bg-white shadow-lg rounded-lg overflow-hidden transition-all duration-300 origin-top ${cfnOpen ? 'opacity-100 visible scale-y-100 translate-y-0' : 'opacity-0 invisible scale-y-75 -translate-y-4'}`}>
-              <Link href={`/${lang}/cfn/biochar-points`} onClick={handleNavLinkClick} className="block px-4 py-3 text-xl font-bold text-black hover:text-green-600 hover:bg-gray-50 transition-all duration-300 font-body">{navbarDict.biochar_points || 'Biochar Points'}</Link>
-              <Link href={`/${lang}/cfn/join-network`} onClick={handleNavLinkClick} className="block px-4 py-3 text-xl font-bold text-black hover:text-green-600 hover:bg-gray-50 transition-all duration-300 font-body">{navbarDict.join_network || 'Únete a la red'}</Link>
+              <Link href={`/${lang}/red/biochar-points`} onClick={handleNavLinkClick} className="block px-4 py-3 text-xl font-bold text-black hover:text-green-600 hover:bg-gray-50 transition-all duration-300 font-body">{navbarDict.biochar_points || 'Biochar Points'}</Link>
+              <Link href={`/${lang}/red/alianza`} onClick={handleNavLinkClick} className="block px-4 py-3 text-xl font-bold text-black hover:text-green-600 hover:bg-gray-50 transition-all duration-300 font-body">{navbarDict.join_network || 'Únete a la red'}</Link>
             </div>
           </div>
           
@@ -241,7 +241,7 @@ const Navbar = ({ dict }) => {
         {/* Mobile Menu Button */}
         <div className="md:hidden">
           <button 
-            className={`fixed md:relative right-4 top-[26px] md:top-auto mt-8 z-50 w-12 h-12 flex items-center justify-center ${scrolled || !isHomePage ? 'text-black' : 'text-green-600'}`} 
+            className={`fixed md:relative right-4 top-[26px] md:top-auto mt-1 z-50 w-12 h-12 flex items-center justify-center ${scrolled || !isHomePage ? 'text-black' : 'text-green-600'}`} 
             onClick={toggleMenu}
             aria-label="Toggle menu"
           >
@@ -331,8 +331,8 @@ const Navbar = ({ dict }) => {
           
           {mobileCfnOpen && (
             <div className="pl-4">
-              <Link href={`/${lang}/cfn/biochar-points`} className="block text-black text-xl font-bold py-3 transition-all duration-300 hover:pl-2 hover:text-green-600 font-body" onClick={handleNavLinkClick}>{navbarDict.biochar_points || 'Biochar Points'}</Link>
-              <Link href={`/${lang}/cfn/join-network`} className="block text-black text-xl font-bold py-3 transition-all duration-300 hover:pl-2 hover:text-green-600 font-body" onClick={handleNavLinkClick}>{navbarDict.join_network || 'Únete a la red'}</Link>
+              <Link href={`/${lang}/red/biochar-points`} className="block text-black text-xl font-bold py-3 transition-all duration-300 hover:pl-2 hover:text-green-600 font-body" onClick={handleNavLinkClick}>{navbarDict.biochar_points || 'Biochar Points'}</Link>
+              <Link href={`/${lang}/red/alianza`} className="block text-black text-xl font-bold py-3 transition-all duration-300 hover:pl-2 hover:text-green-600 font-body" onClick={handleNavLinkClick}>{navbarDict.join_network || 'Únete a la red'}</Link>
             </div>
           )}
         </div>
