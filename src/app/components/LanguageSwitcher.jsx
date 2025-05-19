@@ -9,7 +9,7 @@ import { useEffect } from 'react';
 
 // Importar las imágenes de banderas directamente
 import banderaEspana from '../../../public/flags/espana.png';
-import banderaUSA from '../../../public/flags/estados-unidos.png';
+import banderaUSA from '../../../public/flags/reino-unido.png';
 
 export default function LanguageSwitcher({ currentLocale, scrolled }) {
   const pathname = usePathname();

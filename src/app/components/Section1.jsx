@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 import biocharImage from '../../../public/photos/biochar.jpg';
 import Comunidad from '../../../public/photos/comunidad.jpg';
@@ -36,12 +37,12 @@ const texts = {
   es: {
     // Sección 1
     section1Title: "En Pacchar creamos valor a partir de residuos agroforestales",
-    section1Description: "Nuestras tecnologías de Pirólisis y Compostaje nos permiten producir biochar, compost y otros productos agroecológicos de alta calidad con materias primas de fuentes responsables.",
+    section1Description: "Con nuestros modelos circulares de Biochar y Compostaje creamos abonos orgánicos de calidad que potencian los suelos agropecuarios mientras se reducen las emisiones de carbono.",
     section1Button: "Conoce más",
     
     // Sección 2
     section2Title: "Nuestro Modelo de Trabajo con Comunidades",
-    section2Description: "Colaboramos con comunidades agropecuarias de Ecuador, transformando sus residuos oportunidades para revitalizar los suelos, mejorar las cosechas y capturar carbono. Nuestro enfoque inclusivo impulsa una producción sostenible de alimentos conservando los recursos suelo y agua, fortaleciendo así la resiliencia ambiental y el desarrollo rural.",
+    section2Description: "Colaboramos con comunidades agropecuarias de Ecuador, transformando sus residuos en oportunidades para revitalizar los suelos, mejorar las cosechas y capturar carbono. Nuestro enfoque inclusivo impulsa una producción sostenible de alimentos conservando los recursos suelo y agua, fortaleciendo así la resiliencia ambiental y el desarrollo rural.",
     
     // Sección 3 - Stats
     section3Title: "Nuestro Impacto",
@@ -84,7 +85,7 @@ const texts = {
   en: {
     // Section 1
     section1Title: "At Pacchar we create value from agroforestry waste",
-    section1Description: "Our Pyrolysis and Composting technologies allow us to produce biochar, compost, and other high-quality agroecological products with raw materials from responsible sources.",
+    section1Description: "With our circular Biochar and Composting models, we create high-quality organic fertilizers that enhance agricultural soils while reducing carbon emissions.",
     section1Button: "Learn more",
     
     // Section 2
@@ -239,9 +240,37 @@ const Section1 = () => {
       clearInterval(timer3);
     };
   }, [isStatsVisible]);
+
+  const fadeIn = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 0.8 } }
+  };
+  
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 60 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+  };
+  
+  const fadeInDown = {
+    hidden: { opacity: 0, y: -60 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+  };
+  
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+
   return (
     <div className="w-full">
       {/* Primera Sección - Pantalla Completa */}
+      
       <section id="section1" className="min-h-screen flex flex-col items-center justify-center py-16 px-4 md:px-12 bg-white relative">
         {/* Imagen de fondo (visible en móvil) */}
         <div className="absolute inset-0 md:hidden w-full h-full overflow-hidden">
@@ -272,7 +301,13 @@ const Section1 = () => {
         </div>
         
         {/* Contenedor principal con padding para mantener espacio en blanco en los bordes */}
-        <div className="w-full max-w-7xl mx-auto relative z-10 px-4 md:px-12 flex justify-end">
+        <motion.section 
+      className="w-full max-w-7xl mx-auto relative z-10 px-4 md:px-12 flex justify-end"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-100px" }}
+      variants={fadeIn}
+    >
           {/* Texto en el lado derecho encima de la imagen */}
           <div className="w-full p-6 md:p-10 flex flex-col justify-center items-center md:items-start bg-white/80 backdrop-blur-md rounded-xl shadow-lg max-w-2xl">
             {/* Contenedor con fondo semitransparente y blur */}
@@ -291,7 +326,7 @@ const Section1 = () => {
               </Link>
             </div>
           </div>
-        </div>
+          </motion.section>
       </section>
 
       {/* Segunda Sección - Servicio */}
