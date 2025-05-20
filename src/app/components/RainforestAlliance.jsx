@@ -91,7 +91,7 @@ const RainforestAlliance = () => {
             
             {/* Logos superpuestos en rectángulo con bordes */}
             <div className="absolute top-[90%] left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-              <div className="bg-white rounded-2xl p-4 w-[380px] h-[150px] flex items-center justify-center overflow-hidden shadow-lg">
+              <div className="bg-white rounded-2xl p-4 w-[380px] h-[150px] flex items-center justify-center overflow-hidden">
                 <div className="flex items-center justify-center w-full h-full bg-white">
                   {/* Logo de Pacchar */}
                   <div className="relative w-[120px] h-[120px] mx-2">

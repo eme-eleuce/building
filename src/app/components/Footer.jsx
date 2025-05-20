@@ -16,10 +16,10 @@ const Footer = ({ dict }) => {
 
     return (
         <footer className="bg-[#f8f8f8] shadow-inner relative pt-1 px-8 md:px-4">
-            <div className="absolute top-0 left-0 right-0 mx-auto w-[90%] md:w-[80%] lg:w-[70%] border-t-4 border-green-600"></div>
-            <div className="max-w-[1240px] mx-auto py-10 md:py-12">
+            <div className="absolute top-0 left-0 right-0 mx-auto w-[90%] md:w-[80%] lg:w-[80%] border-t-4 border-green-700"></div>
+            <div className="max-w-[1240px] mx-auto py-2 md:py-4">
                 {/* Contenedor principal */}
-                <div className="flex flex-col space-y-8">
+                <div className="flex flex-col space-y-6">
                     {/* Logo y direcciones */}
                     <div className="flex flex-col md:flex-row justify-between items-start">
                         <div className="w-full md:w-auto flex flex-col items-center md:items-start">

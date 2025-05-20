@@ -32,12 +32,14 @@ const Navbar = ({ dict }) => {
   const [mobileNosotrosOpen, setMobileNosotrosOpen] = useState(false);
   const [mobileCfnOpen, setMobileCfnOpen] = useState(false);
   
-  // References for dropdown menus
+  // References for dropdown menus and mobile menu
   const productosRef = useRef(null);
   const soilRef = useRef(null);
   const pirolysisRef = useRef(null);
   const nosotrosRef = useRef(null);
   const cfnRef = useRef(null);
+  const mobileMenuRef = useRef(null);
+  const mobileButtonRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -52,7 +54,7 @@ const Navbar = ({ dict }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
   
-  // Effect to handle clicks outside the dropdown menus
+  // Effect to handle clicks outside the dropdown menus and mobile menu
   useEffect(() => {
     const handleClickOutside = (event) => {
       // Close Productos dropdown if click is outside
@@ -74,6 +76,13 @@ const Navbar = ({ dict }) => {
       if (cfnRef.current && !cfnRef.current.contains(event.target)) {
         setCfnOpen(false);
       }
+      
+      // Close mobile menu if click is outside and not on the toggle button
+      if (isOpen && mobileMenuRef.current && !mobileMenuRef.current.contains(event.target) && 
+          mobileButtonRef.current && !mobileButtonRef.current.contains(event.target)) {
+        setIsOpen(false);
+        closeAllDropdowns();
+      }
     };
     
     // Add event listener
@@ -83,7 +92,7 @@ const Navbar = ({ dict }) => {
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, []);
+  }, [isOpen]); // Added isOpen to the dependency array
 
   // Función para cerrar todos los menús desplegables
   const closeAllDropdowns = () => {
@@ -241,6 +250,7 @@ const Navbar = ({ dict }) => {
         {/* Mobile Menu Button */}
         <div className="md:hidden">
           <button 
+            ref={mobileButtonRef}
             className={`fixed md:relative right-4 top-[26px] md:top-auto mt-1 z-50 w-12 h-12 flex items-center justify-center ${scrolled || !isHomePage ? 'text-black' : 'text-green-600'}`} 
             onClick={toggleMenu}
             aria-label="Toggle menu"
@@ -255,10 +265,13 @@ const Navbar = ({ dict }) => {
       </div>
 
       {/* Mobile Navigation */}
-      <div className={`fixed top-0 right-0 w-4/5 h-screen bg-white shadow-lg pt-24 px-6 transition-all duration-300 transform ${isOpen ? 'translate-x-0' : 'translate-x-full'} md:hidden z-40 overflow-y-auto rounded-l-lg`}>
+      <div 
+        ref={mobileMenuRef}
+        className={`fixed top-0 right-0 w-4/5 h-screen bg-white shadow-lg pt-24 px-6 transition-all duration-300 transform ${isOpen ? 'translate-x-0' : 'translate-x-full'} md:hidden z-40 overflow-y-auto rounded-l-lg`}
+      >
         {/* Language Switcher - Mobile */}
         <div className="py-4 border-b border-gray-200 flex justify-center mb-4">
-          <div className="bg-blue-600 px-4 py-3 rounded-lg shadow-inner">
+          <div className="bg-green-600 px-5 py-4 rounded-lg shadow-inner">
             <LanguageSwitcher currentLocale={lang || 'es'} scrolled={false} />
           </div>
         </div>
@@ -359,7 +372,7 @@ const Navbar = ({ dict }) => {
         <Link href={`/${lang === 'es' ? 'es/contacto' : 'en/contact'}`} className="block text-black text-3xl font-bold py-4 border-b border-gray-200 transition-all duration-300 hover:pl-2 hover:text-green-600 font-title" onClick={handleNavLinkClick}>{navbarDict.contacto || 'Contacto'}</Link>
         
         {/* Social Media Links */}
-        <div className="mt-6 mb-20 border-t-2 border-blue-600 pt-6">
+        <div className="mt-6 mb-20 border-t-4 border-green-600 pt-6">
           <div className="flex justify-center space-x-8">
             <a 
               href="https://www.instagram.com/pacchar" 

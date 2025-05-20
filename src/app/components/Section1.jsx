@@ -330,16 +330,29 @@ const Section1 = () => {
       </section>
 
       {/* Segunda Sección - Servicio */}
-      <section id="section2" className="py-20 px-4 md:px-12 bg-white">
+      <motion.section 
+        id="section2" 
+        className="py-20 px-4 md:px-12 bg-white"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={staggerContainer}
+      >
         <div className="flex flex-col md:flex-row max-w-6xl mx-auto items-center">
           {/* Texto en el lado izquierdo */}
           <div className="w-full md:w-1/2 md:pr-12 mb-10 md:mb-0">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-green-600 mb-8 text-center md:text-left font-title">
+            <motion.h2 
+              className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-green-600 mb-8 text-center md:text-left font-title"
+              variants={fadeInUp}
+            >
               {t.section2Title}
-            </h2>
-            <p className="text-lg md:text-xl leading-relaxed font-body text-justify mb-8">
+            </motion.h2>
+            <motion.p 
+              className="text-lg md:text-xl leading-relaxed font-body text-justify mb-8"
+              variants={fadeInUp}
+            >
               {t.section2Description}
-            </p>
+            </motion.p>
             
             {/* Botón para unirse a la red */}
             <div className="flex justify-center md:justify-start mt-6">
@@ -366,7 +379,7 @@ const Section1 = () => {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Tercera Sección - Estadísticas */}
       <section 
@@ -498,9 +511,15 @@ const Section1 = () => {
         
         {/* Logros y Metas */}
         <div className="max-w-6xl mx-auto mt-20">
-          <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-10 text-center text-green-600 font-title">
+          <motion.h3 
+            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-10 text-center text-green-600 font-title"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={fadeInUp}
+          >
             {t.section3AchievementTitle}
-          </h3>
+          </motion.h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-yellow-800 transform transition-all duration-300 hover:scale-105">
               <div className="flex items-center mb-3">
@@ -569,14 +588,27 @@ const Section1 = () => {
       </section>
 
       {/* Cuarta Sección - Aliados y Colaboradores */}
-      <section id="section4" className="py-16 bg-gray-50">
+      <motion.section 
+        id="section4" 
+        className="py-16 bg-gray-50"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={staggerContainer}
+      >
         <div className="max-w-7xl mx-auto px-4 md:px-12">
-          <h2 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold text-center text-green-600 mb-12 font-title">
+          <motion.h2 
+            className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold text-center text-green-600 mb-12 font-title"
+            variants={fadeInUp}
+          >
             {t.section4Title}
-          </h2>
-          <p className="text-lg md:text-xl text-center mb-12 max-w-4xl mx-auto font-body">
+          </motion.h2>
+          <motion.p 
+            className="text-lg md:text-xl text-center mb-12 max-w-4xl mx-auto font-body"
+            variants={fadeInUp}
+          >
             {t.section4Description}
-          </p>
+          </motion.p>
           
           {/* Logos con carrusel infinito - una sola fila */}
           <div className="bg-[#f8f8f8] rounded-xl shadow-lg p-8 mb-12 md:mx-[-2%] lg:mx-[-4%] xl:mx-[-5%]">
@@ -666,7 +698,13 @@ const Section1 = () => {
           </div>
           
           {/* Sección de contacto */}
-          <div className="text-center mt-24 mb-16 relative rounded-xl shadow-xl overflow-hidden max-w-6xl mx-auto">
+          <motion.div 
+            className="text-center mt-24 mb-16 relative rounded-xl shadow-xl overflow-hidden max-w-6xl mx-auto"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={staggerContainer}
+          >
             <div className="absolute inset-0 z-0">
               <Image 
                 src={Aliado} 
@@ -676,30 +714,49 @@ const Section1 = () => {
               />
             </div>
             <div className="relative z-10 p-16 md:p-20 text-[#f8f8f8]">
-              <h3 className="text-5xl md:text-6xl font-extrabold mb-10 text-center font-title">
+              <motion.h3 
+                className="text-5xl md:text-6xl font-extrabold mb-10 text-center font-title"
+                variants={fadeInUp}
+              >
                 {t.section4ContactTitle}
-              </h3>
-              <p className="text-xl md:text-2xl leading-relaxed mb-12 text-center font-body max-w-3xl mx-auto">
+              </motion.h3>
+              <motion.p 
+                className="text-xl md:text-2xl leading-relaxed mb-12 text-center font-body max-w-3xl mx-auto"
+                variants={fadeInUp}
+              >
                 {t.section4ContactDescription}
-              </p>
-              <div className="flex justify-center">
+              </motion.p>
+              <motion.div 
+                className="flex justify-center"
+                variants={fadeInUp}
+              >
                 <Link 
                   href={`/${pathname.includes('/en') ? 'en/contact' : 'es/contacto'}`}
                   className="bg-[#f8f8f8] text-green-600 font-bold text-xl py-5 px-12 rounded-full transition-all duration-300 shadow-lg hover:bg-green-600 hover:text-[#f8f8f8] hover:scale-105 font-body"
                 >
                   {t.section4ContactButton}
                 </Link>
-              </div>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Quinta Sección - Equipo */}
-      <section id="section5" className="py-20 bg-green-700 text-white">
+      <motion.section 
+        id="section5" 
+        className="py-20 bg-green-700 text-white"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={staggerContainer}
+      >
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center">
           {/* Imagen del lado izquierdo */}
-          <div className="w-full md:w-1/2 p-4 md:p-8">
+          <motion.div 
+            className="w-full md:w-1/2 p-4 md:p-8"
+            variants={fadeInUp}
+          >
             <div className="relative w-full h-[300px] md:h-[400px] rounded-xl overflow-hidden shadow-xl">
               <Image 
                 src={Team} 
@@ -710,30 +767,45 @@ const Section1 = () => {
                 className="object-cover object-center"
               />
             </div>
-          </div>
+          </motion.div>
           
           {/* Texto del lado derecho */}
-          <div className="w-full md:w-1/2 p-6 md:p-12 flex flex-col justify-center">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-8 font-title">
+          <motion.div 
+            className="w-full md:w-1/2 p-6 md:p-12 flex flex-col justify-center"
+            variants={staggerContainer}
+          >
+            <motion.h2 
+              className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-8 font-title"
+              variants={fadeInUp}
+            >
               {t.section5Title}
-            </h2>
-            <p className="text-lg md:text-xl leading-relaxed mb-8 font-body text-justify">
+            </motion.h2>
+            <motion.p 
+              className="text-lg md:text-xl leading-relaxed mb-8 font-body text-justify"
+              variants={fadeInUp}
+            >
               {t.section5Description1}
-            </p>
-            <p className="text-lg md:text-xl leading-relaxed mb-8 font-body text-justify">
+            </motion.p>
+            <motion.p 
+              className="text-lg md:text-xl leading-relaxed mb-8 font-body text-justify"
+              variants={fadeInUp}
+            >
               {t.section5Description2}
-            </p>
-            <div className="mt-4">
+            </motion.p>
+            <motion.div 
+              className="mt-4"
+              variants={fadeInUp}
+            >
               <Link 
                 href={`/${pathname.includes('/en') ? 'en/equipo' : 'es/equipo'}`}
                 className="inline-block bg-lime-300 hover:bg-lime-400 text-green-950 font-bold py-3 px-8 rounded-full transition-colors duration-300 transform hover:scale-105 font-body"
               >
                 {t.section5Button}
               </Link>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 };
