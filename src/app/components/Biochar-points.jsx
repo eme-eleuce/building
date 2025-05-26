@@ -107,9 +107,9 @@ const BiocharPoints = () => {
           </motion.p>
           
           <motion.div className="flex flex-col md:flex-row items-center gap-8 md:gap-16">
-            {/* Mapa de Ecuador */}
+            {/* Mapa de Ecuador - En móvil aparece después del título */}
             <motion.div 
-              className="w-full md:w-1/2 relative rounded-lg overflow-hidden h-[350px] md:h-[500px] order-2 md:order-1"
+              className="w-full md:w-1/2 relative rounded-lg overflow-hidden h-[350px] md:h-[500px] order-1 md:order-1"
               variants={fadeInLeft}
             >
               <Image
@@ -123,7 +123,7 @@ const BiocharPoints = () => {
             
             {/* Texto de provincias */}
             <motion.div 
-              className="w-full md:w-1/2 order-1 md:order-2"
+              className="w-full md:w-1/2 order-2 md:order-2"
               variants={fadeInRight}
             >
               <motion.h3 

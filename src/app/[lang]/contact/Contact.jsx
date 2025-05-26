@@ -21,7 +21,7 @@ const Contact = ({ params }) => {
       subtitle: "Estamos aquí para ayudarte",
       description: "Ponte en contacto con nosotros para más información sobre nuestros productos y servicios. Estaremos encantados de atenderte.",
       officesTitle: "Nuestras Oficinas",
-      guayaquilTitle: "Guayaquil",
+      guayaquilTitle: "La Aurora (Guayas)",
       quitoTitle: "Quito",
       contactTitle: "Información de Contacto",
       whatsapp: "WhatsApp",
@@ -38,7 +38,7 @@ const Contact = ({ params }) => {
       subtitle: "We're here to help",
       description: "Get in touch with us for more information about our products and services. We'll be happy to assist you.",
       officesTitle: "Our Offices",
-      guayaquilTitle: "Guayaquil",
+      guayaquilTitle: "La Aurora (Guayas)",
       quitoTitle: "Quito",
       contactTitle: "Contact Information",
       whatsapp: "WhatsApp",
@@ -101,7 +101,7 @@ const Contact = ({ params }) => {
                 <FaMapMarkerAlt className="text-amber-800 text-2xl mr-3 mt-1" />
                 <div>
                   <h4 className="text-xl font-semibold text-gray-700 mb-2 font-title">{t.officesTitle}</h4>
-                  <p className="text-gray-600 text-lg font-body">Av. Francisco de Orellana #111 y Av. Plaza Dañín, Oficina 52</p>
+                  <p className="text-gray-600 text-lg font-body">Av. Ricardo Paredez #09</p>
                 </div>
               </div>
             </div>

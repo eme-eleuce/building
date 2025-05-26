@@ -16,13 +16,13 @@ const Footer = ({ dict }) => {
 
     return (
         <footer className="bg-[#f8f8f8] shadow-inner relative pt-1 px-8 md:px-4">
-            <div className="absolute top-0 left-0 right-0 mx-auto w-[90%] md:w-[80%] lg:w-[80%] border-t-4 border-green-700"></div>
+            <div className="absolute top-0 left-0 right-0 mx-auto w-[90%] md:w-[80%] lg:w-[85%] border-t-4 border-green-700"></div>
             <div className="max-w-[1240px] mx-auto py-2 md:py-4">
                 {/* Contenedor principal */}
                 <div className="flex flex-col space-y-6">
                     {/* Logo y direcciones */}
                     <div className="flex flex-col md:flex-row justify-between items-start">
-                        <div className="w-full md:w-auto flex flex-col items-center md:items-start">
+                        <div className="w-full md:w-auto flex flex-col items-center md:items-start justify-center md:self-center">
                             <Image
                                 src={logoPacchar}
                                 alt="Pacchar Logo"
@@ -31,31 +31,28 @@ const Footer = ({ dict }) => {
                                 className="w-[270px] h-auto lg:w-[300px] object-contain"
                                 priority
                             />
-                            <p className="text-gray-600 mt-2 max-w-md font-body text-center md:text-left">
-                                {lang === 'es' ? 'Soluciones climáticas escalables y sostenibles para un futuro mejor.' : 'Scalable and sustainable climate solutions for a better future.'}
-                            </p>
                         </div>
                         
                         {/* Línea de separación vertical (solo en escritorio) */}
                         <div className="hidden md:block h-28 w-1 mx-6 self-center mt-4" style={{ backgroundColor: '#854d0e' }}></div>
                         
                         {/* Direcciones (versión escritorio) */}
-                        <div className="hidden md:flex md:flex-row md:space-x-12 md:self-end mt-8">
+                        <div className="hidden md:flex md:flex-row md:space-x-28 md:self-end mt-8">
                             {/* Dirección Guayaquil */}
                             <div>
                                 <div className="flex items-center mb-3">
-                                    <FaMapMarkerAlt className="text-yellow-700 mr-2 text-xl" />
-                                    <h4 className="text-lg font-bold text-gray-800 font-title">Guayaquil</h4>
+                                    <FaMapMarkerAlt className="text-green-700 mr-2 text-xl" />
+                                    <h4 className="text-lg font-bold text-gray-800 font-title">La Aurora (Guayas)</h4>
                                 </div>
                                 <p className="text-base text-gray-700 font-body">
-                                    Av. Francisco de Orellana #111 y Av. Plaza Dañín, Oficina 52
+                                    Av. Ricardo Paredez #09
                                 </p>
                             </div>
 
                             {/* Dirección Quito */}
                             <div>
                                 <div className="flex items-center mb-3">
-                                    <FaMapMarkerAlt className="text-yellow-700 mr-2 text-xl" />
+                                    <FaMapMarkerAlt className="text-green-700 mr-2 text-xl" />
                                     <h4 className="text-lg font-bold text-gray-800 font-title">Quito</h4>
                                 </div>
                                 <p className="text-base text-gray-700 font-body">
@@ -78,10 +75,10 @@ const Footer = ({ dict }) => {
                         <div className="mb-8">
                             <div className="flex items-center mb-3">
                                 <FaMapMarkerAlt className="text-yellow-700 mr-2 text-xl" />
-                                <h4 className="text-lg font-bold text-gray-800 font-title">Guayaquil</h4>
+                                <h4 className="text-lg font-bold text-gray-800 font-title">La Aurora (Guayas)</h4>
                             </div>
                             <p className="text-base text-gray-700 font-body">
-                                Av. Francisco de Orellana #111 y Av. Plaza Dañín, Oficina 52
+                            Av. Ricardo Paredez #09
                             </p>
                         </div>
 

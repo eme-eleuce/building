@@ -36,7 +36,7 @@ import herboreLogo from '../../../public/photos/logos/herbore.png';
 const texts = {
   es: {
     // Sección 1
-    section1Title: "En Pacchar creamos valor a partir de residuos agroforestales",
+    section1Title: "En Pacchar creamos valor a partir de residuos agropecuarios",
     section1Description: "Con nuestros modelos circulares de Biochar y Compostaje creamos abonos orgánicos de calidad que potencian los suelos agropecuarios mientras se reducen las emisiones de carbono.",
     section1Button: "Conoce más",
     
@@ -46,11 +46,11 @@ const texts = {
     
     // Sección 3 - Stats
     section3Title: "Nuestro Impacto",
-    section3Description: "Nuestra filosofía de triple impacto, que promueve una agricultura climáticamente inteligente para enfrentar el cambio climático y beneficiar la calidad de vida de las comunidades rurales y sus ecosistemas, se reflejan en las siguientes cifras:",
+    section3Description: "Nuestra filosofía de impacto ambiental, social y económico impulsa una agricultura climáticamente inteligente, con adaptación al cambio climático y que mejora los ecosistemas y la calidad de vida de las comunidades rurales. Estos valores se reflejan en las siguientes cifras:",
     section3Stat1Label: "Toneladas de CO₂ removidas",
     section3Stat2Label: "Agricultores activos",
     section3Stat3Label: "Número de hectáreas beneficiadas",
-    section3Timeline1: "2021",
+    section3Timeline1: " ",
     section3Timeline2: "10 tCO₂",
     section3Timeline3: "500 tCO₂",
     section3Timeline4: "10.000 tCO₂",
@@ -84,7 +84,7 @@ const texts = {
   },
   en: {
     // Section 1
-    section1Title: "At Pacchar we create value from agroforestry waste",
+    section1Title: "At Pacchar we create value from agricultural and livestock waste",
     section1Description: "With our circular Biochar and Composting models, we create high-quality organic fertilizers that enhance agricultural soils while reducing carbon emissions.",
     section1Button: "Learn more",
     
@@ -94,11 +94,11 @@ const texts = {
     
     // Section 3 - Stats
     section3Title: "Our Impact",
-    section3Description: "Driven by our triple-impact philosophy, we foster climate-smart agriculture that benefits people, nature, and the planet. Here's how our impact is growing:",
+    section3Description: "Our philosophy of environmental, social, and economic impact drives climate-smart agriculture—promoting climate change adaptation while enhancing ecosystems and improving the quality of life in rural communities. These values are reflected in the following figures:",
     section3Stat1Label: "Tonnes of CO₂ removed",
     section3Stat2Label: "Active farmers",
     section3Stat3Label: "Number of benefited hectares",
-    section3Timeline1: "2021",
+    section3Timeline1: " ",
     section3Timeline2: "10 tCO₂",
     section3Timeline3: "500 tCO₂",
     section3Timeline4: "10,000 tCO₂",
@@ -524,7 +524,7 @@ const Section1 = () => {
             <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-yellow-800 transform transition-all duration-300 hover:scale-105">
               <div className="flex items-center mb-3">
                 <div className="w-4 h-4 bg-yellow-800 rounded-full mr-3"></div>
-                <p className="font-semibold text-lg">2020 - {t.section3Timeline1}</p>
+                <p className="font-semibold text-lg">2021 {t.section3Timeline1}</p>
               </div>
               <p className="text-gray-700 font-body">{t.section3Achievement1}</p>
             </div>
@@ -793,12 +793,12 @@ const Section1 = () => {
               {t.section5Description2}
             </motion.p>
             <motion.div 
-              className="mt-4"
+              className="mt-4 flex justify-center md:justify-start"
               variants={fadeInUp}
             >
               <Link 
                 href={`/${pathname.includes('/en') ? 'en/equipo' : 'es/equipo'}`}
-                className="inline-block bg-lime-300 hover:bg-lime-400 text-green-950 font-bold py-3 px-8 rounded-full transition-colors duration-300 transform hover:scale-105 font-body"
+                className="inline-block bg-yellow-700 hover:bg-yellow-900 text-white font-bold py-3 px-8 rounded-full transition-colors duration-300 transform hover:scale-105 font-body"
               >
                 {t.section5Button}
               </Link>

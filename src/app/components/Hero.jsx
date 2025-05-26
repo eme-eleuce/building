@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import {IoIosArrowDown} from 'react-icons/io';
 import { MdOutlineConstruction } from "react-icons/md";
 
@@ -13,6 +14,9 @@ import image4 from '../../../public/photos/4.jpg';
 import image5 from '../../../public/photos/fuego.jpg';
 
 const Hero = () => {
+  const pathname = usePathname();
+  const lang = pathname?.split('/')[1] || 'es';
+  
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const images = [
     fondoImage,
@@ -59,8 +63,29 @@ const Hero = () => {
         <div className="absolute inset-0 bg-black opacity-30"></div>
       </div>
 
-      {/* Logo */}
+      {/* Texto principal */}
+      <div className="absolute inset-0 flex flex-col items-left justify-center text-white px-8 md:px-20 mt-16 md:mt-20 lg:mt-24">
+        <div className="mt-20 md:mt-24 lg:mt-32">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-left mb-6 font-title leading-tight uppercase">
+            {lang === 'es' ? (
+              <>
+                DESCARBONIZAMOS LA ATMÓSFERA <br />
+                POTENCIANDO LOS SUELOS
+              </>
+            ) : (
+              <>
+                DECARBONIZING THE ATMOSPHERE <br />
+                BY ENHANCING SOILS
+              </>
+            )}
+          </h1>
+          <p className="text-xl md:text-2xl text-left font-body mb-16">
+            {lang === 'es' ? 'Empoderando a un agricultor a la vez' : 'Empowering one farmer at a time'}
+          </p>
+        </div>
+      </div>
       
+      {/* Flecha de scroll */}
       <div className='absolute justify-center mt-[36rem] lg:mt-[37rem] md:mt-[34rem] text-white cursor-pointer'>
             <Link href='#section1' scroll={true}>
                <IoIosArrowDown size={65}/>
