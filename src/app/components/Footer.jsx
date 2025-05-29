@@ -45,7 +45,7 @@ const Footer = ({ dict }) => {
                                     <h4 className="text-lg font-bold text-gray-800 font-title">La Aurora (Guayas)</h4>
                                 </div>
                                 <p className="text-base text-gray-700 font-body">
-                                    Av. Ricardo Paredez #09
+                                    Av. Ricardo Paredes #09
                                 </p>
                             </div>
 
@@ -78,7 +78,7 @@ const Footer = ({ dict }) => {
                                 <h4 className="text-lg font-bold text-gray-800 font-title">La Aurora (Guayas)</h4>
                             </div>
                             <p className="text-base text-gray-700 font-body">
-                            Av. Ricardo Paredez #09
+                            Av. Ricardo Paredes #09
                             </p>
                         </div>
 

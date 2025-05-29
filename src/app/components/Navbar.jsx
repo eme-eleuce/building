@@ -196,7 +196,7 @@ const Navbar = ({ dict }) => {
                   <Link href={`/${lang}/products/pirolysis-tech/industrial`} onClick={handleNavLinkClick} className="block px-8 py-2 text-lg font-medium text-black hover:text-green-600 hover:bg-gray-50 transition-all duration-300 font-body">Industrial</Link>
                 </div>
               </div>
-              <Link href={`/${lang}/productos/co2-removal`} onClick={handleNavLinkClick} className="block px-4 py-3 text-xl font-bold text-black hover:text-green-600 hover:bg-gray-50 transition-all duration-300 font-body">{navbarDict.co2_removal || 'Compensación de CO2'}</Link>
+              <Link href={`/${lang}/products/co2-removal`} onClick={handleNavLinkClick} className="block px-4 py-3 text-xl font-bold text-black hover:text-green-600 hover:bg-gray-50 transition-all duration-300 font-body">{navbarDict.co2_removal || 'Compensación de CO2'}</Link>
             </div>
           </div>
           
@@ -327,7 +327,7 @@ const Navbar = ({ dict }) => {
                   </div>
                 )}
               </div>
-              <Link href={`/${lang}/productos/co2-removal`} className="block text-black text-xl font-bold py-3 border-b border-gray-200 transition-all duration-300 hover:pl-2 hover:text-green-600 font-body" onClick={handleNavLinkClick}>{navbarDict.co2_removal || 'Compensación de CO2'}</Link>
+              <Link href={`/${lang}/products/co2-removal`} className="block text-black text-xl font-bold py-3 border-b border-gray-200 transition-all duration-300 hover:pl-2 hover:text-green-600 font-body" onClick={handleNavLinkClick}>{navbarDict.co2_removal || 'Compensación de CO2'}</Link>
             </div>
           )}
         </div>

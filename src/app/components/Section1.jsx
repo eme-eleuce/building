@@ -49,7 +49,7 @@ const texts = {
     section3Description: "Nuestra filosofía de impacto ambiental, social y económico impulsa una agricultura climáticamente inteligente, con adaptación al cambio climático y que mejora los ecosistemas y la calidad de vida de las comunidades rurales. Estos valores se reflejan en las siguientes cifras:",
     section3Stat1Label: "Toneladas de CO₂ removidas",
     section3Stat2Label: "Agricultores activos",
-    section3Stat3Label: "Número de hectáreas beneficiadas",
+    section3Stat3Label: "Hectáreas beneficiadas",
     section3Timeline1: " ",
     section3Timeline2: "10 tCO₂",
     section3Timeline3: "500 tCO₂",
@@ -66,7 +66,7 @@ const texts = {
     
     // Sección 4 - Aliados
     section4Title: "Nuestra red de valor",
-    section4Description: "Trabajamos junto a empresas, gobiernos, ONGs y corporaciones para crear un impacto positivo en el medio ambiente y las comunidades del Ecuador.",
+    section4Description: "Trabajamos junto a agricultores, gobiernos, ONGs y corporaciones para crear un impacto positivo en el medio ambiente y las comunidades del Ecuador.",
     section4Category1: "Empresas",
     section4Category2: "GADs",
     section4Category3: "ONGs",
@@ -78,7 +78,7 @@ const texts = {
     
     // Sección 5 - Equipo
     section5Title: "Nuestro Equipo",
-    section5Description1: "Somos un equipo diverso y apasionado de científicos, ingenieros, agricultores y emprendedores comprometidos con la creación de soluciones climáticas escalables y sostenibles.",
+    section5Description1: "Somos un equipo diverso y apasionado de científicos, ingenieros, agricultores y emprendedores comprometidos con la creación de soluciones agrícolas y climáticas sostenibles.",
     section5Description2: "¿Quieres conocer más sobre nuestro viaje hacia soluciones climáticas globales? Haz clic a continuación para descubrir más.",
     section5Button: "Conócenos"
   },
@@ -97,7 +97,7 @@ const texts = {
     section3Description: "Our philosophy of environmental, social, and economic impact drives climate-smart agriculture—promoting climate change adaptation while enhancing ecosystems and improving the quality of life in rural communities. These values are reflected in the following figures:",
     section3Stat1Label: "Tonnes of CO₂ removed",
     section3Stat2Label: "Active farmers",
-    section3Stat3Label: "Number of benefited hectares",
+    section3Stat3Label: "Benefited hectares",
     section3Timeline1: " ",
     section3Timeline2: "10 tCO₂",
     section3Timeline3: "500 tCO₂",
@@ -114,7 +114,7 @@ const texts = {
     
     // Section 4 - Allies
     section4Title: "Stakeholder Network",
-    section4Description: "We work together with companies, governments, NGOs, and corporations to create a positive impact on the environment and communities across Ecuador.",
+    section4Description: "We work together with farmers, governments, NGOs, and corporations to create a positive impact on the environment and communities across Ecuador.",
     section4Category1: "Companies",
     section4Category2: "GADs",
     section4Category3: "NGOs",
@@ -126,7 +126,7 @@ const texts = {
     
     // Section 5 - Team
     section5Title: "Our Team",
-    section5Description1: "We are a diverse and passionate team of scientists, engineers, farmers, and entrepreneurs committed to creating scalable and sustainable climate solutions.",
+    section5Description1: "We are a diverse and passionate team of scientists, engineers, farmers, and entrepreneurs committed to creating sustainable agricultural and climate solutions.",
     section5Description2: "Want to learn more about our journey towards global climate solutions? Click below to find out more.",
     section5Button: "About us"
   }

@@ -1,39 +1,33 @@
 "use client";
 
-import React from 'react';
+import React, { useState } from 'react';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import pureImage from '../../../public/products/pure.png';
 import aliadoImage from '../../../public/photos/aliado.jpg';
+import compositionImage from '../../../public/photos/pacchar-1.jpg';
+import applicationImage from '../../../public/photos/pacchar-2.jpg';
 
 // Textos para internacionalización
 const texts = {
   es: {
     // Títulos principales
-    title: "Pacchar Pure (Biochar)",
-    subtitle: "Biochar de alta calidad para mejorar la fertilidad del suelo",
+    title: "Pacchar Biochar",
+    subtitle: "Potencie la salud de sus suelos naturalmente",
     
     // Descripción
-    description: "El bio carbón vegetal, también conocido como biochar, es un producto natural orgánico obtenido a través de la pirólisis. Este proceso transforma la biomasa en carbón, que actúa como enmienda y mejorador del suelo. La aplicación de bio carbón en el suelo ofrece numerosos beneficios. Estudios han demostrado que incrementa significativamente el contenido de materia orgánica y la fertilidad del suelo. Además, mejora la textura, porosidad, y estructura del mismo, creando un ambiente más saludable para los cultivos.",
-    benefits: "Beneficios: Mejora la retención de agua y nutrientes, aumenta la actividad microbiana, secuestra carbono de forma estable, reduce la necesidad de fertilizantes químicos.",
+    description: "Pacchar Biochar es una poderosa enmienda natural para suelos agrícolas. Su alto contenido de carbono y estructura porosa mejoran las propiedades físicas, químicas y biológicas del suelo, que a su vez mejoran el crecimiento, salud y producción de los cultivos. El incremento del carbono orgánico favorece directamente al incremento de la materia orgánica y a la salud general del suelo; al almacenar carbono en el suelo con biochar, usted está contribuyendo también a reducir la emisiones y mitigar el cambio climático.",
+    benefits: "Beneficios del suelo:\n Incrementa la capacidad de retención de agua y nutrientes.\n Sus poros favorecen la aireación y la actividad microbiana benéfica.\n Almacena carbono orgánico funcional.\n Puede reducir las necesidades de fertilización.",
     
     // Secciones adicionales
     composition: "Composición",
-    compositionText: "Pacchar Pure está compuesto 100% de biochar de alta calidad, producido mediante pirólisis controlada de biomasa vegetal seleccionada. El proceso de producción garantiza un producto con alta porosidad y capacidad de intercambio catiónico.",
+    compositionText: "Pacchar Biochar está elaborado con 100% biomasa sostenible de bambú gigante seleccionada cuidadosamente y con un riguroso control en la pirólisis obtenemos un biochar de alta calidad con más 70% Carbono Orgánico.",
     
     application: "Aplicación",
-    applicationText: "Se recomienda aplicar Pacchar Pure mezclándolo con el suelo en una proporción de 5-10% por volumen. Para mejores resultados, puede pre-cargar el biochar con compost o fertilizantes líquidos antes de su aplicación.",
-    
-    specifications: "Especificaciones técnicas",
-    specificationsItems: [
-      "Contenido de carbono: >70%",
-      "pH: 7.5-8.5",
-      "Capacidad de retención de agua: Alta",
-      "Capacidad de intercambio catiónico: 30-40 cmol/kg",
-      "Tamaño de partícula: 1-5mm"
-    ],
+    applicationText: "Pacchar biochar es adaptable a diversos sistemas agrícolas, su dosis y método de aplicación dependerán de las condiciones específicas de cada finca. Contáctenos para aprender más y sacar el máximo beneficio.",
     
     // Botones
     dataSheetButton: "Ver ficha técnica",
@@ -41,28 +35,19 @@ const texts = {
   },
   en: {
     // Main Titles
-    title: "Pacchar Pure (Biochar)",
-    subtitle: "High-quality biochar to improve soil fertility",
+    title: "Pacchar Biochar",
+    subtitle: "Naturally boost your soil's health",
     
     // Description
-    description: "Bio vegetable charcoal, also known as biochar, is an organic natural product obtained through pyrolysis. This process transforms biomass into carbon, which acts as a soil amendment and improver. The application of biochar in soil offers numerous benefits. Studies have shown that it significantly increases the organic matter content and soil fertility. Additionally, it improves the texture, porosity, and structure of the soil, creating a healthier environment for crops.",
-    benefits: "Benefits: Improves water and nutrient retention, increases microbial activity, sequesters carbon stably, reduces the need for chemical fertilizers.",
+    description: "Pacchar Biochar is a powerful natural soil amendment for agricultural use. Its high carbon content and porous structure enhance the physical, chemical, and biological properties of the soil, leading to improved crop growth, health, and productivity. By increasing organic carbon, biochar directly boosts soil organic matter and overall soil health. Storing carbon in the soil with biochar also helps reduce greenhouse gas emissions, making it a valuable tool in the fight against climate change.",
+    benefits: "Soil Benefits:\n Increases water and nutrient retention capacity.\n Its pores promote aeration and beneficial microbial activity.\n Stores functional organic carbon.\n Can reduce fertilization requirements.",
     
     // Additional sections
     composition: "Composition",
-    compositionText: "Pacchar Pure is composed of 100% high-quality biochar, produced through controlled pyrolysis of selected plant biomass. The production process ensures a product with high porosity and cation exchange capacity.",
+    compositionText: "Pacchar Biochar is made from 100% sustainable giant bamboo biomass carefully selected, and with rigorous control in the pyrolysis process, we obtain a high-quality biochar with more than 70% Organic Carbon.",
     
     application: "Application",
-    applicationText: "It is recommended to apply Pacchar Pure by mixing it with the soil in a proportion of 5-10% by volume. For best results, you can pre-load the biochar with compost or liquid fertilizers before application.",
-    
-    specifications: "Technical specifications",
-    specificationsItems: [
-      "Carbon content: >70%",
-      "pH: 7.5-8.5",
-      "Water retention capacity: High",
-      "Cation exchange capacity: 30-40 cmol/kg",
-      "Particle size: 1-5mm"
-    ],
+    applicationText: "Pacchar biochar is adaptable to various agricultural systems, its dosage and application method will depend on the specific conditions of each farm. Contact us to learn more and get the maximum benefit.",
     
     // Buttons
     dataSheetButton: "View data sheet",
@@ -74,6 +59,18 @@ const PaccharPure = () => {
   const pathname = usePathname();
   const isEnglish = pathname.includes('/en');
   const t = isEnglish ? texts.en : texts.es;
+  
+  // Estado para controlar el slide actual (0: Composición, 1: Aplicación)
+  const [currentSlide, setCurrentSlide] = useState(0);
+  
+  // Función para navegar entre slides
+  const nextSlide = () => {
+    setCurrentSlide(currentSlide === 0 ? 1 : 0);
+  };
+  
+  const prevSlide = () => {
+    setCurrentSlide(currentSlide === 0 ? 1 : 0);
+  };
   
   // Variantes para animaciones
   const fadeInUp = {
@@ -175,12 +172,17 @@ const PaccharPure = () => {
               >
                 {t.description}
               </motion.p>
-              <motion.p 
+              <motion.div 
                 className="text-lg font-semibold text-gray-800 mb-8 font-body"
                 variants={fadeInUp}
               >
-                {t.benefits}
-              </motion.p>
+                <p className="mb-2">{t.benefits.split('\n')[0]}</p>
+                <ul className="list-disc pl-6 space-y-1">
+                  {t.benefits.split('\n').slice(1).map((benefit, index) => (
+                    <li key={index} className="text-gray-700">{benefit.trim()}</li>
+                  ))}
+                </ul>
+              </motion.div>
               <motion.div 
                 className="flex flex-wrap gap-4"
                 variants={fadeInUp}
@@ -194,81 +196,157 @@ const PaccharPure = () => {
         </div>
       </motion.section>
 
-      {/* Composición y Aplicación */}
+      {/* Carrusel de Composición y Aplicación */}
       <motion.section 
-        className="py-12 md:py-16" style={{ backgroundColor: '#f8f8f8' }}
+        className="py-12 md:py-16 relative" style={{ backgroundColor: '#f8f8f8' }}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-50px" }}
         variants={staggerContainer}
       >
-        <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
-            {/* Composición */}
-            <motion.div variants={fadeInRight}>
-              <motion.h2 
-                className="text-3xl font-bold text-green-700 mb-6 font-title"
-                variants={fadeInUp}
+        <div className="max-w-7xl mx-auto px-6 md:px-16 relative">
+          {/* Título del carrusel con flechas de navegación en móvil */}
+          <div className="flex items-center justify-between md:hidden mb-8">
+            <motion.h2 
+              className="text-3xl font-bold text-green-700 font-title"
+              variants={fadeInUp}
+            >
+              {currentSlide === 0 ? t.composition : t.application}
+            </motion.h2>
+            <div className="flex items-center space-x-3">
+              <button 
+                onClick={prevSlide}
+                className="text-green-700 hover:text-green-800 p-2 transition-all duration-300"
+                aria-label="Slide anterior"
               >
-                {t.composition}
-              </motion.h2>
-              <motion.p 
-                className="text-lg text-gray-700 mb-6 font-body text-justify"
-                variants={fadeInUp}
+                <FaChevronLeft size={18} />
+              </button>
+              <button 
+                onClick={nextSlide}
+                className="text-green-700 hover:text-green-800 p-2 transition-all duration-300"
+                aria-label="Siguiente slide"
               >
-                {t.compositionText}
-              </motion.p>
-            </motion.div>
-            
-            {/* Aplicación */}
-            <motion.div variants={fadeInRight}>
-              <motion.h2 
-                className="text-3xl font-bold text-green-700 mb-6 font-title"
-                variants={fadeInUp}
-              >
-                {t.application}
-              </motion.h2>
-              <motion.p 
-                className="text-lg text-gray-700 mb-6 font-body text-justify"
-                variants={fadeInUp}
-              >
-                {t.applicationText}
-              </motion.p>
-            </motion.div>
+                <FaChevronRight size={18} />
+              </button>
+            </div>
+          </div>
+          {/* Contenedor del carrusel */}
+          <div className="overflow-hidden relative">
+            <div 
+              className="flex transition-transform duration-500 ease-in-out"
+              style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+            >
+              {/* Slide 1: Composición */}
+              <div className="w-full flex-shrink-0 px-4 md:px-0">
+                <motion.div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+                  {/* Texto de Composición */}
+                  <motion.div 
+                    className="w-full md:w-1/2"
+                    variants={fadeInLeft}
+                  >
+                    <motion.h2 
+                      className="text-3xl font-bold text-green-700 mb-6 font-title hidden md:block"
+                      variants={fadeInUp}
+                    >
+                      {t.composition}
+                    </motion.h2>
+                    <motion.p 
+                      className="text-lg text-gray-700 mb-6 font-body text-justify"
+                      variants={fadeInUp}
+                    >
+                      {t.compositionText}
+                    </motion.p>
+                  </motion.div>
+                  
+                  {/* Imagen de Composición */}
+                  <motion.div 
+                    className="w-full md:w-1/2 h-[300px] md:h-[400px] relative rounded-lg overflow-hidden shadow-lg"
+                    variants={fadeInRight}
+                  >
+                    <Image
+                      src={compositionImage}
+                      alt="Composición de Pacchar Biochar"
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      className="object-cover"
+                    />
+                  </motion.div>
+                </motion.div>
+              </div>
+
+              {/* Slide 2: Aplicación */}
+              <div className="w-full flex-shrink-0 px-4 md:px-0">
+                <motion.div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+                  {/* Texto de Aplicación */}
+                  <motion.div 
+                    className="w-full md:w-1/2"
+                    variants={fadeInLeft}
+                  >
+                    <motion.h2 
+                      className="text-3xl font-bold text-green-700 mb-6 font-title hidden md:block"
+                      variants={fadeInUp}
+                    >
+                      {t.application}
+                    </motion.h2>
+                    <motion.p 
+                      className="text-lg text-gray-700 mb-6 font-body text-justify"
+                      variants={fadeInUp}
+                    >
+                      {t.applicationText}
+                    </motion.p>
+                  </motion.div>
+                  
+                  {/* Imagen de Aplicación */}
+                  <motion.div 
+                    className="w-full md:w-1/2 h-[300px] md:h-[400px] relative rounded-lg overflow-hidden shadow-lg"
+                    variants={fadeInRight}
+                  >
+                    <Image
+                      src={applicationImage}
+                      alt="Aplicación de Pacchar Biochar"
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      className="object-cover"
+                    />
+                  </motion.div>
+                </motion.div>
+              </div>
+            </div>
+          </div>
+
+          {/* Botones de navegación (solo en escritorio) */}
+          <button 
+            onClick={prevSlide}
+            className="hidden md:block absolute md:-left-10 md:top-[45%] transform -translate-y-1/2 text-green-700 hover:text-green-800 md:p-3 z-10 transition-all duration-300"
+            aria-label="Slide anterior"
+          >
+            <FaChevronLeft className="md:w-6 md:h-6" />
+          </button>
+          <button 
+            onClick={nextSlide}
+            className="hidden md:block absolute md:-right-10 md:top-[45%] transform -translate-y-1/2 text-green-700 hover:text-green-800 md:p-3 z-10 transition-all duration-300"
+            aria-label="Siguiente slide"
+          >
+            <FaChevronRight className="md:w-6 md:h-6" />
+          </button>
+
+          {/* Indicadores de slide */}
+          <div className="flex justify-center mt-6 space-x-2">
+            <button 
+              onClick={() => setCurrentSlide(0)}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${currentSlide === 0 ? 'bg-green-700 w-6' : 'bg-gray-300'}`}
+              aria-label="Ir al slide 1"
+            />
+            <button 
+              onClick={() => setCurrentSlide(1)}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${currentSlide === 1 ? 'bg-green-700 w-6' : 'bg-gray-300'}`}
+              aria-label="Ir al slide 2"
+            />
           </div>
         </div>
       </motion.section>
 
-      {/* Especificaciones técnicas */}
-      <motion.section 
-        className="pt-4 pb-12 md:pt-6 md:pb-16" style={{ backgroundColor: '#f8f8f8' }}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-50px" }}
-        variants={staggerContainer}
-      >
-        <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <motion.h2 
-            className="text-3xl font-bold text-green-700 mb-8 font-title text-center"
-            variants={fadeInUp}
-          >
-            {t.specifications}
-          </motion.h2>
-          <motion.div 
-            className="bg-gray-50 rounded-xl p-8 shadow-sm"
-            variants={fadeInUp}
-          >
-            <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {t.specificationsItems.map((item, index) => (
-                <li key={index} className="flex items-start">
-                  <span className="text-green-600 mr-2">•</span>
-                  <span className="text-lg text-gray-700 font-body">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-        </div>
-      </motion.section>
+
 
       {/* Llamada a la acción */}
       <motion.section 

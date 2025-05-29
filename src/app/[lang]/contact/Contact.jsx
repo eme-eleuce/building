@@ -101,7 +101,7 @@ const Contact = ({ params }) => {
                 <FaMapMarkerAlt className="text-amber-800 text-2xl mr-3 mt-1" />
                 <div>
                   <h4 className="text-xl font-semibold text-gray-700 mb-2 font-title">{t.officesTitle}</h4>
-                  <p className="text-gray-600 text-lg font-body">Av. Ricardo Paredez #09</p>
+                  <p className="text-gray-600 text-lg font-body">Av. Ricardo Paredes #09</p>
                 </div>
               </div>
             </div>
