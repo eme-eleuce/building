@@ -245,13 +245,13 @@ const PaccharPure = () => {
                     variants={fadeInLeft}
                   >
                     <motion.h2 
-                      className="text-3xl font-bold text-green-700 mb-6 font-title hidden md:block"
+                      className="text-4xl font-bold text-green-700 mb-6 font-title hidden md:block"
                       variants={fadeInUp}
                     >
                       {t.composition}
                     </motion.h2>
                     <motion.p 
-                      className="text-lg text-gray-700 mb-6 font-body text-justify"
+                      className="text-lg md:text-xl text-gray-700 mb-6 font-body text-justify"
                       variants={fadeInUp}
                     >
                       {t.compositionText}
@@ -283,13 +283,13 @@ const PaccharPure = () => {
                     variants={fadeInLeft}
                   >
                     <motion.h2 
-                      className="text-3xl font-bold text-green-700 mb-6 font-title hidden md:block"
+                      className="text-4xl font-bold text-green-700 mb-6 font-title hidden md:block"
                       variants={fadeInUp}
                     >
                       {t.application}
                     </motion.h2>
                     <motion.p 
-                      className="text-lg text-gray-700 mb-6 font-body text-justify"
+                      className="text-lg md:text-xl text-gray-700 mb-6 font-body text-justify"
                       variants={fadeInUp}
                     >
                       {t.applicationText}
@@ -376,7 +376,7 @@ const PaccharPure = () => {
             className="text-xl md:text-2xl mb-10 font-body max-w-3xl mx-auto"
             variants={fadeInUp}
           >
-            {isEnglish ? "Contact us today to learn more about Pacchar Pure and how it can benefit your soil." : "Contáctanos hoy para conocer más sobre Pacchar Pure y cómo puede beneficiar tu suelo."}
+            {isEnglish ? "Contact us today to learn more about Pacchar Biochar and how it can benefit your soil." : "Contáctanos hoy para conocer más sobre Pacchar Biochar y cómo puede beneficiar tu suelo."}
           </motion.p>
           <motion.div variants={fadeInUp}>
             <Link 
