@@ -94,7 +94,7 @@ const texts = {
     
     // Section 3 - Stats
     section3Title: "Our Impact",
-    section3Description: "Our philosophy of environmental, social, and economic impact drives climate-smart agriculture—promoting climate change adaptation while enhancing ecosystems and improving the quality of life in rural communities. These values are reflected in the following figures:",
+    section3Description: "Our philosophy of environmental, social, and economic impact drives climate-smart agriculture, promoting climate change adaptation while enhancing ecosystems and improving the quality of life in rural communities. These values are reflected in the following figures:",
     section3Stat1Label: "Tonnes of CO₂ removed",
     section3Stat2Label: "Active farmers",
     section3Stat3Label: "Benefited hectares",

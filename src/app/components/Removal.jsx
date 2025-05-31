@@ -16,10 +16,8 @@ const texts = {
     // Sección 1
     section1Title: "Solución natural para mitigar el cambio climático",
     section1Content: [
-      "La reducción del carbono atmosférico es crucial para frenar el cambio climático, enfriar el planeta y evitar impactos devastadores en ecosistemas y comunidades.",
-      "El biochar es una solución eficaz basada en la naturaleza para aliviar el cambio climático al almacenar carbono sólido estable en suelos agrícolas para mejorar la producción de alimentos.",
-      "Al producir biochar a través de pirólisis, el carbono de la biomasa que originalmente estaría destinado a volver a la atmósfera se estabiliza y queda almacenado en forma sólida (Biochar) por siglos, evitando su liberación como CO₂.",
-      "Adoptar el biochar a gran escala puede transformar la agricultura en una práctica regenerativa, contribuyendo significativamente a aliviar el cambio climático."
+      "La reducción del carbono atmosférico es crucial para frenar el cambio climático, enfriar el planeta y evitar impactos devastadores en ecosistemas y comunidades. El biochar es una solución eficaz basada en la naturaleza para aliviar el cambio climático al almacenar carbono sólido estable en suelos agrícolas para mejorar la producción de alimentos.",
+      "Al producir biochar a través de pirólisis, el carbono de la biomasa que originalmente estaría destinado a volver a la atmósfera se estabiliza y queda almacenado en forma sólida (Biochar) por siglos, evitando su liberación como CO₂. Adoptar el biochar a gran escala puede transformar la agricultura en una práctica regenerativa, contribuyendo significativamente a aliviar el cambio climático."
     ],
     
     // Sección 2
@@ -29,9 +27,7 @@ const texts = {
     // Sección 3
     section3Title: "Impacto Socioambiental",
     section3Content: [
-      "La adaptación del biochar aporta múltiples beneficios a las comunidades rurales y sus agroecosistemas. El abastecimiento circular y la regeneración de sus suelos mejoran su resiliencia al cambio climático.",
-      "El aprovechamiento y valorización de residuos que tradicionalmente se queman evita la contaminación del aire. El biochar resultante potencia la salud del suelo para mejorar cosechas, filtración de aguas subterráneas y promover la biodiversidad sosteniblemente.",
-      "Además de los beneficios agronómicos. Los agricultores, habiendo cumplido por un proceso de certificación, pueden acceder a ingresos adicionales por almacenar carbono en sus suelos utilizando Pacchar Biochar."
+      "La adaptación del biochar aporta múltiples beneficios a las comunidades rurales y sus agroecosistemas. El abastecimiento circular y la regeneración de sus suelos mejoran su resiliencia al cambio climático. El aprovechamiento y valorización de residuos que tradicionalmente se queman evita la contaminación del aire. El biochar resultante potencia la salud del suelo para mejorar cosechas, filtración de aguas subterráneas y promover la biodiversidad sosteniblemente. Además de los beneficios agronómicos, los agricultores, habiendo cumplido por un proceso de certificación, pueden acceder a ingresos adicionales por almacenar carbono en sus suelos utilizando Pacchar Biochar."
     ],
     section3ButtonText: "Conoce más",
     
@@ -55,10 +51,8 @@ const texts = {
     // Section 1
     section1Title: "Natural solution to mitigate climate change",
     section1Content: [
-      "Reducing atmospheric carbon is crucial to slow down climate change, cool the planet, and avoid devastating impacts on ecosystems and communities.",
-      "Biochar is an effective nature-based solution to alleviate climate change by storing stable solid carbon in agricultural soils to improve food production.",
-      "By producing biochar through pyrolysis, carbon from biomass that would originally be destined to return to the atmosphere is stabilized and stored in solid form (Biochar) for centuries, preventing its release as CO₂.",
-      "Adopting biochar on a large scale can transform agriculture into a regenerative practice, significantly contributing to alleviating climate change."
+      "Reducing atmospheric carbon is crucial to slow down climate change, cool the planet, and avoid devastating impacts on ecosystems and communities. Biochar is an effective nature-based solution to alleviate climate change by storing stable solid carbon in agricultural soils to improve food production.",
+      "By producing biochar through pyrolysis, carbon from biomass that would originally be destined to return to the atmosphere is stabilized and stored in solid form (Biochar) for centuries, preventing its release as CO₂. Adopting biochar on a large scale can transform agriculture into a regenerative practice, significantly contributing to alleviating climate change."
     ],
     
     // Section 2
@@ -68,9 +62,7 @@ const texts = {
     // Section 3
     section3Title: "Socio-environmental Impact",
     section3Content: [
-      "The adaptation of biochar brings multiple benefits to rural communities and their agroecosystems. Circular sourcing and soil regeneration improve their resilience to climate change.",
-      "The use and valorization of waste that is traditionally burned prevents air pollution. The resulting biochar enhances soil health to improve crops, groundwater filtration, and promote biodiversity sustainably.",
-      "In addition to agronomic benefits, farmers, having completed a certification process, can access additional income by storing carbon in their soils using Pacchar Biochar."
+      "The adaptation of biochar brings multiple benefits to rural communities and their agroecosystems. Circular sourcing and soil regeneration improve their resilience to climate change. The use and valorization of waste that is traditionally burned prevents air pollution. The resulting biochar enhances soil health to improve crops, groundwater filtration, and promote biodiversity sustainably. In addition to agronomic benefits, farmers, having completed a certification process, can access additional income by storing carbon in their soils using Pacchar Biochar."
     ],
     section3ButtonText: "Learn more",
     
@@ -137,7 +129,7 @@ const CoRemoval = () => {
             variants={fadeIn}
           >
             <motion.div 
-              className="w-full h-[350px] md:h-[500px] relative"
+              className="w-full h-[400px] md:h-[550px] relative"
               variants={fadeIn}
             >
               <Image
@@ -149,9 +141,9 @@ const CoRemoval = () => {
               />
               
               {/* Título principal superpuesto - posicionado más abajo */}
-              <div className="absolute inset-x-0 bottom-[-80px] md:bottom-[-60px] flex flex-col items-center justify-end p-6">
+              <div className="absolute inset-x-0 bottom-[-120px] md:bottom-[-100px] flex flex-col items-center justify-end p-6">
                 <div className="bg-[#f8f8f8] py-4 px-6 md:px-10 rounded-t-2xl max-w-4xl w-full z-10 ">
-                  <h1 className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-extrabold text-center mb-6 md:mb-8 font-title text-green-700">
+                  <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold text-center mb-6 md:mb-8 font-title text-green-700">
                     {t.title}
                   </h1>
                   <p className="text-xl md:text-2xl text-center font-body text-gray-800">
@@ -161,7 +153,6 @@ const CoRemoval = () => {
               </div>
             </motion.div>
             
-            {/* Se eliminó el logo de CO2 */}
           </motion.div>
           
           {/* Contenido de texto centrado */}
@@ -171,7 +162,7 @@ const CoRemoval = () => {
           >
             {/* Sección 1: Solución natural */}
             <motion.div 
-              className="w-full max-w-4xl mb-16"
+              className="w-full max-w-4xl mb-16 mt-16"
               variants={fadeInUp}
             >
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-green-700 mb-8 font-title">
@@ -179,7 +170,7 @@ const CoRemoval = () => {
               </h2>
               <div className="space-y-4">
                 {t.section1Content.map((paragraph, index) => (
-                  <p key={index} className="text-lg text-gray-700 font-body text-justify md:text-left">
+                  <p key={index} className="text-lg text-gray-700 font-body text-justify">
                     {paragraph}
                   </p>
                 ))}
@@ -209,7 +200,7 @@ const CoRemoval = () => {
               </h2>
               <div className="space-y-4 mb-6">
                 {t.section3Content.map((paragraph, index) => (
-                  <p key={index} className="text-lg text-gray-700 font-body text-justify md:text-left">
+                  <p key={index} className="text-lg text-gray-700 font-body text-justify">
                     {paragraph}
                   </p>
                 ))}
@@ -235,12 +226,12 @@ const CoRemoval = () => {
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-green-700 mb-8 font-title">
                 {t.section4Title}
               </h2>
-              <p className="text-lg text-gray-700 text-justify md:text-left font-body mb-4">
+              <p className="text-lg text-gray-700 text-justify font-body mb-4">
                 {t.section4Content}
               </p>
               <ul className="list-disc pl-6 space-y-4">
                 {t.section4List.map((item, index) => (
-                  <li key={index} className="text-lg text-gray-700 font-body text-justify md:text-left">
+                  <li key={index} className="text-lg text-gray-700 font-body text-justify">
                     <span className="font-bold text-green-700">{item.title}:</span> {item.content}
                   </li>
                 ))}

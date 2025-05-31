@@ -178,11 +178,11 @@ const History = () => {
                 variants={getItemVariants(index)}
               >
                 {/* Punto en la línea */}
-                <div className={`absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full ${index % 2 === 0 ? 'bg-green-600' : 'bg-yellow-700'} border-4 border-[#f8f8f8] shadow-lg z-10`}></div>
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-black border-4 border-[#f8f8f8] shadow-lg z-10"></div>
                 
                 {/* Contenido */}
                 <div className={`w-10/12 md:w-5/12 mx-auto md:mx-0 px-0 md:px-0 ${index % 2 === 0 ? 'md:pr-12 md:text-right' : 'md:pl-12'}`}>
-                  <div className="bg-[#f8f8f8] p-6 md:p-8 rounded-lg shadow-md md:shadow-lg hover:shadow-xl transition-shadow duration-300">
+                  <div className="bg-[#f8f8f8] p-6 md:p-8 rounded-lg shadow-md md:shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-gray-300 hover:border-gray-400 group">
                     <div className="flex items-center mb-3 justify-start md:justify-start">
                       <span className={`text-3xl md:text-4xl font-bold mr-3 font-title ${index % 2 === 0 ? 'text-green-700' : 'text-yellow-800'}`}>{event.year}</span>
                       <h3 className="text-xl md:text-2xl font-bold text-gray-800 font-title">{event.title}</h3>
