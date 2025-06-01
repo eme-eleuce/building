@@ -11,6 +11,7 @@ import pyrolysisImage from '../../../public/photos/fuego.jpg';
 import verdeImage from '../../../public/photos/verde.jpg';
 import aliadoImage from '../../../public/photos/aliado.jpg';
 import biocharGif from '../../../public/gif/muestra.gif';
+import vImage from '../../../public/photos/pacchar-1.jpg';
 
 // Textos para internacionalización
 const texts = {
@@ -410,18 +411,49 @@ const Biochar = () => {
                   </motion.li>
                 ))}
               </motion.ul>
-              <motion.h3 
-                className="text-2xl font-bold text-green-600 mb-4 font-title"
+            </motion.div>
+          </motion.div>
+        </div>
+      </motion.section>
+
+      {/* Solución climática escalable */}
+      <motion.section 
+        className="py-12 md:py-16" style={{ backgroundColor: '#fff' }}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={staggerContainer}
+      >
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <motion.div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+            <motion.div 
+              className="w-full md:w-1/2 mb-8 md:mb-0"
+              variants={fadeInLeft}
+            >
+              <motion.h2 
+                className="text-4xl md:text-5xl font-extrabold text-green-700 mb-6 font-title"
                 variants={fadeInUp}
               >
                 {t.benefitsSubtitle}
-              </motion.h3>
+              </motion.h2>
               <motion.p 
-                className="text-lg text-gray-700 font-body"
+                className="text-lg md:text-xl text-gray-700 mb-6 font-body text-justify"
                 variants={fadeInUp}
               >
                 {t.benefitsExtra}
               </motion.p>
+            </motion.div>
+            <motion.div 
+              className="w-full md:w-1/2 h-[300px] md:h-[400px] relative rounded-lg overflow-hidden"
+              variants={fadeInRight}
+            >
+              <Image
+                src={vImage}
+                alt="Solución climática escalable con biochar"
+                fill
+                className="object-cover"
+                priority
+              />
             </motion.div>
           </motion.div>
         </div>

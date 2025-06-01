@@ -6,6 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import aliadoImage from '../../../public/photos/aliado.jpg';
+import artisanProImage from '../../../public/products/artisan-pro.jpg';
 
 // Textos para internacionalización
 const texts = {
@@ -150,43 +151,58 @@ const Artisan = () => {
         variants={staggerContainer}
       >
         <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <motion.div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+          <motion.div className="flex flex-col items-center gap-8">
+            {/* Imagen más ancha y horizontal */}
             <motion.div 
-              className="w-full md:w-1/2 h-[300px] md:h-[500px] relative rounded-lg overflow-hidden border-4 border-yellow-800 p-2 bg-gray-300 flex items-center justify-center"
+              className="w-full md:w-4/5 lg:w-3/4 xl:w-2/3 mx-auto relative rounded-lg overflow-hidden border-4 border-yellow-800 shadow-lg"
               variants={fadeInLeft}
             >
-              <p className="text-xl font-semibold text-gray-600">Imagen de Artisan Pro</p>
+              <Image 
+                src={artisanProImage} 
+                alt="Artisan Pro - Sistema de pirólisis compacto"
+                width={1200}
+                height={600}
+                className="w-full h-auto object-cover"
+                priority
+              />
             </motion.div>
+            {/* Contenido debajo de la imagen en layout horizontal */}
             <motion.div 
-              className="w-full md:w-1/2 mb-8 md:mb-0"
+              className="w-full"
               variants={fadeInRight}
             >
-              <motion.p 
-                className="text-lg md:text-xl text-gray-700 mb-6 font-body text-justify"
-                variants={fadeInUp}
-              >
-                {t.description}
-              </motion.p>
-              <motion.p 
-                className="text-lg font-semibold text-gray-800 mb-8 font-body"
-                variants={fadeInUp}
-              >
-                {t.benefits}
-              </motion.p>
-              <motion.div 
-                className="flex flex-wrap gap-4"
-                variants={fadeInUp}
-              >
-                <button className="px-6 py-3 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300 transition-colors font-medium">
-                  {t.dataSheetButton}
-                </button>
-                <Link 
-                  href={`/${pathname.includes('/en') ? 'en/contact' : 'es/contacto'}`}
-                  className="px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors font-medium"
-                >
-                  {t.contactButton}
-                </Link>
-              </motion.div>
+              <div className="flex flex-col md:flex-row gap-8 md:gap-16">
+                <motion.div className="w-full md:w-2/3" variants={fadeInUp}>
+                  <motion.p 
+                    className="text-lg md:text-xl text-gray-700 mb-6 font-body text-justify"
+                    variants={fadeInUp}
+                  >
+                    {t.description}
+                  </motion.p>
+                  <motion.p 
+                    className="text-lg font-semibold text-gray-800 mb-8 font-body"
+                    variants={fadeInUp}
+                  >
+                    {t.benefits}
+                  </motion.p>
+                </motion.div>
+                <motion.div className="w-full md:w-1/3 flex flex-col justify-center" variants={fadeInUp}>
+                  <motion.div 
+                    className="flex flex-col sm:flex-row md:flex-col gap-4 justify-center items-center"
+                    variants={fadeInUp}
+                  >
+                    <button className="w-full sm:w-auto md:w-full px-6 py-4 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300 transition-colors font-medium text-lg">
+                      {t.dataSheetButton}
+                    </button>
+                    <Link 
+                      href={`/${pathname.includes('/en') ? 'en/contact' : 'es/contacto'}`}
+                      className="w-full sm:w-auto md:w-full px-6 py-4 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors font-medium text-lg text-center"
+                    >
+                      {t.contactButton}
+                    </Link>
+                  </motion.div>
+                </motion.div>
+              </div>
             </motion.div>
           </motion.div>
         </div>

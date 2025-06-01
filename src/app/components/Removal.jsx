@@ -109,7 +109,7 @@ const CoRemoval = () => {
 
   return (
     <motion.section 
-      className="py-20 mt-20"
+      className="py-10 mt-20"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-100px" }}
@@ -120,7 +120,7 @@ const CoRemoval = () => {
         variants={staggerContainer}
       >
         <motion.div 
-          className="flex flex-col items-center  rounded-2xl shadow-xl overflow-hidden"
+          className="flex flex-col items-center rounded-2xl shadow-xl overflow-hidden"
           variants={fadeInUp}
         >
           {/* Imagen de fondo con título superpuesto */}
@@ -129,19 +129,19 @@ const CoRemoval = () => {
             variants={fadeIn}
           >
             <motion.div 
-              className="w-full h-[400px] md:h-[550px] relative"
+              className="w-full h-[500px] md:h-[650px] lg:h-[700px] relative"
               variants={fadeIn}
             >
               <Image
                 src={backgroundImage}
                 alt="CO2 Removal Background"
                 fill
-                className="object-cover brightness-75"
+                className="object-cover brightness-75 object-center"
                 priority
               />
               
-              {/* Título principal superpuesto - posicionado más abajo */}
-              <div className="absolute inset-x-0 bottom-[-120px] md:bottom-[-100px] flex flex-col items-center justify-end p-6">
+              {/* Título principal superpuesto - posicionado mucho más abajo */}
+              <div className="absolute inset-x-0 bottom-[-180px] md:bottom-[-170px] lg:bottom-[-190px] flex flex-col items-center justify-end p-6">
                 <div className="bg-[#f8f8f8] py-4 px-6 md:px-10 rounded-t-2xl max-w-4xl w-full z-10 ">
                   <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold text-center mb-6 md:mb-8 font-title text-green-700">
                     {t.title}
@@ -157,12 +157,12 @@ const CoRemoval = () => {
           
           {/* Contenido de texto centrado */}
           <motion.div 
-            className="w-full p-8 pt-24 md:p-12 md:pt-20 flex flex-col items-center relative z-0"
+            className="w-full p-8 pt-40 md:p-12 md:pt-36 lg:pt-40 flex flex-col items-center relative z-0"
             variants={staggerContainer}
           >
             {/* Sección 1: Solución natural */}
             <motion.div 
-              className="w-full max-w-4xl mb-16 mt-16"
+              className="w-full max-w-4xl mb-16 mt-20 md:mt-24 lg:mt-30"
               variants={fadeInUp}
             >
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-green-700 mb-8 font-title">
