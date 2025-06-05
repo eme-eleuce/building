@@ -8,7 +8,7 @@ import { motion } from 'framer-motion';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import pureImage from '../../../public/products/pure.png';
 import aliadoImage from '../../../public/photos/aliado.jpg';
-import compositionImage from '../../../public/photos/pacchar-1.jpg';
+import compositionImage from '../../../public/photos/mano.jpg';
 import applicationImage from '../../../public/photos/pacchar-2.jpg';
 
 // Textos para internacionalización

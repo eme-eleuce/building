@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { FaLinkedin } from 'react-icons/fa';
+import alejandroImage from '../../../../public/team/alejandro.jpeg';
 
 const Team = ({ params }) => {
   // Detectar el idioma desde la ruta
@@ -24,23 +25,29 @@ const Team = ({ params }) => {
       members: [
         {
           name: "Carlos González",
-          position: "CEO"
+          position: "CEO",
+          linkedin: "https://www.linkedin.com/in/carlos-alfredo-gonz%C3%A1lez-vargas-420587100/"
         },
         {
           name: "Gabriel González",
-          position: "Business Developer Agriculture - Head of Science"
+          position: "Business Developer Agriculture / Head of Science",
+          linkedin: "https://www.linkedin.com/in/gabrieldavidgonzalezvargas/"
         },
         {
           name: "Alejandro Sánchez",
-          position: "Head of Carbon"
+          position: "Head of Carbon",
+          linkedin: "https://www.linkedin.com/in/jonathan-alejandro-s%C3%A1nchez-t-697874154/",
+          image: alejandroImage
         },
         {
           name: "Victor Rojas",
-          position: "President / CFO"
+          position: "President / CFO",
+          linkedin: ""
         },
         {
           name: "David Rojas",
-          position: "COO / Business Developer Animal Nutrition"
+          position: "COO / Business Developer Animal Nutrition",
+          linkedin: ""
         }
       ]
     },
@@ -51,23 +58,29 @@ const Team = ({ params }) => {
       members: [
         {
           name: "Carlos González",
-          position: "CEO"
+          position: "CEO",
+          linkedin: "https://www.linkedin.com/in/carlos-alfredo-gonz%C3%A1lez-vargas-420587100/"
         },
         {
           name: "Gabriel González",
-          position: "Business Developer Agriculture - Head of Science"
+          position: "Business Developer Agriculture / Head of Science",
+          linkedin: "https://www.linkedin.com/in/gabrieldavidgonzalezvargas/"
         },
         {
           name: "Alejandro Sánchez",
-          position: "Head of Carbon"
+          position: "Head of Carbon",
+          linkedin: "https://www.linkedin.com/in/jonathan-alejandro-s%C3%A1nchez-t-697874154/",
+          image: alejandroImage
         },
         {
           name: "Victor Rojas",
-          position: "President / CFO"
+          position: "President / CFO",
+          linkedin: ""
         },
         {
           name: "David Rojas",
-          position: "COO / Business Developer Animal Nutrition"
+          position: "COO / Business Developer Animal Nutrition",
+          linkedin: ""
         }
       ]
     }
@@ -117,7 +130,7 @@ const Team = ({ params }) => {
           {t.members.map((member, index) => (
             <motion.div 
               key={index} 
-              className="bg-white rounded-xl shadow-xl p-8 flex flex-col items-center hover:shadow-2xl transition-shadow duration-300"
+              className="bg-white rounded-xl shadow-xl p-8 flex flex-col items-center hover:shadow-2xl transition-shadow duration-300 h-full"
               initial={{ opacity: 0, y: 100 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ 
@@ -128,29 +141,37 @@ const Team = ({ params }) => {
               }}
               // Se eliminó el efecto hover según lo solicitado
             >
-              {/* Foto (placeholder circular gris) */}
+              {/* Foto */}
               <div className="w-48 h-48 bg-gray-300 rounded-full mb-6 overflow-hidden relative">
-                {/* Cuando tengas fotos reales, descomenta esto y agrega las imágenes */}
-                {/* <Image 
-                  src={`/photos/team/${member.name.toLowerCase().replace(' ', '-')}.jpg`}
-                  alt={member.name}
-                  fill
-                  className="object-cover"
-                /> */}
+                {member.image ? (
+                  <Image 
+                    src={member.image}
+                    alt={member.name}
+                    fill
+                    className="object-cover"
+                    priority={index < 3} // Prioritize loading for the first few images
+                  />
+                ) : (
+                  <div className="w-full h-full bg-gray-300"></div> // Placeholder si no hay imagen
+                )}
               </div>
 
-              {/* Información */}
-              <h3 className="text-2xl font-bold text-gray-800 mb-2 text-center font-title">
-                {member.name}
-              </h3>
-              <p className="text-xl text-green-700 font-semibold mb-4 text-center font-title">
-                {member.position}
-              </p>
+              {/* Contenedor para información con altura fija */}
+              <div className="flex flex-col flex-grow">
+                {/* Información */}
+                <h3 className="text-2xl font-bold text-gray-800 mb-2 text-center font-title">
+                  {member.name}
+                </h3>
+                <p className="text-xl text-green-700 font-semibold mb-4 text-center font-title">
+                  {member.position}
+                </p>
+                <div className="flex-grow"></div>
+              </div>
               
-              {/* LinkedIn */}
+              {/* LinkedIn - siempre al final */}
               <div className="mt-4">
                 <Link 
-                  href="https://www.linkedin.com/company/pacchar/" 
+                  href={member.linkedin || "https://www.linkedin.com/company/pacchar/"} 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full transition-all duration-300 transform hover:scale-110"

@@ -116,11 +116,11 @@ const CoRemoval = () => {
       variants={fadeIn}
     >
       <motion.div 
-        className="max-w-7xl mx-auto px-4 md:px-12"
+        className="w-full mx-auto px-0 md:px-4"
         variants={staggerContainer}
       >
         <motion.div 
-          className="flex flex-col items-center rounded-2xl shadow-xl overflow-hidden"
+          className="flex flex-col items-center rounded-2xl shadow-xl overflow-hidden w-full"
           variants={fadeInUp}
         >
           {/* Imagen de fondo con título superpuesto */}
@@ -141,8 +141,8 @@ const CoRemoval = () => {
               />
               
               {/* Título principal superpuesto - posicionado mucho más abajo */}
-              <div className="absolute inset-x-0 bottom-[-180px] md:bottom-[-170px] lg:bottom-[-190px] flex flex-col items-center justify-end p-6">
-                <div className="bg-[#f8f8f8] py-4 px-6 md:px-10 rounded-t-2xl max-w-4xl w-full z-10 ">
+              <div className="absolute inset-x-0 bottom-[-140px] md:bottom-[-130px] lg:bottom-[-150px] flex flex-col items-center justify-end p-6 w-full">
+                <div className="bg-[#f8f8f8] py-4 px-6 md:px-10 rounded-t-2xl w-full max-w-5xl z-10 mx-auto">
                   <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold text-center mb-6 md:mb-8 font-title text-green-700">
                     {t.title}
                   </h1>
@@ -157,7 +157,7 @@ const CoRemoval = () => {
           
           {/* Contenido de texto centrado */}
           <motion.div 
-            className="w-full p-8 pt-40 md:p-12 md:pt-36 lg:pt-40 flex flex-col items-center relative z-0"
+            className="w-full p-8 pt-40 md:p-12 md:pt-36 lg:pt-40 flex flex-col items-center relative z-0 max-w-7xl mx-auto"
             variants={staggerContainer}
           >
             {/* Sección 1: Solución natural */}

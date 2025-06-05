@@ -2,7 +2,7 @@ import React from 'react';
 import PaccharPure from '../../../../components/PaccharPure';
 
 export const metadata = {
-  title: 'Pacchar Pure (Biochar) | Pacchar',
+  title: 'Pacchar Biochar | Pacchar',
   description: 'Biochar de alta calidad para mejorar la fertilidad del suelo. Mejora la retención de agua y nutrientes, aumenta la actividad microbiana y secuestra carbono de forma estable.',
 };
 

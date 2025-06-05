@@ -1,11 +1,14 @@
 "use client";
 
-import React from 'react';
+import React, { useState } from 'react';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import aliadoImage from '../../../public/photos/aliado.jpg';
+import artisanProImage from '../../../public/products/artisan-pro.jpg';
+import artisanPro1Image from '../../../public/products/artisan-pro1.jpg';
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 // Textos para internacionalización
 const texts = {
@@ -15,25 +18,11 @@ const texts = {
     subtitle: "Sistema de pirólisis industrial para producción de biochar a gran escala",
     
     // Descripción
-    description: "El Industrial es un sistema de pirólisis avanzado diseñado para la producción de biochar de alta calidad a escala industrial. Ideal para empresas agrícolas, plantas de tratamiento de residuos y operaciones forestales que buscan una solución sostenible y rentable para el manejo de grandes volúmenes de biomasa. Nuestro sistema utiliza tecnología patentada de pirólisis controlada para maximizar la eficiencia y la calidad del biochar producido.",
-    benefits: "Beneficios: Alta capacidad de procesamiento, operación continua, recuperación de energía, control automatizado, bajo mantenimiento, producción consistente de biochar de calidad.",
+    description: "Sistemas vanguardistas de pirólisis continua, automatizables y adaptables a las necesidades de cada operación. Ideal para industrias forestales, de cemento o cualquiera que desee valorizar biomasas residuales. Respaldados por Ingenieros internacionales de ARTi y más de 200 estudios, las Unidades de Producción de Biochar (BPU) pueden procesar de 4 a 40 toneladas de biomasa diariamente, generando biochar, bioaceites, bioenergía (térmica o eléctrica) y créditos de carbono para monetizar la compensación de emisiones.",
     
     // Secciones adicionales
-    specifications: "Especificaciones técnicas",
-    specificationsText: "El Industrial está construido con materiales de alta calidad y diseñado para operar continuamente en entornos industriales exigentes. Su sistema de control automatizado permite una operación precisa y consistente, mientras que su diseño modular facilita el mantenimiento y las actualizaciones.",
-    
     operation: "Operación",
-    operationText: "El sistema opera mediante un proceso de pirólisis continua a temperaturas controladas entre 400°C y 800°C. El sistema automatizado ajusta los parámetros en tiempo real para optimizar la producción según el tipo de biomasa utilizada y las características deseadas del biochar resultante. Incluye recuperación de energía de los gases producidos durante el proceso.",
-    
-    capacity: "Capacidad y rendimiento",
-    capacityItems: [
-      "Capacidad de procesamiento: 1-5 toneladas de biomasa por día",
-      "Rendimiento de biochar: 25-35% del peso de la biomasa inicial",
-      "Operación: Continua (24/7)",
-      "Temperatura máxima: 800°C",
-      "Recuperación de energía: Sí (calor y electricidad)",
-      "Control: Sistema automatizado con monitoreo remoto"
-    ],
+    operationText: "Las Unidades de producción de Biochar (BPU) Industriales vienen en un contenedor de 40 pies y ofrecen una automatización que permite operar el reactor desde un panel de control digital. La operación debe garantizar un suministro de biomasa continuo y la utilización de los productos dentro de la operación empresarial. El proceso puede monitorearse y controlarse remotamente desde un software especializado.",
     
     // Botones
     dataSheetButton: "Ver ficha técnica",
@@ -45,25 +34,11 @@ const texts = {
     subtitle: "Industrial pyrolysis system for large-scale biochar production",
     
     // Description
-    description: "The Industrial is an advanced pyrolysis system designed for high-quality biochar production at an industrial scale. Ideal for agricultural companies, waste treatment plants, and forestry operations looking for a sustainable and cost-effective solution for managing large volumes of biomass. Our system uses patented controlled pyrolysis technology to maximize efficiency and quality of the produced biochar.",
-    benefits: "Benefits: High processing capacity, continuous operation, energy recovery, automated control, low maintenance, consistent quality biochar production.",
+    description: "Cutting-edge continuous pyrolysis systems, automatable and adaptable to the needs of each operation. Ideal for forestry industries, cement plants, or any business looking to valorize residual biomass. Backed by international ARTi engineers and over 200 studies, Biochar Production Units (BPU) can process 4 to 40 tons of biomass daily, generating biochar, bio-oils, bioenergy (thermal or electrical), and carbon credits to monetize emission offsets.",
     
     // Additional sections
-    specifications: "Technical specifications",
-    specificationsText: "The Industrial is built with high-quality materials and designed to operate continuously in demanding industrial environments. Its automated control system allows for precise and consistent operation, while its modular design facilitates maintenance and upgrades.",
-    
     operation: "Operation",
-    operationText: "The system operates through a continuous pyrolysis process at controlled temperatures between 400°C and 800°C. The automated system adjusts parameters in real-time to optimize production according to the type of biomass used and the desired characteristics of the resulting biochar. It includes energy recovery from gases produced during the process.",
-    
-    capacity: "Capacity and yield",
-    capacityItems: [
-      "Processing capacity: 1-5 tons of biomass per day",
-      "Biochar yield: 25-35% of initial biomass weight",
-      "Operation: Continuous (24/7)",
-      "Maximum temperature: 800°C",
-      "Energy recovery: Yes (heat and electricity)",
-      "Control: Automated system with remote monitoring"
-    ],
+    operationText: "The Industrial Biochar Production Units (BPU) come in a 40-foot container and offer automation that allows operating the reactor from a digital control panel. The operation must ensure a continuous biomass supply and the utilization of products within the business operation. The process can be monitored and controlled remotely from specialized software.",
     
     // Buttons
     dataSheetButton: "View data sheet",
@@ -75,6 +50,19 @@ const Industrial = () => {
   const pathname = usePathname();
   const isEnglish = pathname.includes('/en');
   const t = isEnglish ? texts.en : texts.es;
+  
+  // Estado para el carrusel de imágenes
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const images = [artisanProImage, artisanPro1Image];
+  
+  // Funciones para navegar entre imágenes
+  const nextImage = () => {
+    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+  };
+  
+  const prevImage = () => {
+    setCurrentImageIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+  };
   
   // Variantes para animaciones
   const fadeInUp = {
@@ -152,84 +140,105 @@ const Industrial = () => {
         variants={staggerContainer}
       >
         <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <motion.div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+          <motion.div className="flex flex-col items-center gap-8">
+            {/* Carrusel de imágenes */}
             <motion.div 
-              className="w-full md:w-1/2 h-[300px] md:h-[500px] relative rounded-lg overflow-hidden border-4 border-yellow-800 p-2 bg-gray-300 flex items-center justify-center"
+              className="w-full md:w-4/5 lg:w-3/4 xl:w-2/3 mx-auto relative rounded-lg overflow-hidden border-4 border-yellow-800 shadow-lg"
               variants={fadeInLeft}
             >
-              <p className="text-xl font-semibold text-gray-600">Imagen de Industrial</p>
+              <div className="relative" style={{ aspectRatio: '16/9' }}>
+                <Image 
+                  src={images[currentImageIndex]} 
+                  alt="Industrial - Sistema de pirólisis industrial"
+                  width={1200}
+                  height={600}
+                  className="w-full h-full object-cover absolute inset-0"
+                  priority
+                />
+                
+                {/* Flechas de navegación */}
+                <button 
+                  onClick={prevImage}
+                  className="absolute left-2 top-1/2 -translate-y-1/2 bg-black bg-opacity-50 hover:bg-opacity-70 text-white p-3 rounded-full transition-all duration-300 transform hover:scale-110"
+                  aria-label="Imagen anterior"
+                >
+                  <FaChevronLeft size={20} />
+                </button>
+                <button 
+                  onClick={nextImage}
+                  className="absolute right-2 top-1/2 -translate-y-1/2 bg-black bg-opacity-50 hover:bg-opacity-70 text-white p-3 rounded-full transition-all duration-300 transform hover:scale-110"
+                  aria-label="Siguiente imagen"
+                >
+                  <FaChevronRight size={20} />
+                </button>
+                
+                {/* Indicadores de posición */}
+                <div className="absolute bottom-3 left-0 right-0 flex justify-center gap-2">
+                  {images.map((_, index) => (
+                    <button 
+                      key={index}
+                      onClick={() => setCurrentImageIndex(index)}
+                      className={`w-3 h-3 rounded-full transition-all ${currentImageIndex === index ? 'bg-white scale-125' : 'bg-white bg-opacity-50'}`}
+                      aria-label={`Ver imagen ${index + 1}`}
+                    />
+                  ))}
+                </div>
+              </div>
             </motion.div>
+            {/* Contenido debajo de la imagen en layout horizontal */}
             <motion.div 
-              className="w-full md:w-1/2 mb-8 md:mb-0"
+              className="w-full"
               variants={fadeInRight}
             >
-              <motion.p 
-                className="text-lg md:text-xl text-gray-700 mb-6 font-body text-justify"
-                variants={fadeInUp}
-              >
-                {t.description}
-              </motion.p>
-              <motion.p 
-                className="text-lg font-semibold text-gray-800 mb-8 font-body"
-                variants={fadeInUp}
-              >
-                {t.benefits}
-              </motion.p>
-              <motion.div 
-                className="flex flex-wrap gap-4"
-                variants={fadeInUp}
-              >
-                <button className="px-6 py-3 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300 transition-colors font-medium">
-                  {t.dataSheetButton}
-                </button>
-                <Link 
-                  href={`/${pathname.includes('/en') ? 'en/contact' : 'es/contacto'}`}
-                  className="px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors font-medium"
-                >
-                  {t.contactButton}
-                </Link>
-              </motion.div>
+              <div className="flex flex-col md:flex-row gap-8 md:gap-16">
+                <motion.div className="w-full md:w-2/3" variants={fadeInUp}>
+                  <motion.p 
+                    className="text-lg text-gray-700 mb-8 font-body text-justify"
+                    variants={fadeInUp}
+                  >
+                    {t.description}
+                  </motion.p>
+                </motion.div>
+                <motion.div className="w-full md:w-1/3 flex flex-col justify-center" variants={fadeInUp}>
+                  <motion.div 
+                    className="flex flex-col sm:flex-row md:flex-col gap-4 justify-center items-center"
+                    variants={fadeInUp}
+                  >
+
+                    <Link 
+                      href={`/${pathname.includes('/en') ? 'en/contact' : 'es/contacto'}`}
+                      className="w-full sm:w-auto md:w-full px-6 py-4 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors font-title text-xl text-center"
+                    >
+                      {t.contactButton}
+                    </Link>
+                  </motion.div>
+                </motion.div>
+              </div>
             </motion.div>
           </motion.div>
         </div>
       </motion.section>
 
-      {/* Especificaciones y Operación */}
+      {/* Operación */}
       <motion.section 
-        className="py-12 md:py-16" style={{ backgroundColor: '#f8f8f8' }}
+        className="py-4 md:py-4" style={{ backgroundColor: '#f8f8f8' }}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-50px" }}
         variants={staggerContainer}
       >
         <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
-            {/* Especificaciones */}
-            <motion.div variants={fadeInRight}>
-              <motion.h2 
-                className="text-3xl font-bold text-green-700 mb-6 font-title"
-                variants={fadeInUp}
-              >
-                {t.specifications}
-              </motion.h2>
-              <motion.p 
-                className="text-lg text-gray-700 mb-6 font-body text-justify"
-                variants={fadeInUp}
-              >
-                {t.specificationsText}
-              </motion.p>
-            </motion.div>
-            
+          <div className="flex justify-center">
             {/* Operación */}
-            <motion.div variants={fadeInRight}>
+            <motion.div className="w-full max-w-3xl" variants={fadeInRight}>
               <motion.h2 
-                className="text-3xl font-bold text-green-700 mb-6 font-title"
+                className="text-5xl md:text-5xl lg:text-7xl font-bold text-green-700 mb-6 md:mb-8 font-title text-center"
                 variants={fadeInUp}
               >
                 {t.operation}
               </motion.h2>
               <motion.p 
-                className="text-lg text-gray-700 mb-6 font-body text-justify"
+                className="text-xl text-gray-700 mb-6 font-body text-justify"
                 variants={fadeInUp}
               >
                 {t.operationText}
@@ -239,36 +248,7 @@ const Industrial = () => {
         </div>
       </motion.section>
 
-      {/* Capacidad y rendimiento */}
-      <motion.section 
-        className="pt-4 pb-12 md:pt-6 md:pb-16" style={{ backgroundColor: '#f8f8f8' }}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-50px" }}
-        variants={staggerContainer}
-      >
-        <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <motion.h2 
-            className="text-3xl font-bold text-green-700 mb-6 font-title text-center"
-            variants={fadeInUp}
-          >
-            {t.capacity}
-          </motion.h2>
-          <motion.div 
-            className="bg-white rounded-xl p-6 shadow-md"
-            variants={fadeInUp}
-          >
-            <ul className="space-y-3">
-              {t.capacityItems.map((item, index) => (
-                <li key={index} className="flex items-start">
-                  <span className="text-green-600 mr-2">•</span>
-                  <span className="text-lg text-gray-700 font-body">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-        </div>
-      </motion.section>
+
 
       {/* Llamada a la acción */}
       <motion.section 

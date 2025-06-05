@@ -64,7 +64,7 @@ const Hero = () => {
       </div>
 
       {/* Texto principal */}
-      <div className="absolute inset-0 flex flex-col items-left justify-center text-white px-8 md:px-20 md:ml-10 lg:ml-24 xl: ml-32 mt-16 md:mt-20 lg:mt-24">
+      <div className="absolute inset-0 flex flex-col items-left justify-center text-white px-8 md:px-20 md:ml-6 lg:ml-24 xl:ml-30 mt-16 md:mt-20 lg:mt-24">
         <div className="mt-20 md:mt-24 lg:mt-32">
           <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-left mb-6 font-title leading-tight uppercase">
             {lang === 'es' ? (

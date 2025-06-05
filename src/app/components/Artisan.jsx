@@ -5,8 +5,11 @@ import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { useState } from 'react';
 import aliadoImage from '../../../public/photos/aliado.jpg';
 import artisanProImage from '../../../public/products/artisan-pro.jpg';
+import artisanPro1Image from '../../../public/products/artisan-pro1.jpg';
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 // Textos para internacionalización
 const texts = {
@@ -16,24 +19,11 @@ const texts = {
     subtitle: "Sistema de pirólisis compacto para producción de biochar a pequeña escala",
     
     // Descripción
-    description: "El Artisan Pro es un sistema de pirólisis compacto diseñado para la producción de biochar de alta calidad a pequeña escala. Ideal para agricultores, investigadores y emprendedores que buscan incorporar el biochar en sus operaciones. Este sistema utiliza nuestra tecnología patentada de pirólisis controlada para transformar residuos agrícolas y forestales en biochar de manera eficiente y sostenible.",
-    benefits: "Beneficios: Fácil de operar, tamaño compacto, alta eficiencia energética, producción consistente de biochar de calidad, captura de gases para uso como combustible.",
+    description: "El Artisan Pro es un sistema de pirólisis compacto y transportable, diseñado para la producción de biochar por lotes a escala artesanal. Ideal para agrupaciones de pequeños y medianos agricultores, investigadores y emprendedores que buscan incorporar los beneficios del biochar en sus operaciones agropecuarias. Este sistema de pirólisis es simple, eficiente y certificable en cada granja. Adoptarlo le permite ingresar a la Red de Agricultores de Carbono, donde se comparten asesorías, entrenamientos y otros beneficios por almacenar carbono en sus suelos y transicionar hacia agricultura climáticamente inteligente.",
     
     // Secciones adicionales
-    specifications: "Especificaciones técnicas",
-    specificationsText: "El Artisan Pro está diseñado para ofrecer un rendimiento óptimo con un tamaño compacto. Su diseño modular permite una fácil instalación y mantenimiento, mientras que sus controles precisos aseguran una producción consistente de biochar.",
-    
     operation: "Operación",
-    operationText: "El sistema opera mediante un proceso de pirólisis controlada a temperaturas entre 350°C y 700°C. El usuario puede ajustar los parámetros para optimizar la producción según el tipo de biomasa utilizada y las características deseadas del biochar resultante.",
-    
-    capacity: "Capacidad y rendimiento",
-    capacityItems: [
-      "Capacidad de procesamiento: 50-100 kg de biomasa por ciclo",
-      "Rendimiento de biochar: 20-30% del peso de la biomasa inicial",
-      "Tiempo de ciclo: 4-6 horas",
-      "Temperatura máxima: 700°C",
-      "Consumo energético: Bajo (utiliza parte de los gases generados)"
-    ],
+    operationText: "El sistema ARTISAN PRO tiene capacidad de procesar 1.5 m3 de biomasa en aproximadamente 4 horas con una persona, generando alrededor de 0.75 m3 de biochar. Se brindan capacitaciones complementarias para implementar la producción artesanal de biochar en las granjas, desde la selección y pretratamiento de la biomasa, técnicas de la pirólisis y la aplicación del biochar en los cultivos.",
     
     // Botones
     dataSheetButton: "Ver ficha técnica",
@@ -45,24 +35,11 @@ const texts = {
     subtitle: "Compact pyrolysis system for small-scale biochar production",
     
     // Description
-    description: "The Artisan Pro is a compact pyrolysis system designed for high-quality biochar production on a small scale. Ideal for farmers, researchers, and entrepreneurs looking to incorporate biochar into their operations. This system uses our patented controlled pyrolysis technology to efficiently and sustainably transform agricultural and forestry waste into biochar.",
-    benefits: "Benefits: Easy to operate, compact size, high energy efficiency, consistent quality biochar production, gas capture for use as fuel.",
+    description: "The Artisan Pro is a compact and transportable pyrolysis system, designed for batch biochar production at an artisanal scale. Ideal for groups of small and medium farmers, researchers, and entrepreneurs looking to incorporate the benefits of biochar into their agricultural operations. This pyrolysis system is simple, efficient, and certifiable on each farm. Adopting it allows you to join the Carbon Farmers Network, where advice, training, and other benefits are shared for storing carbon in your soils and transitioning to climate-smart agriculture.",
     
     // Additional sections
-    specifications: "Technical specifications",
-    specificationsText: "The Artisan Pro is designed to deliver optimal performance with a compact footprint. Its modular design allows for easy installation and maintenance, while its precise controls ensure consistent biochar production.",
-    
     operation: "Operation",
-    operationText: "The system operates through a controlled pyrolysis process at temperatures between 350°C and 700°C. The user can adjust parameters to optimize production according to the type of biomass used and the desired characteristics of the resulting biochar.",
-    
-    capacity: "Capacity and yield",
-    capacityItems: [
-      "Processing capacity: 50-100 kg of biomass per cycle",
-      "Biochar yield: 20-30% of initial biomass weight",
-      "Cycle time: 4-6 hours",
-      "Maximum temperature: 700°C",
-      "Energy consumption: Low (uses part of the generated gases)"
-    ],
+    operationText: "The ARTISAN PRO system has the capacity to process 1.5 m3 of biomass in approximately 4 hours with one person, generating around 0.75 m3 of biochar. Complementary training is provided to implement artisanal biochar production on farms, from biomass selection and pretreatment, to pyrolysis techniques and biochar application in crops.",
     
     // Buttons
     dataSheetButton: "View data sheet",
@@ -74,6 +51,19 @@ const Artisan = () => {
   const pathname = usePathname();
   const isEnglish = pathname.includes('/en');
   const t = isEnglish ? texts.en : texts.es;
+  
+  // Estado para el carrusel de imágenes
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const images = [artisanProImage, artisanPro1Image];
+  
+  // Funciones para navegar entre imágenes
+  const nextImage = () => {
+    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+  };
+  
+  const prevImage = () => {
+    setCurrentImageIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+  };
   
   // Variantes para animaciones
   const fadeInUp = {
@@ -157,14 +147,45 @@ const Artisan = () => {
               className="w-full md:w-4/5 lg:w-3/4 xl:w-2/3 mx-auto relative rounded-lg overflow-hidden border-4 border-yellow-800 shadow-lg"
               variants={fadeInLeft}
             >
-              <Image 
-                src={artisanProImage} 
-                alt="Artisan Pro - Sistema de pirólisis compacto"
-                width={1200}
-                height={600}
-                className="w-full h-auto object-cover"
-                priority
-              />
+              {/* Carrusel de imágenes */}
+              <div className="relative" style={{ aspectRatio: '16/9' }}>
+                <Image 
+                  src={images[currentImageIndex]} 
+                  alt="Artisan Pro - Sistema de pirólisis compacto"
+                  width={1200}
+                  height={600}
+                  className="w-full h-full object-cover absolute inset-0"
+                  priority
+                />
+                
+                {/* Flechas de navegación */}
+                <button 
+                  onClick={prevImage}
+                  className="absolute left-2 top-1/2 -translate-y-1/2 bg-black bg-opacity-50 hover:bg-opacity-70 text-white p-3 rounded-full transition-all duration-300 transform hover:scale-110"
+                  aria-label="Imagen anterior"
+                >
+                  <FaChevronLeft size={20} />
+                </button>
+                <button 
+                  onClick={nextImage}
+                  className="absolute right-2 top-1/2 -translate-y-1/2 bg-black bg-opacity-50 hover:bg-opacity-70 text-white p-3 rounded-full transition-all duration-300 transform hover:scale-110"
+                  aria-label="Siguiente imagen"
+                >
+                  <FaChevronRight size={20} />
+                </button>
+                
+                {/* Indicadores de posición */}
+                <div className="absolute bottom-3 left-0 right-0 flex justify-center gap-2">
+                  {images.map((_, index) => (
+                    <button 
+                      key={index}
+                      onClick={() => setCurrentImageIndex(index)}
+                      className={`w-3 h-3 rounded-full transition-all ${currentImageIndex === index ? 'bg-white scale-125' : 'bg-white bg-opacity-50'}`}
+                      aria-label={`Ver imagen ${index + 1}`}
+                    />
+                  ))}
+                </div>
+              </div>
             </motion.div>
             {/* Contenido debajo de la imagen en layout horizontal */}
             <motion.div 
@@ -174,16 +195,10 @@ const Artisan = () => {
               <div className="flex flex-col md:flex-row gap-8 md:gap-16">
                 <motion.div className="w-full md:w-2/3" variants={fadeInUp}>
                   <motion.p 
-                    className="text-lg md:text-xl text-gray-700 mb-6 font-body text-justify"
+                    className="text-lg text-gray-700 mb-8 font-body text-justify"
                     variants={fadeInUp}
                   >
                     {t.description}
-                  </motion.p>
-                  <motion.p 
-                    className="text-lg font-semibold text-gray-800 mb-8 font-body"
-                    variants={fadeInUp}
-                  >
-                    {t.benefits}
                   </motion.p>
                 </motion.div>
                 <motion.div className="w-full md:w-1/3 flex flex-col justify-center" variants={fadeInUp}>
@@ -191,12 +206,10 @@ const Artisan = () => {
                     className="flex flex-col sm:flex-row md:flex-col gap-4 justify-center items-center"
                     variants={fadeInUp}
                   >
-                    <button className="w-full sm:w-auto md:w-full px-6 py-4 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300 transition-colors font-medium text-lg">
-                      {t.dataSheetButton}
-                    </button>
+
                     <Link 
                       href={`/${pathname.includes('/en') ? 'en/contact' : 'es/contacto'}`}
-                      className="w-full sm:w-auto md:w-full px-6 py-4 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors font-medium text-lg text-center"
+                      className="w-full sm:w-auto md:w-full px-6 py-4 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors font-title text-xl text-center"
                     >
                       {t.contactButton}
                     </Link>
@@ -207,43 +220,26 @@ const Artisan = () => {
           </motion.div>
         </div>
       </motion.section>
-
-      {/* Especificaciones y Operación */}
+      {/* Operación */}
       <motion.section 
-        className="py-12 md:py-16" style={{ backgroundColor: '#f8f8f8' }}
+        className="py-4 md:py-4" style={{ backgroundColor: '#f8f8f8' }}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-50px" }}
         variants={staggerContainer}
       >
         <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
-            {/* Especificaciones */}
-            <motion.div variants={fadeInRight}>
-              <motion.h2 
-                className="text-3xl font-bold text-green-700 mb-6 font-title"
-                variants={fadeInUp}
-              >
-                {t.specifications}
-              </motion.h2>
-              <motion.p 
-                className="text-lg text-gray-700 mb-6 font-body text-justify"
-                variants={fadeInUp}
-              >
-                {t.specificationsText}
-              </motion.p>
-            </motion.div>
-            
+          <div className="flex justify-center">
             {/* Operación */}
-            <motion.div variants={fadeInRight}>
+            <motion.div variants={fadeInRight} className="max-w-3xl">
               <motion.h2 
-                className="text-3xl font-bold text-green-700 mb-6 font-title"
+                className="text-5xl md:text-5xl lg:text-7xl font-bold text-green-700 mb-6 md:mb-8 font-title text-center"
                 variants={fadeInUp}
               >
                 {t.operation}
               </motion.h2>
               <motion.p 
-                className="text-lg text-gray-700 mb-6 font-body text-justify"
+                className="text-xl text-gray-700 mb-8 font-body text-justify"
                 variants={fadeInUp}
               >
                 {t.operationText}
@@ -253,36 +249,7 @@ const Artisan = () => {
         </div>
       </motion.section>
 
-      {/* Capacidad y rendimiento */}
-      <motion.section 
-        className="pt-4 pb-12 md:pt-6 md:pb-16" style={{ backgroundColor: '#f8f8f8' }}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-50px" }}
-        variants={staggerContainer}
-      >
-        <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <motion.h2 
-            className="text-3xl font-bold text-green-700 mb-6 font-title text-center"
-            variants={fadeInUp}
-          >
-            {t.capacity}
-          </motion.h2>
-          <motion.div 
-            className="bg-white rounded-xl p-6 shadow-md"
-            variants={fadeInUp}
-          >
-            <ul className="space-y-3">
-              {t.capacityItems.map((item, index) => (
-                <li key={index} className="flex items-start">
-                  <span className="text-green-600 mr-2">•</span>
-                  <span className="text-lg text-gray-700 font-body">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-        </div>
-      </motion.section>
+
 
       {/* Llamada a la acción */}
       <motion.section 

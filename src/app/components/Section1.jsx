@@ -723,7 +723,7 @@ const Section1 = () => {
             >
               <Link 
                 href={`/${pathname.includes('/en') ? 'en/equipo' : 'es/equipo'}`}
-                className="inline-block bg-yellow-700 hover:bg-yellow-900 text-white font-bold py-3 px-8 rounded-full transition-colors duration-300 transform hover:scale-105 font-body"
+                className="inline-block bg-yellow-700 hover:bg-yellow-900 text-white text-lg font-bold py-4 px-8 rounded-full transition-colors duration-300 transform hover:scale-105 font-body"
               >
                 {t.section5Button}
               </Link>

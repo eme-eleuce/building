@@ -156,12 +156,12 @@ const Navbar = ({ dict }) => {
                 <IoIosArrowDown className="text-xl" />
               )}
             </button>
-            <div className={`absolute left-0 mt-2 w-64 bg-white shadow-lg rounded-lg overflow-hidden transition-all duration-300 origin-top ${productosOpen ? 'opacity-100 visible scale-y-100 translate-y-0' : 'opacity-0 invisible scale-y-75 -translate-y-4'}`}>
+            <div className={`absolute left-0 mt-2 w-64 bg-[#f8f8f8] shadow-lg rounded-lg overflow-hidden transition-all duration-300 origin-top ${productosOpen ? 'opacity-100 visible scale-y-100 translate-y-0' : 'opacity-0 invisible scale-y-75 -translate-y-4'}`}>
               
               {/* Nested Soil Admendments Dropdown */}
               <div className="relative" ref={soilRef}>
                 <button 
-                  className="flex items-center justify-between w-full px-4 py-3 text-xl font-bold text-black hover:text-green-600 hover:bg-gray-50 transition-all duration-300 font-body"
+                  className="flex items-center justify-between w-full px-4 py-3 text-xl font-bold text-black hover:text-green-600 hover:bg-[#f8f8f8] transition-all duration-300 font-body"
                   onClick={(e) => {
                     e.stopPropagation();
                     setSoilOpen(!soilOpen);
@@ -171,17 +171,17 @@ const Navbar = ({ dict }) => {
                   {soilOpen ? <IoIosArrowUp className="text-lg" /> : <IoIosArrowDown className="text-lg" />}
                 </button>
                 
-                <div className={`bg-gray-50 transition-all duration-300 overflow-hidden rounded-lg origin-top ${soilOpen ? 'max-h-60 scale-y-100 opacity-100' : 'max-h-0 scale-y-90 opacity-0'}`}>
-                  <Link href={`/${lang}/products/soil-admendments/pacchar-pure`} onClick={handleNavLinkClick} className="block px-8 py-2 text-xl font-medium text-black hover:text-green-600 hover:bg-gray-50 transition-all duration-300 font-body">{navbarDict.pacchar_pure || 'Pacchar Pure'}</Link>
-                  <Link href={`/${lang}/products/soil-admendments/combi`} onClick={handleNavLinkClick} className="block px-8 py-2 text-xl font-medium text-black hover:text-green-600 hover:bg-gray-50 transition-all duration-300 font-body">{navbarDict.combi || 'COMBI'}</Link>
-                  <Link href={`/${lang}/products/soil-admendments/active-compost`} onClick={handleNavLinkClick} className="block px-8 py-2 text-xl font-medium text-black hover:text-green-600 hover:bg-gray-50 transition-all duration-300 font-body">{navbarDict.active_compost || 'Active Compost'}</Link>
+                <div className={`bg-[#f8f8f8] transition-all duration-300 overflow-hidden rounded-lg origin-top ${soilOpen ? 'max-h-60 scale-y-100 opacity-100' : 'max-h-0 scale-y-90 opacity-0'}`}>
+                  <Link href={`/${lang}/products/soil-admendments/pacchar-pure`} onClick={handleNavLinkClick} className="block px-8 py-2 text-xl font-medium text-black hover:text-green-600 hover:bg-[#f8f8f8] transition-all duration-300 font-body">{navbarDict.pacchar_pure || 'Pacchar Pure'}</Link>
+                  <Link href={`/${lang}/products/soil-admendments/combi`} onClick={handleNavLinkClick} className="block px-8 py-2 text-xl font-medium text-black hover:text-green-600 hover:bg-[#f8f8f8] transition-all duration-300 font-body">{navbarDict.combi || 'COMBI'}</Link>
+                  <Link href={`/${lang}/products/soil-admendments/active-compost`} onClick={handleNavLinkClick} className="block px-8 py-2 text-xl font-medium text-black hover:text-green-600 hover:bg-[#f8f8f8] transition-all duration-300 font-body">{navbarDict.active_compost || 'Active Compost'}</Link>
                 </div>
               </div>
               
               {/* Nested Pirolysis Tech Dropdown */}
               <div className="relative" ref={pirolysisRef}>
                 <button 
-                  className="flex items-center justify-between w-full px-4 py-3 text-xl font-bold text-black hover:text-green-600 hover:bg-gray-50 transition-all duration-300 font-body"
+                  className="flex items-center justify-between w-full px-4 py-3 text-xl font-bold text-black hover:text-green-600 hover:bg-[#f8f8f8] transition-all duration-300 font-body"
                   onClick={(e) => {
                     e.stopPropagation();
                     setPirolysisOpen(!pirolysisOpen);
@@ -191,12 +191,12 @@ const Navbar = ({ dict }) => {
                   {pirolysisOpen ? <IoIosArrowUp className="text-lg" /> : <IoIosArrowDown className="text-lg" />}
                 </button>
                 
-                <div className={`bg-gray-50 transition-all duration-300 overflow-hidden rounded-lg origin-top ${pirolysisOpen ? 'max-h-60 scale-y-100 opacity-100' : 'max-h-0 scale-y-90 opacity-0'}`}>
-                  <Link href={`/${lang}/products/pirolysis-tech/artisan-pro`} onClick={handleNavLinkClick} className="block px-8 py-2 text-xl font-medium text-black hover:text-green-600 hover:bg-gray-50 transition-all duration-300 font-body">Artisan Pro</Link>
-                  <Link href={`/${lang}/products/pirolysis-tech/industrial`} onClick={handleNavLinkClick} className="block px-8 py-2 text-xl font-medium text-black hover:text-green-600 hover:bg-gray-50 transition-all duration-300 font-body">Industrial</Link>
+                <div className={`bg-[#f8f8f8] transition-all duration-300 overflow-hidden rounded-lg origin-top ${pirolysisOpen ? 'max-h-60 scale-y-100 opacity-100' : 'max-h-0 scale-y-90 opacity-0'}`}>
+                  <Link href={`/${lang}/products/pirolysis-tech/artisan-pro`} onClick={handleNavLinkClick} className="block px-8 py-2 text-xl font-medium text-black hover:text-green-600 hover:bg-[#f8f8f8] transition-all duration-300 font-body">Artisan Pro</Link>
+                  <Link href={`/${lang}/products/pirolysis-tech/industrial`} onClick={handleNavLinkClick} className="block px-8 py-2 text-xl font-medium text-black hover:text-green-600 hover:bg-[#f8f8f8] transition-all duration-300 font-body">Industrial</Link>
                 </div>
               </div>
-              <Link href={`/${lang}/products/co2-removal`} onClick={handleNavLinkClick} className="block px-4 py-3 text-xl font-bold text-black hover:text-green-600 hover:bg-gray-50 transition-all duration-300 font-body">{navbarDict.co2_removal || 'Compensación de CO2'}</Link>
+              <Link href={`/${lang}/products/co2-removal`} onClick={handleNavLinkClick} className="block px-4 py-3 text-xl font-bold text-black hover:text-green-600 hover:bg-[#f8f8f8] transition-all duration-300 font-body">{navbarDict.co2_removal || 'Compensación de CO2'}</Link>
             </div>
           </div>
           
@@ -213,9 +213,9 @@ const Navbar = ({ dict }) => {
                 <IoIosArrowDown className="text-xl" />
               )}
             </button>
-            <div className={`absolute left-0 mt-2 w-64 bg-white shadow-lg rounded-lg overflow-hidden transition-all duration-300 origin-top ${cfnOpen ? 'opacity-100 visible scale-y-100 translate-y-0' : 'opacity-0 invisible scale-y-75 -translate-y-4'}`}>
-              <Link href={`/${lang}/red/biochar-points`} onClick={handleNavLinkClick} className="block px-4 py-3 text-xl font-bold text-black hover:text-green-600 hover:bg-gray-50 transition-all duration-300 font-body">{navbarDict.biochar_points || 'Biochar Points'}</Link>
-              <Link href={`/${lang}/red/alianza`} onClick={handleNavLinkClick} className="block px-4 py-3 text-xl font-bold text-black hover:text-green-600 hover:bg-gray-50 transition-all duration-300 font-body">{navbarDict.join_network || 'Únete a la red'}</Link>
+            <div className={`absolute left-0 mt-2 w-64 bg-[#f8f8f8] shadow-lg rounded-lg overflow-hidden transition-all duration-300 origin-top ${cfnOpen ? 'opacity-100 visible scale-y-100 translate-y-0' : 'opacity-0 invisible scale-y-75 -translate-y-4'}`}>
+              <Link href={`/${lang}/red/biochar-points`} onClick={handleNavLinkClick} className="block px-4 py-3 text-xl font-bold text-black hover:text-green-600 hover:bg-[#f8f8f8] transition-all duration-300 font-body">{navbarDict.biochar_points || 'Biochar Points'}</Link>
+              <Link href={`/${lang}/red/alianza`} onClick={handleNavLinkClick} className="block px-4 py-3 text-xl font-bold text-black hover:text-green-600 hover:bg-[#f8f8f8] transition-all duration-300 font-body">{navbarDict.join_network || 'Únete a la red'}</Link>
             </div>
           </div>
           
@@ -232,10 +232,10 @@ const Navbar = ({ dict }) => {
                 <IoIosArrowDown className="text-xl" />
               )}
             </button>
-            <div className={`absolute left-0 mt-2 w-64 bg-white shadow-lg rounded-lg overflow-hidden transition-all duration-300 origin-top ${nosotrosOpen ? 'opacity-100 visible scale-y-100 translate-y-0' : 'opacity-0 invisible scale-y-75 -translate-y-4'}`}>
-              <Link href={`/${lang}/nosotros/historia`} onClick={handleNavLinkClick} className="block px-4 py-3 text-xl font-bold text-black hover:text-green-600 hover:bg-gray-50 transition-all duration-300 font-body">{navbarDict.historia || 'Historia'}</Link>
-              <Link href={`/${lang}/equipo`} onClick={handleNavLinkClick} className="block px-4 py-3 text-xl font-bold text-black hover:text-green-600 hover:bg-gray-50 transition-all duration-300 font-body">{navbarDict.equipo || 'Equipo'}</Link>
-              <Link href={`/${lang}/nosotros/rainforest-enterprise`} onClick={handleNavLinkClick} className="block px-4 py-3 text-xl font-bold text-black hover:text-green-600 hover:bg-gray-50 transition-all duration-300 font-body">{navbarDict.rainforest_enterprise || 'Rainforest Enterprise'}</Link>
+            <div className={`absolute left-0 mt-2 w-64 bg-[#f8f8f8] shadow-lg rounded-lg overflow-hidden transition-all duration-300 origin-top ${nosotrosOpen ? 'opacity-100 visible scale-y-100 translate-y-0' : 'opacity-0 invisible scale-y-75 -translate-y-4'}`}>
+              <Link href={`/${lang}/nosotros/historia`} onClick={handleNavLinkClick} className="block px-4 py-3 text-xl font-bold text-black hover:text-green-600 hover:bg-[#f8f8f8] transition-all duration-300 font-body">{navbarDict.historia || 'Historia'}</Link>
+              <Link href={`/${lang}/equipo`} onClick={handleNavLinkClick} className="block px-4 py-3 text-xl font-bold text-black hover:text-green-600 hover:bg-[#f8f8f8] transition-all duration-300 font-body">{navbarDict.equipo || 'Equipo'}</Link>
+              <Link href={`/${lang}/nosotros/rainforest-enterprise`} onClick={handleNavLinkClick} className="block px-4 py-3 text-xl font-bold text-black hover:text-green-600 hover:bg-[#f8f8f8] transition-all duration-300 font-body">{navbarDict.rainforest_enterprise || 'Rainforest Enterprise'}</Link>
             </div>
           </div>
           

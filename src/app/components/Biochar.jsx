@@ -418,7 +418,7 @@ const Biochar = () => {
 
       {/* Solución climática escalable */}
       <motion.section 
-        className="py-12 md:py-16" style={{ backgroundColor: '#fff' }}
+        className="py-12 md:py-16"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
