@@ -1,11 +1,14 @@
 "use client";
 
-import React from 'react';
+import React, { useRef } from 'react';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import backgroundImage from '../../../public/photos/pacchar-1.jpg';
+import removal1Image from '../../../public/photos/removal-co2/removal1.jpg';
+import removal2Image from '../../../public/photos/removal-co2/removal2.jpg';
+import removal3Image from '../../../public/photos/removal-co2/removal3.jpg';
 
 // Textos para internacionalización
 const texts = {
@@ -81,10 +84,22 @@ const texts = {
   }
 };
 
-const CoRemoval = () => {
+const Removal = () => {
   const pathname = usePathname();
   const isEnglish = pathname.includes('/en');
   const t = isEnglish ? texts.en : texts.es;
+  
+  // Referencias para animaciones al hacer scroll
+  const section1Ref = useRef(null);
+  const section2Ref = useRef(null);
+  const section3Ref = useRef(null);
+  const ctaRef = useRef(null);
+  
+  // Estados de visibilidad para cada sección
+  const section1IsInView = useInView(section1Ref, { once: true, amount: 0.3 });
+  const section2IsInView = useInView(section2Ref, { once: true, amount: 0.3 });
+  const section3IsInView = useInView(section3Ref, { once: true, amount: 0.3 });
+  const ctaIsInView = useInView(ctaRef, { once: true, amount: 0.3 });
   
   // Variantes de animación
   const fadeIn = {
@@ -108,104 +123,165 @@ const CoRemoval = () => {
   };
 
   return (
-    <motion.section 
-      className="py-10 mt-20"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-100px" }}
-      variants={fadeIn}
-    >
-      <motion.div 
-        className="w-full mx-auto px-0 md:px-4"
+    <div className="overflow-hidden">
+      {/* Hero Section con imagen de fondo */}
+      <motion.section 
+        className="relative h-screen w-full flex items-center justify-center px-4 md:px-8 py-6 md:py-10 mt-28 md:mt-28"
+        initial="hidden"
+        animate="visible"
         variants={staggerContainer}
       >
-        <motion.div 
-          className="flex flex-col items-center rounded-2xl shadow-xl overflow-hidden w-full"
-          variants={fadeInUp}
-        >
-          {/* Imagen de fondo con título superpuesto */}
-          <motion.div 
-            className="w-full relative"
-            variants={fadeIn}
+        {/* Imagen de fondo con padding */}
+        <div className="absolute inset-0 w-full h-full">
+          <Image
+            src={backgroundImage}
+            alt="CO2 Removal Background"
+            fill
+            className="object-cover brightness-[0.65] object-center"
+            priority
+          />
+        </div>
+        
+        {/* Contenido superpuesto */}
+        <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
+          <motion.h1 
+            className="text-6xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold text-white mb-6 md:mb-16 font-title mx-20"
+            variants={fadeInUp}
           >
-            <motion.div 
-              className="w-full h-[500px] md:h-[650px] lg:h-[700px] relative"
-              variants={fadeIn}
-            >
-              <Image
-                src={backgroundImage}
-                alt="CO2 Removal Background"
-                fill
-                className="object-cover brightness-75 object-center"
-                priority
-              />
-              
-              {/* Título principal superpuesto - posicionado mucho más abajo */}
-              <div className="absolute inset-x-0 bottom-[-140px] md:bottom-[-130px] lg:bottom-[-150px] flex flex-col items-center justify-end p-6 w-full">
-                <div className="bg-[#f8f8f8] py-4 px-6 md:px-10 rounded-t-2xl w-full max-w-5xl z-10 mx-auto">
-                  <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold text-center mb-6 md:mb-8 font-title text-green-700">
-                    {t.title}
-                  </h1>
-                  <p className="text-xl md:text-2xl text-center font-body text-gray-800">
-                    {t.subtitle}
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-            
-          </motion.div>
-          
-          {/* Contenido de texto centrado */}
+            {t.title}
+          </motion.h1>
+          <motion.p 
+            className="text-md md:text-lg lg:text-xl text-white font-body max-w-3xl mx-auto"
+            variants={fadeInUp}
+          >
+            {t.subtitle}
+          </motion.p>
+        </div>
+      </motion.section>
+      {/* Contenido de texto centrado */}
+      <motion.section 
+        className="py-16 md:py-24"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={staggerContainer}
+      >
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
           <motion.div 
-            className="w-full p-8 pt-40 md:p-12 md:pt-36 lg:pt-40 flex flex-col items-center relative z-0 max-w-7xl mx-auto"
+            className="w-full flex flex-col items-center"
             variants={staggerContainer}
           >
             {/* Sección 1: Solución natural */}
             <motion.div 
-              className="w-full max-w-4xl mb-16 mt-20 md:mt-24 lg:mt-30"
-              variants={fadeInUp}
+              ref={section1Ref}
+              className="w-full max-w-4xl mb-16"
+              initial={{ opacity: 0, y: 50 }}
+              animate={section1IsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
             >
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-green-700 mb-8 font-title">
                 {t.section1Title}
               </h2>
-              <div className="space-y-4">
-                {t.section1Content.map((paragraph, index) => (
-                  <p key={index} className="text-lg text-gray-700 font-body text-justify">
-                    {paragraph}
-                  </p>
-                ))}
+              <div className="flex flex-col md:flex-row md:gap-8 lg:gap-12">
+                {/* Título y contenido en columna (móvil) o derecha (escritorio) */}
+                <div className="w-full md:w-1/2 order-1 md:order-2">
+                  {/* Imagen visible solo en móvil, después del título */}
+                  <div className="relative w-full aspect-square mb-8 md:hidden">
+                    <Image 
+                      src={removal1Image} 
+                      alt="Solución natural para mitigar el cambio climático" 
+                      fill 
+                      className="object-cover rounded-lg"
+                    />
+                  </div>
+                  
+                  <div className="space-y-4 mb-6">
+                    {t.section1Content.map((paragraph, index) => (
+                      <motion.p 
+                        key={index} 
+                        className="text-lg text-gray-700 font-body text-justify"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={section1IsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                        transition={{ duration: 0.6, delay: 0.3 + index * 0.2 }}
+                      >
+                        {paragraph}
+                      </motion.p>
+                    ))}
+                  </div>
+                </div>
+                
+                {/* Imagen en columna izquierda (solo en escritorio) */}
+                <div className="w-full md:w-1/2 order-2 md:order-1 hidden md:block">
+                  <div className="relative w-full aspect-square">
+                    <Image 
+                      src={removal1Image} 
+                      alt="Solución natural para mitigar el cambio climático" 
+                      fill 
+                      className="object-cover rounded-lg"
+                    />
+                  </div>
+                </div>
               </div>
             </motion.div>
             
             {/* Sección 2: Remociones de carbono */}
             <motion.div 
+              ref={section2Ref}
               className="w-full max-w-4xl mb-16"
-              variants={fadeInUp}
+              initial={{ opacity: 0, y: 50 }}
+              animate={section2IsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
             >
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-green-700 mb-8 font-title">
                 {t.section2Title}
               </h2>
-              <p className="text-lg text-gray-700 font-body text-justify">
+              <motion.p 
+                className="text-lg text-gray-700 font-body text-justify"
+                initial={{ opacity: 0, y: 20 }}
+                animate={section2IsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+              >
                 {t.section2Content}
-              </p>
+              </motion.p>
             </motion.div>
             
             {/* Sección 3: Impacto Socioambiental */}
             <motion.div 
+              ref={section3Ref}
               className="w-full max-w-4xl mb-16"
-              variants={fadeInUp}
+              initial={{ opacity: 0, y: 50 }}
+              animate={section3IsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-green-700 mb-8 font-title">
-                {t.section3Title}
-              </h2>
+              {/* Título con imagen de fondo */}
+              <div className="relative w-full h-[300px] md:h-[400px] lg:h-[500px] mb-8 overflow-hidden rounded-lg">
+                <Image 
+                  src={removal2Image} 
+                  alt="Impacto Socioambiental" 
+                  fill 
+                  className="object-cover brightness-[0.65]"
+                />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <h2 className="text-4xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white font-title px-4 text-center">
+                    {t.section3Title}
+                  </h2>
+                </div>
+              </div>
+              
               <div className="space-y-4 mb-6">
                 {t.section3Content.map((paragraph, index) => (
-                  <p key={index} className="text-lg text-gray-700 font-body text-justify">
+                  <motion.p 
+                    key={index} 
+                    className="text-lg text-gray-700 font-body text-justify"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={section3IsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                    transition={{ duration: 0.6, delay: 0.3 + index * 0.2 }}
+                  >
                     {paragraph}
-                  </p>
+                  </motion.p>
                 ))}
               </div>
-              <div className="flex justify-start mt-6">
+              <div className="flex justify-center mt-6">
                 <Link 
                   href={`/${isEnglish ? 'en' : 'es'}/red/alianza`}
                   className="bg-yellow-900 hover:bg-yellow-950 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 font-body text-lg flex items-center"
@@ -238,35 +314,49 @@ const CoRemoval = () => {
               </ul>
             </motion.div>
             
-            {/* Llamado a la acción */}
+            {/* Call to Action con imagen de fondo */}
             <motion.div 
-              className="w-full max-w-4xl mt-12 mb-8 text-center"
-              variants={fadeInUp}
+              ref={ctaRef}
+              className="w-full max-w-4xl mb-8"
+              initial={{ opacity: 0, y: 50 }}
+              animate={ctaIsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-green-700 mb-8 font-title">
-                {isEnglish ? "Ready to offset your carbon footprint?" : "¿Listo para compensar su huella de carbono?"}
-              </h2>
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="inline-block"
-              >
-                <Link 
-                  href={`/${isEnglish ? 'en' : 'es'}/nosotros/rainforest-enterprise`}
-                  className="bg-yellow-900 hover:bg-yellow-950 text-white font-bold py-4 px-10 rounded-full transition-all duration-300 font-body text-xl flex items-center"
-                >
-                  {isEnglish ? "Learn about our alliance" : "Conoce nuestra alianza"}
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 ml-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </svg>
-                </Link>
-              </motion.div>
+              <div className="relative w-full h-[300px] md:h-[400px] lg:h-[500px] rounded-2xl overflow-hidden">
+                <Image 
+                  src={removal3Image} 
+                  alt="Compensación de carbono" 
+                  fill 
+                  className="object-cover brightness-[0.6]" 
+                  priority
+                />
+                <div className="absolute inset-0 flex flex-col items-center justify-center p-6 md:p-10">
+                  <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-8 md:mb-10 font-title text-center max-w-3xl">
+                    {isEnglish ? "Ready to offset your carbon footprint?" : "¿Listo para compensar su huella de carbono?"}
+                  </h2>
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="inline-block"
+                  >
+                    <Link 
+                      href={`/${isEnglish ? 'en' : 'es'}/nosotros/rainforest-enterprise`}
+                      className="bg-yellow-900 hover:bg-yellow-950 text-white font-bold py-4 px-10 rounded-full transition-all duration-300 font-body text-xl flex items-center"
+                    >
+                      {isEnglish ? "Learn about our alliance" : "Conoce nuestra alianza"}
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 ml-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                      </svg>
+                    </Link>
+                  </motion.div>
+                </div>
+              </div>
             </motion.div>
           </motion.div>
-        </motion.div>
-      </motion.div>
-    </motion.section>
+        </div>
+      </motion.section>
+    </div>
   );
 };
 
-export default CoRemoval;
+export default Removal;

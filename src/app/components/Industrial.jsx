@@ -6,8 +6,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import aliadoImage from '../../../public/photos/aliado.jpg';
-import artisanProImage from '../../../public/products/artisan-pro.jpg';
-import artisanPro1Image from '../../../public/products/artisan-pro1.jpg';
+import artisanProImage from '../../../public/products/industrial1.jpg';
+import artisanPro1Image from '../../../public/products/industrial2.jpg';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 // Textos para internacionalización

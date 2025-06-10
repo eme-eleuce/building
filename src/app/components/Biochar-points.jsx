@@ -1,19 +1,22 @@
 "use client"
 
-import React from 'react';
+import React, { useRef } from 'react';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
-import mapaEcuador from '../../../public/photos/points/mapa.png';
+import { motion, useInView } from 'framer-motion';
 import manoImage from '../../../public/photos/mano.jpg';
+import farmersImage from '../../../public/photos/farmers-net/farmers1.jpg';
+import farmers2Image from '../../../public/photos/farmers-net/farmers2.jpg';
+import farmers3Image from '../../../public/photos/farmers-net/farmers3.jpg';
+import mapaEcuador from '../../../public/photos/points/mapa.png';
 
 // Textos para internacionalización
 const texts = {
   es: {
     // Sección de Mapa
     mapTitle: "Los primeros hijos del Suelo",
-    mapDescription: "En Ecuador, el cuidado del suelo es un legado ancestral y un deber nacional reflejado en nuestro himno como un símbolo de identidad y compromiso con la tierra.",
+    mapDescription: "En Ecuador, el cuidado del suelo es un legado ancestral y un deber nacional reflejado en nuestro himno como un símbolo de identidad y compromiso con la Pachamama.",
     
     // Sección de Guardianes del Suelo
     guardiansTitle: "Nuestros guardianes del suelo",
@@ -59,8 +62,8 @@ const texts = {
   },
   en: {
     // Map Section
-    mapTitle: "The First Children of the Soil",
-    mapDescription: "In Ecuador, caring for the soil is an ancestral legacy and a national duty reflected in our anthem as a symbol of identity and commitment to the land.",
+    mapTitle: "First, the children of the Soil",
+    mapDescription: "In Ecuador, caring for the soil is an ancestral legacy and a national duty reflected in our anthem as a symbol of identity and commitment to the Pachamama.",
     
     // Soil Guardians Section
     guardiansTitle: "Our soil guardians",
@@ -111,6 +114,18 @@ const BiocharPoints = () => {
   const isEnglish = pathname.includes('/en');
   const t = isEnglish ? texts.en : texts.es;
   
+  // Referencias para animaciones al hacer scroll
+  const mapSectionRef = useRef(null);
+  const guardiansSectionRef = useRef(null);
+  const tripleImpactSectionRef = useRef(null);
+  const impactDetailsSectionRef = useRef(null);
+  
+  // Estados de visibilidad para cada sección
+  const mapSectionIsInView = useInView(mapSectionRef, { once: true, amount: 0.3 });
+  const guardiansSectionIsInView = useInView(guardiansSectionRef, { once: true, amount: 0.3 });
+  const tripleImpactSectionIsInView = useInView(tripleImpactSectionRef, { once: true, amount: 0.3 });
+  const impactDetailsSectionIsInView = useInView(impactDetailsSectionRef, { once: true, amount: 0.3 });
+  
   // Variantes para animaciones
   const fadeInUp = {
     hidden: { opacity: 0, y: 60 },
@@ -151,6 +166,45 @@ const BiocharPoints = () => {
 
   return (
     <div className="overflow-hidden">
+      {/* Hero Section con imagen de fondo */}
+      <motion.section 
+        className="relative h-screen w-full flex items-center justify-center overflow-hidden"
+        initial="hidden"
+        animate="visible"
+        variants={staggerContainer}
+      >
+        {/* Imagen de fondo */}
+        <div className="absolute inset-0 w-full h-full">
+          <Image
+            src={farmersImage}
+            alt="Agricultores de carbono"
+            fill
+            className="object-cover brightness-[0.70] object-center"
+            priority
+          />
+        </div>
+        
+        {/* Contenido superpuesto */}
+        <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
+          <motion.h1 
+            className="text-6xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold text-white mb-6 md:mb-16 font-title"
+            variants={fadeInUp}
+          >
+            {isEnglish ? (
+              <>First, the children of the <span className="text-yellow-400">Soil</span></>
+            ) : (
+              <>Primero, los hijos del <span className="text-yellow-400">Suelo</span></>
+            )}
+          </motion.h1>
+          <motion.p 
+            className="text-md md:text-lg lg:text-xl text-white mb-8 max-w-3xl mx-auto font-body"
+            variants={fadeInUp}
+          >
+            {t.mapDescription}
+          </motion.p>
+        </div>
+      </motion.section>
+      
       {/* Mapa de Ecuador */}
       <motion.section 
         className="py-16 md:py-24"
@@ -160,43 +214,23 @@ const BiocharPoints = () => {
         variants={staggerContainer}
       >
         <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <motion.h2 
-            className="text-6xl md:text-7xl lg:text-8xl font-extrabold text-green-700 mb-8 text-center font-title"
-            variants={fadeInUp}
-          >
-            {isEnglish ? (
-              <>
-                The First Children of the <span className="text-yellow-700">Soil</span>
-              </>
-            ) : (
-              <>
-                Los primeros hijos del <span className="text-yellow-700">Suelo</span>
-              </>
-            )}
-          </motion.h2>
-          <motion.p 
-            className="text-lg text-gray-700 mb-12 text-center max-w-4xl mx-auto font-body"
-            variants={fadeInUp}
-          >
-            {t.mapDescription}
-          </motion.p>
           
-          <motion.div className="flex flex-col md:flex-row items-start gap-8 md:gap-16">
-            {/* Columna izquierda - Mapa y Provincias */}
+          <motion.div className="flex flex-col md:flex-row items-center gap-8 md:gap-16">
+            {/* Columna izquierda - Nueva imagen de agricultores */}
             <motion.div 
-              className="w-full md:w-1/2 order-1 md:order-1 flex flex-col"
+              className="w-full md:w-1/2 order-2 md:order-1 flex flex-col"
               variants={fadeInLeft}
             >
-              {/* Mapa de Ecuador */}
+              {/* Imagen de agricultores */}
               <motion.div 
                 className="w-full relative rounded-lg overflow-hidden h-[350px] md:h-[500px] mb-8"
                 variants={fadeInUp}
               >
                 <Image
-                  src={mapaEcuador}
-                  alt="Mapa de Ecuador con provincias resaltadas"
+                  src={farmers2Image}
+                  alt="Agricultores de carbono trabajando la tierra"
                   fill
-                  className="object-contain"
+                  className="object-cover"
                   priority
                 />
               </motion.div>
@@ -204,55 +238,87 @@ const BiocharPoints = () => {
             
             {/* Columna derecha - Solo Guardianes del Suelo */}
             <motion.div 
-              className="w-full md:w-1/2 order-2 md:order-2"
-              variants={fadeInRight}
+              ref={guardiansSectionRef}
+              className="w-full md:w-1/2 order-1 md:order-2"
+              initial={{ opacity: 0, y: 50 }}
+              animate={guardiansSectionIsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <motion.h3 
-                className="text-2xl md:text-3xl font-bold text-green-600 mb-6 font-title"
-                variants={fadeInUp}
+              <motion.h2 
+                className="text-4xl md:text-5xl lg:text-6xl font-bold text-green-700 mb-6 font-title"
+                initial={{ opacity: 0, y: 20 }}
+                animate={guardiansSectionIsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
               >
                 {t.guardiansTitle}
-              </motion.h3>
+              </motion.h2>
               <motion.p 
                 className="text-lg text-gray-700 font-body text-justify mb-6"
-                variants={fadeInUp}
+                initial={{ opacity: 0, y: 20 }}
+                animate={guardiansSectionIsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
               >
                 {t.guardiansDescription}
               </motion.p>
               <motion.p 
                 className="text-lg text-gray-700 font-body text-justify mb-8"
-                variants={fadeInUp}
+                initial={{ opacity: 0, y: 20 }}
+                animate={guardiansSectionIsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                transition={{ duration: 0.6, delay: 0.5 }}
               >
                 {t.guardiansDescription2}
               </motion.p>
             </motion.div>
           </motion.div>
           
-          {/* Triple Impacto - Centrado en la página completa */}
+          {/* Triple Impacto - Con imagen de fondo */}
           <motion.div
-            variants={fadeInUp}
-            className="mt-4 mb-16 flex flex-col items-center w-full"
+            ref={tripleImpactSectionRef}
+            className="mt-12 mb-20 flex flex-col items-center w-full"
+            initial={{ opacity: 0, y: 50 }}
+            animate={tripleImpactSectionIsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <motion.h3 
-              className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-green-600 mb-8 font-title text-center"
-              variants={fadeInUp}
-            >
-              {t.tripleImpactTitle}
-            </motion.h3>
-            <motion.p 
-              className="text-lg text-gray-700 font-body mb-8 text-center max-w-3xl"
-              variants={fadeInUp}
-            >
-              {t.tripleImpactDescription}
-            </motion.p>
+            {/* Contenedor con imagen de fondo */}
+            <div className="relative w-full max-w-5xl rounded-2xl overflow-hidden">
+              {/* Imagen de fondo */}
+              <div className="relative w-full h-[300px] md:h-[450px] lg:h-[500px]">
+                <Image
+                  src={farmers3Image}
+                  alt="Agricultores trabajando en campo"
+                  fill
+                  className="object-cover brightness-[0.60]"
+                />
+                
+                {/* Contenido superpuesto */}
+                <div className="absolute inset-0 flex flex-col items-center justify-center p-6 md:p-10">
+                  <motion.h2 
+                    className="text-6xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold text-white mb-6 md:mb-16 font-title text-center"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={tripleImpactSectionIsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                    transition={{ duration: 0.6, delay: 0.3 }}
+                  >
+                    {t.tripleImpactTitle}
+                  </motion.h2>
+                  <motion.p 
+                    className="text-md md:text-lg lg:text-xl text-white font-body text-center max-w-3xl  p-4 rounded-lg"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={tripleImpactSectionIsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                    transition={{ duration: 0.6, delay: 0.4 }}
+                  >
+                    {t.tripleImpactDescription}
+                  </motion.p>
+                </div>
+              </div>
+            </div>
             
             {/* Impactos en una fila horizontal */}
-            <div className="mb-8 w-full max-w-5xl">
+            <div className="mt-16 md:mt-20 lg:mt-24 mb-8 w-full max-w-5xl">
               <div className="flex flex-col md:flex-row gap-6 md:justify-center">
                 {/* Impactos Sociales */}
                 <motion.div variants={fadeInUp} className="w-full md:w-1/4">
                   <motion.h4 
-                    className="text-xl font-semibold text-green-600 mb-3 font-title text-center"
+                    className="underline text-5xl font-semibold text-green-600 mb-8 font-title text-center"
                     variants={fadeInUp}
                   >
                     {t.socialTitle}
@@ -276,7 +342,7 @@ const BiocharPoints = () => {
                 {/* Impactos Ambientales - Más ancho */}
                 <motion.div variants={fadeInUp} className="w-full md:w-2/4">
                   <motion.h4 
-                    className="text-xl font-semibold text-green-600 mb-3 font-title text-center"
+                    className="underline text-5xl font-semibold text-green-600 mb-8 font-title text-center"
                     variants={fadeInUp}
                   >
                     {t.environmentalTitle}
@@ -300,7 +366,7 @@ const BiocharPoints = () => {
                 {/* Impactos Financieros */}
                 <motion.div variants={fadeInUp} className="w-full md:w-1/4">
                   <motion.h4 
-                    className="text-xl font-semibold text-green-600 mb-3 font-title text-center"
+                    className="underline text-5xl font-semibold text-green-600 mb-8 font-title text-center"
                     variants={fadeInUp}
                   >
                     {t.financialTitle}
@@ -326,19 +392,26 @@ const BiocharPoints = () => {
           
           {/* Operaciones actuales - Tabla de provincias y cultivos */}
           <motion.div
-            variants={fadeInUp}
-            className="mt-16 mb-16 flex flex-col items-center w-full"
+            ref={impactDetailsSectionRef}
+            className="mb-20 max-w-5xl mx-auto"
+            initial={{ opacity: 0, y: 50 }}
+            animate={impactDetailsSectionIsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
           >
             <motion.h3 
               className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-green-600 mb-8 font-title text-center"
-              variants={fadeInUp}
+              initial={{ opacity: 0, y: 20 }}
+              animate={impactDetailsSectionIsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
             >
               {isEnglish ? "Current Operations" : "Operaciones actuales"}
             </motion.h3>
             
             <motion.div 
-              className="w-full max-w-4xl overflow-x-auto"
-              variants={fadeInUp}
+              className="w-full max-w-4xl overflow-x-auto mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              animate={impactDetailsSectionIsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
             >
               <table className="min-w-full rounded-lg overflow-hidden shadow-lg font-body text-lg">
                 <thead className="bg-yellow-800 text-white">
@@ -366,6 +439,22 @@ const BiocharPoints = () => {
                   </tr>
                 </tbody>
               </table>
+            </motion.div>
+            
+            {/* Mapa de Ecuador debajo de la tabla */}
+            <motion.div 
+              className="mt-8 md:mt-10 w-full max-w-4xl mx-auto flex justify-center"
+              variants={fadeInUp}
+            >
+              <div className="relative w-full h-[400px] md:h-[500px] lg:h-[550px] rounded-lg overflow-hidden">
+                <Image
+                  src={mapaEcuador}
+                  alt="Mapa de Ecuador con provincias resaltadas"
+                  fill
+                  className="object-contain"
+                  priority
+                />
+              </div>
             </motion.div>
           </motion.div>
           
@@ -408,7 +497,7 @@ const BiocharPoints = () => {
             className="text-4xl md:text-5xl font-bold mb-8 font-title"
             variants={fadeInUp}
           >
-            {isEnglish ? "If you are a producer and want to contribute to mitigating climate change with biochar, we are enthusiastically waiting for you!" : "Si eres productor y buscas contribuir a mitigar el cambio climático con biochar, ¡te esperamos con entusiasmo!"}
+            {isEnglish ? "If you are a producer and want to contribute to mitigating climate change with biochar, we're excited to connect with you!" : "Si eres productor y buscas contribuir a mitigar el cambio climático con biochar, ¡te esperamos con entusiasmo!"}
           </motion.h2>
 
           <motion.div variants={fadeInUp}>

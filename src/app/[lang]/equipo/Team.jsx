@@ -7,6 +7,10 @@ import { usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { FaLinkedin } from 'react-icons/fa';
 import alejandroImage from '../../../../public/team/alejandro.jpeg';
+import CarlosImage from '../../../../public/team/carlosg.jpg';
+import GabrielImage from '../../../../public/team/gabriel.jpg';
+import davidImage from '../../../../public/team/david.jpg';
+import victorImage from '../../../../public/team/victor.jpg';
 
 const Team = ({ params }) => {
   // Detectar el idioma desde la ruta
@@ -26,12 +30,14 @@ const Team = ({ params }) => {
         {
           name: "Carlos González",
           position: "CEO",
-          linkedin: "https://www.linkedin.com/in/carlos-alfredo-gonz%C3%A1lez-vargas-420587100/"
+          linkedin: "https://www.linkedin.com/in/carlos-alfredo-gonz%C3%A1lez-vargas-420587100/",
+          image: CarlosImage
         },
         {
           name: "Gabriel González",
           position: "Business Developer Agriculture / Head of Science",
-          linkedin: "https://www.linkedin.com/in/gabrieldavidgonzalezvargas/"
+          linkedin: "https://www.linkedin.com/in/gabrieldavidgonzalezvargas/",
+          image: GabrielImage
         },
         {
           name: "Alejandro Sánchez",
@@ -42,12 +48,14 @@ const Team = ({ params }) => {
         {
           name: "Victor Rojas",
           position: "President / CFO",
-          linkedin: ""
+          linkedin: "https://www.linkedin.com/in/victor-rojas-valle-252306a9/",
+          image: victorImage
         },
         {
           name: "David Rojas",
           position: "COO / Business Developer Animal Nutrition",
-          linkedin: ""
+          linkedin: "",
+          image: davidImage
         }
       ]
     },
@@ -59,12 +67,14 @@ const Team = ({ params }) => {
         {
           name: "Carlos González",
           position: "CEO",
-          linkedin: "https://www.linkedin.com/in/carlos-alfredo-gonz%C3%A1lez-vargas-420587100/"
+          linkedin: "https://www.linkedin.com/in/carlos-alfredo-gonz%C3%A1lez-vargas-420587100/",
+          image: CarlosImage
         },
         {
           name: "Gabriel González",
           position: "Business Developer Agriculture / Head of Science",
-          linkedin: "https://www.linkedin.com/in/gabrieldavidgonzalezvargas/"
+          linkedin: "https://www.linkedin.com/in/gabrieldavidgonzalezvargas/",
+          image: GabrielImage
         },
         {
           name: "Alejandro Sánchez",
@@ -75,12 +85,14 @@ const Team = ({ params }) => {
         {
           name: "Victor Rojas",
           position: "President / CFO",
-          linkedin: ""
+          linkedin: "https://www.linkedin.com/in/victor-rojas-valle-252306a9/",
+          image: victorImage
         },
         {
           name: "David Rojas",
           position: "COO / Business Developer Animal Nutrition",
-          linkedin: ""
+          linkedin: "",
+          image: davidImage
         }
       ]
     }
