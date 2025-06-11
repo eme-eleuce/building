@@ -536,7 +536,7 @@ const Section1 = () => {
           </motion.p>
           
           {/* Logos con carrusel infinito - una sola fila */}
-          <div className="bg-[#f8f8f8] rounded-xl shadow-lg p-8 mb-12 md:mx-[-2%] lg:mx-[-4%] xl:mx-[-5%]">
+          <div className="bg-[#f8f8f8] rounded-xl shadow-lg p-2 mb-12 md:mx-[-2%] lg:mx-[-4%] xl:mx-[-5%]">
             {/* Título eliminado para evitar repetición */}
             
             {/* Carrusel infinito con una sola fila */}
@@ -568,14 +568,14 @@ const Section1 = () => {
                   ].map((logo, index) => (
                     <div 
                       key={`logo-${index}`} 
-                      className="logo-container mx-3 p-4 bg-white rounded-lg h-24 md:h-28 min-w-[150px] md:min-w-[180px] lg:min-w-[190px] shadow-sm flex justify-center items-center"
+                      className="logo-container mx-3 md:mx-0.5 rounded-lg h-28 md:h-32 lg:h-36 min-w-[180px] md:min-w-[200px] lg:min-w-[220px] shadow-sm flex justify-center items-center"
                     >
                       <Image 
                         src={logo.src} 
                         alt={logo.alt} 
-                        width={120} 
-                        height={80}
-                        className="object-contain max-h-16 md:max-h-20"
+                        width={180} 
+                        height={120}
+                        className="object-contain max-h-24 md:max-h-28 lg:max-h-32"
                       />
                     </div>
                   ))}
@@ -604,14 +604,14 @@ const Section1 = () => {
                   ].map((logo, index) => (
                     <div 
                       key={`logo-dup-${index}`} 
-                      className="logo-container mx-3 p-4 bg-white rounded-lg h-24 md:h-28 min-w-[150px] md:min-w-[180px] lg:min-w-[190px] shadow-sm flex justify-center items-center"
+                      className="logo-container mx-0.5 rounded-lg h-28 md:h-32 lg:h-36 min-w-[180px] md:min-w-[200px] lg:min-w-[220px] shadow-sm flex justify-center items-center"
                     >
                       <Image 
                         src={logo.src} 
                         alt={logo.alt} 
-                        width={120} 
-                        height={80}
-                        className="object-contain max-h-16 md:max-h-20"
+                        width={180} 
+                        height={120}
+                        className="object-contain max-h-24 md:max-h-28 lg:max-h-32"
                       />
                     </div>
                   ))}

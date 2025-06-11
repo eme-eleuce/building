@@ -7,7 +7,7 @@ export const metadata = {
 
 export default function BiocharPointsPage({ params }) {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between pt-24 pb-12">
+    <main className="flex min-h-screen flex-col justify-between pt-24 pb-12 w-full">
       <BiocharPoints />
     </main>
   );

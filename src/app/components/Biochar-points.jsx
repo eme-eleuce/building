@@ -15,7 +15,7 @@ import mapaEcuador from '../../../public/photos/points/mapa.png';
 const texts = {
   es: {
     // Sección de Mapa
-    mapTitle: "Los primeros hijos del Suelo",
+    mapTitle: "Los primeros los hijos del Suelo",
     mapDescription: "En Ecuador, el cuidado del suelo es un legado ancestral y un deber nacional reflejado en nuestro himno como un símbolo de identidad y compromiso con la Pachamama.",
     
     // Sección de Guardianes del Suelo
@@ -185,7 +185,7 @@ const BiocharPoints = () => {
         </div>
         
         {/* Contenido superpuesto */}
-        <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
+        <div className="relative z-10 text-center w-full">
           <motion.h1 
             className="text-6xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold text-white mb-6 md:mb-16 font-title"
             variants={fadeInUp}
@@ -193,7 +193,7 @@ const BiocharPoints = () => {
             {isEnglish ? (
               <>First, the children of the <span className="text-yellow-400">Soil</span></>
             ) : (
-              <>Primero, los hijos del <span className="text-yellow-400">Suelo</span></>
+              <>Los primeros los hijos del <span className="text-yellow-400">Suelo</span></>
             )}
           </motion.h1>
           <motion.p 
@@ -477,7 +477,7 @@ const BiocharPoints = () => {
 
       {/* Sección de llamado a la acción con imagen de fondo */}
       <motion.section 
-        className="py-24 md:py-28 relative text-white rounded-lg overflow-hidden my-8 mx-4"
+        className="py-24 md:py-28 relative text-white rounded-lg overflow-hidden my-8"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}

@@ -145,13 +145,13 @@ const Removal = () => {
         {/* Contenido superpuesto */}
         <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
           <motion.h1 
-            className="text-6xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold text-white mb-6 md:mb-16 font-title mx-20"
+            className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold text-white mb-4 md:mb-16 font-title mx-4 md:mx-20"
             variants={fadeInUp}
           >
             {t.title}
           </motion.h1>
           <motion.p 
-            className="text-md md:text-lg lg:text-xl text-white font-body max-w-3xl mx-auto"
+            className="text-base md:text-lg lg:text-xl text-white font-body max-w-[90%] md:max-w-3xl mx-auto px-2 md:px-0"
             variants={fadeInUp}
           >
             {t.subtitle}
@@ -341,7 +341,7 @@ const Removal = () => {
                   >
                     <Link 
                       href={`/${isEnglish ? 'en' : 'es'}/nosotros/rainforest-enterprise`}
-                      className="bg-yellow-900 hover:bg-yellow-950 text-white font-bold py-4 px-10 rounded-full transition-all duration-300 font-body text-xl flex items-center"
+                      className="bg-yellow-900 hover:bg-yellow-950 text-white font-bold py-2 px-10 rounded-full transition-all duration-300 font-body text-xl flex items-center"
                     >
                       {isEnglish ? "Learn about our alliance" : "Conoce nuestra alianza"}
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 ml-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
