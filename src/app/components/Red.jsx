@@ -221,7 +221,7 @@ const Red = () => {
                 src={red3Image}
                 alt="Comunidad de agricultores Pacchar"
                 fill
-                className="object-cover"
+                className="object-contain md:object-cover"
                 priority
               />
             </motion.div>
@@ -260,7 +260,7 @@ const Red = () => {
                 src={red4Image}
                 alt="Requisitos para biochar"
                 fill
-                className="object-cover"
+                className="object-contain md:object-cover"
                 priority
               />
             </motion.div>
