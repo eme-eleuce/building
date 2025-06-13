@@ -357,7 +357,7 @@ const Section1 = () => {
             {/* Botón para unirse a la red */}
             <div className="flex justify-center md:justify-start mt-6">
               <Link 
-                href={`/${pathname.includes('/en') ? 'en/contact' : 'es/contacto'}`}
+                href={`/${pathname.includes('/en') ? 'en/red/alianza' : 'es/red/alianza'}`}
                 className="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 font-body text-lg"
               >
                 {t.section4JoinButton}

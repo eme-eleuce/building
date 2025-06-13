@@ -3,7 +3,7 @@
 import React from 'react';
 import { usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
-import { FaMapMarkerAlt, FaWhatsapp } from 'react-icons/fa';
+import { FaMapMarkerAlt, FaWhatsapp, FaExternalLinkAlt } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
 import { BsBuilding } from 'react-icons/bs';
 import Link from 'next/link';
@@ -96,7 +96,7 @@ const Contact = ({ params }) => {
             </div>
             
             {/* Dirección */}
-            <div className="mb-8">
+            <div className="mb-8 min-h-[100px] flex flex-col justify-start">
               <div className="flex items-start mb-3">
                 <FaMapMarkerAlt className="text-amber-800 text-2xl mr-3 mt-1" />
                 <div>
@@ -110,24 +110,50 @@ const Contact = ({ params }) => {
             <h4 className="text-xl font-semibold text-gray-700 mb-4 font-title">{t.contactTitle}</h4>
             
             {/* WhatsApp */}
-            <div className="flex items-center mb-4">
-              <div className="bg-green-50 p-3 rounded-full mr-4">
+            <div className="flex items-start mb-4">
+              <div className="bg-green-50 p-3 rounded-full mr-4 mt-1">
                 <FaWhatsapp className="text-green-600 text-2xl" />
               </div>
-              <div>
+              <div className="flex flex-col">
                 <p className="text-base text-gray-500 font-body">{t.whatsapp}</p>
-                <p className="text-lg font-medium text-gray-700 font-body">+593 98 765 4321</p>
+                <Link 
+                  href="https://wa.me/593939928517" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-lg font-medium text-gray-700 hover:text-green-600 transition-colors font-body flex items-center"
+                >
+                  +593 939928517 <FaExternalLinkAlt className="ml-2 text-sm text-green-600" />
+                </Link>
+                <Link 
+                  href="https://wa.me/593990641248" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-lg font-medium text-gray-700 hover:text-green-600 transition-colors font-body flex items-center"
+                >
+                  +593 990641248 <FaExternalLinkAlt className="ml-2 text-sm text-green-600" />
+                </Link>
               </div>
             </div>
             
             {/* Email */}
-            <div className="flex items-center">
-              <div className="bg-green-50 p-3 rounded-full mr-4">
+            <div className="flex items-start">
+              <div className="bg-green-50 p-3 rounded-full mr-4 mt-1">
                 <MdEmail className="text-amber-800 text-2xl" />
               </div>
-              <div>
+              <div className="flex flex-col">
                 <p className="text-base text-gray-500 font-body">{t.email}</p>
-                <p className="text-lg font-medium text-gray-700 font-body">guayaquil@pacchar.com</p>
+                <Link 
+                  href="mailto:carlos.gonzalez@pacchar.com" 
+                  className="text-lg font-medium text-gray-700 hover:text-amber-800 transition-colors font-body"
+                >
+                  carlos.gonzalez@pacchar.com
+                </Link>
+                <Link 
+                  href="mailto:gabriel.gonzalez@pacchar.com" 
+                  className="text-lg font-medium text-gray-700 hover:text-amber-800 transition-colors font-body"
+                >
+                  gabriel.gonzalez@pacchar.com
+                </Link>
               </div>
             </div>
           </motion.div>
@@ -145,7 +171,7 @@ const Contact = ({ params }) => {
             </div>
             
             {/* Dirección */}
-            <div className="mb-8">
+            <div className="mb-8 min-h-[100px] flex flex-col justify-start">
               <div className="flex items-start mb-3">
                 <FaMapMarkerAlt className="text-amber-800 text-2xl mr-3 mt-1" />
                 <div>
@@ -160,24 +186,36 @@ const Contact = ({ params }) => {
             <h4 className="text-xl font-semibold text-gray-700 mb-4 font-title">{t.contactTitle}</h4>
             
             {/* WhatsApp */}
-            <div className="flex items-center mb-4">
-              <div className="bg-green-50 p-3 rounded-full mr-4">
+            <div className="flex items-start mb-4">
+              <div className="bg-green-50 p-3 rounded-full mr-4 mt-1">
                 <FaWhatsapp className="text-green-600 text-2xl" />
               </div>
               <div>
                 <p className="text-base text-gray-500 font-body">{t.whatsapp}</p>
-                <p className="text-lg font-medium text-gray-700 font-body">+593 99 876 5432</p>
+                <Link 
+                  href="https://wa.me/593994006471" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-lg font-medium text-gray-700 hover:text-green-600 transition-colors font-body flex items-center"
+                >
+                  +593 99 400 6471 <FaExternalLinkAlt className="ml-2 text-sm text-green-600" />
+                </Link>
               </div>
             </div>
             
             {/* Email */}
-            <div className="flex items-center">
-              <div className="bg-green-50 p-3 rounded-full mr-4">
+            <div className="flex items-start">
+              <div className="bg-green-50 p-3 rounded-full mr-4 mt-1">
                 <MdEmail className="text-amber-800 text-2xl" />
               </div>
               <div>
                 <p className="text-base text-gray-500 font-body">{t.email}</p>
-                <p className="text-lg font-medium text-gray-700 font-body">quito@pacchar.com</p>
+                <Link 
+                  href="mailto:jonathan.sanchez@pacchar.com" 
+                  className="text-lg font-medium text-gray-700 hover:text-amber-800 transition-colors font-body"
+                >
+                  jonathan.sanchez@pacchar.com
+                </Link>
               </div>
             </div>
           </motion.div>

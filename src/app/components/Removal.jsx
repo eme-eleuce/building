@@ -8,7 +8,7 @@ import { motion, useInView } from 'framer-motion';
 import backgroundImage from '../../../public/photos/pacchar-1.jpg';
 import removal1Image from '../../../public/photos/removal-co2/removal1.jpg';
 import removal2Image from '../../../public/photos/removal-co2/removal2.jpg';
-import removal3Image from '../../../public/photos/removal-co2/removal3.jpg';
+import removal3Image from '../../../public/photos/comunidad.jpg';
 
 // Textos para internacionalización
 const texts = {

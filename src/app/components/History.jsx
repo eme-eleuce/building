@@ -186,7 +186,7 @@ const History = () => {
         animate={controls}
         variants={containerVariants}
       >
-        <div className="max-w-5xl mx-auto px-4 md:px-8">
+        <div className="max-w-6xl mx-auto px-4 md:px-8">
           <div className="relative">
             {/* Línea vertical */}
             <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-green-600 to-yellow-700"></div>
@@ -201,27 +201,39 @@ const History = () => {
                 {/* Punto en la línea */}
                 <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-black border-4 border-[#f8f8f8] shadow-lg z-10"></div>
                 
-                {/* Contenido */}
-                <div className={`w-10/12 md:w-5/12 mx-auto md:mx-0 px-0 md:px-0 ${index % 2 === 0 ? 'md:pr-12 md:text-right' : 'md:pl-12'}`}>
+                {/* Contenido de texto */}
+                <div className={`w-10/12 md:w-5/12 mx-auto md:mx-0 px-0 md:px-0 ${index % 2 === 0 ? 'md:pr-16 md:text-right' : 'md:pl-16'}`}>
                   <div className="bg-[#f8f8f8] p-6 md:p-8 rounded-lg shadow-md md:shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-gray-300 hover:border-gray-400 group">
-                    <div className="flex items-center mb-3 justify-start md:justify-start">
+                    <div className={`flex items-center mb-3 ${index % 2 === 0 ? 'md:justify-end' : 'justify-start'}`}>
                       <span className={`text-3xl md:text-4xl font-bold mr-3 font-title ${index % 2 === 0 ? 'text-green-700' : 'text-yellow-800'}`}>{event.year}</span>
                       <h3 className="text-xl md:text-2xl font-bold text-gray-800 font-title">{event.title}</h3>
                     </div>
-                    <p className="text-gray-700 text-justify text-base md:text-lg font-body mb-4">{event.description}</p>
-                    <div className={`relative w-full ${event.year === "2021" ? "h-40 md:h-52 lg:h-60" : "h-56 md:h-72 lg:h-80"} mt-4 rounded-lg overflow-hidden`}>
+                    <p className="text-gray-700 text-justify text-base md:text-lg font-body">{event.description}</p>
+                    
+                    {/* Imagen solo visible en móvil */}
+                    <div className={`relative w-full ${event.year === "2021" ? "h-40" : "h-56"} mt-4 rounded-lg overflow-hidden md:hidden`}>
                       <Image 
                         src={event.image} 
                         alt={`${event.year} - ${event.title}`}
                         fill
-                        className={`${event.year === "2021" ? "object-contain" : "object-cover md:object-contain lg:object-cover"}`}
+                        className={`${event.year === "2021" ? "object-contain" : "object-cover"}`}
                       />
                     </div>
                   </div>
                 </div>
                 
-                {/* Espacio para alinear */}
-                <div className="w-0 md:w-5/12"></div>
+                {/* Contenedor de imagen para desktop */}
+                <div className={`w-0 md:w-5/12 md:flex md:items-center ${index % 2 === 0 ? 'md:justify-start' : 'md:justify-end'}`}>
+                  {/* Imagen para desktop, oculta en móvil */}
+                  <div className={`hidden md:block relative w-10/12 ${event.year === "2021" ? "h-52 lg:h-60" : "h-72 lg:h-80"} rounded-lg overflow-hidden shadow-lg border-2 border-gray-300 ${index % 2 === 0 ? 'ml-16' : 'mr-16'}`}>
+                    <Image 
+                      src={event.image} 
+                      alt={`${event.year} - ${event.title}`}
+                      fill
+                      className={`${event.year === "2021" ? "object-contain" : "object-contain lg:object-cover"}`}
+                    />
+                  </div>
+                </div>
               </motion.div>
             ))}
           </div>
