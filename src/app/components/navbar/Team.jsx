@@ -32,11 +32,6 @@ const Team = ({ params }) => {
           ]
         },
         {
-          name: "Alejandro Sánchez",
-          position: "Head of Carbon",
-          education: []
-        },
-        {
           name: "Victor Rojas",
           position: "President / CFO",
           education: [
@@ -70,11 +65,6 @@ const Team = ({ params }) => {
             "Agricultural Engineering - EARTH University",
             "Master in Sustainable Tropical Agriculture - EAP Zamorano"
           ]
-        },
-        {
-          name: "Alejandro Sánchez",
-          position: "Head of Carbon",
-          education: []
         },
         {
           name: "Victor Rojas",

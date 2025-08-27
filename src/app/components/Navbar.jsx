@@ -235,7 +235,6 @@ const Navbar = ({ dict }) => {
             <div className={`absolute left-0 mt-2 w-64 bg-[#f8f8f8] shadow-lg rounded-lg overflow-hidden transition-all duration-300 origin-top ${nosotrosOpen ? 'opacity-100 visible scale-y-100 translate-y-0' : 'opacity-0 invisible scale-y-75 -translate-y-4'}`}>
               <Link href={`/${lang}/nosotros/historia`} onClick={handleNavLinkClick} className="block px-4 py-3 text-xl font-bold text-black hover:text-green-600 hover:bg-[#f8f8f8] transition-all duration-300 font-body">{navbarDict.historia || 'Historia'}</Link>
               <Link href={`/${lang}/equipo`} onClick={handleNavLinkClick} className="block px-4 py-3 text-xl font-bold text-black hover:text-green-600 hover:bg-[#f8f8f8] transition-all duration-300 font-body">{navbarDict.equipo || 'Equipo'}</Link>
-              <Link href={`/${lang}/nosotros/rainforest-enterprise`} onClick={handleNavLinkClick} className="block px-4 py-3 text-xl font-bold text-black hover:text-green-600 hover:bg-[#f8f8f8] transition-all duration-300 font-body">{navbarDict.rainforest_enterprise || 'Rainforest Enterprise'}</Link>
             </div>
           </div>
           
@@ -364,7 +363,6 @@ const Navbar = ({ dict }) => {
             <div className="pl-4">
               <Link href={`/${lang}/nosotros/historia`} className="block text-black text-xl font-bold py-3 transition-all duration-300 hover:pl-2 hover:text-green-600 font-body" onClick={handleNavLinkClick}>{navbarDict.historia || 'Historia'}</Link>
               <Link href={`/${lang}/equipo`} className="block text-black text-xl font-bold py-3 transition-all duration-300 hover:pl-2 hover:text-green-600 font-body" onClick={handleNavLinkClick}>{navbarDict.equipo || 'Equipo'}</Link>
-              <Link href={`/${lang}/nosotros/rainforest-enterprise`} className="block text-black text-xl font-bold py-3 transition-all duration-300 hover:pl-2 hover:text-green-600 font-body" onClick={handleNavLinkClick}>{navbarDict.rainforest_enterprise || 'Rainforest Enterprise'}</Link>
             </div>
           )}
         </div>

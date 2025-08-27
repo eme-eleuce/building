@@ -40,12 +40,6 @@ const Team = ({ params }) => {
           image: GabrielImage
         },
         {
-          name: "Alejandro Sánchez",
-          position: "Head of Carbon",
-          linkedin: "https://www.linkedin.com/in/jonathan-alejandro-s%C3%A1nchez-t-697874154/",
-          image: alejandroImage
-        },
-        {
           name: "Victor Rojas",
           position: "President / CFO",
           linkedin: "https://www.linkedin.com/in/victor-rojas-valle-252306a9/",
@@ -75,12 +69,6 @@ const Team = ({ params }) => {
           position: "Business Developer Agriculture / Head of Science",
           linkedin: "https://www.linkedin.com/in/gabrieldavidgonzalezvargas/",
           image: GabrielImage
-        },
-        {
-          name: "Alejandro Sánchez",
-          position: "Head of Carbon",
-          linkedin: "https://www.linkedin.com/in/jonathan-alejandro-s%C3%A1nchez-t-697874154/",
-          image: alejandroImage
         },
         {
           name: "Victor Rojas",
