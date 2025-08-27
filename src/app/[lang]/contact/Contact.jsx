@@ -158,67 +158,8 @@ const Contact = ({ params }) => {
             </div>
           </motion.div>
 
-          {/* Sección Quito */}
-          <motion.div 
-            className="bg-[#f8f8f8] rounded-xl shadow-xl p-8 flex flex-col"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.9 }}
-          >
-            <div className="flex items-center mb-6">
-              <BsBuilding className="text-green-600 text-4xl mr-4" />
-              <h3 className="text-3xl font-bold text-gray-800 font-title">{t.quitoTitle}</h3>
-            </div>
-            
-            {/* Dirección */}
-            <div className="mb-8 min-h-[100px] flex flex-col justify-start">
-              <div className="flex items-start mb-3">
-                <FaMapMarkerAlt className="text-amber-800 text-2xl mr-3 mt-1" />
-                <div>
-                  <h4 className="text-xl font-semibold text-gray-700 mb-2 font-title">{t.officesTitle}</h4>
-                  <p className="text-gray-600 text-lg font-body">Av. De Los Shyris E9-38 y Bélgica</p>
-                  <p className="text-gray-600 text-lg font-body">Edificio Shyris Century, Piso 12, Oficina 12 B</p>
-                </div>
-              </div>
-            </div>
-            
-            {/* Información de contacto */}
-            <h4 className="text-xl font-semibold text-gray-700 mb-4 font-title">{t.contactTitle}</h4>
-            
-            {/* WhatsApp */}
-            <div className="flex items-start mb-4">
-              <div className="bg-green-50 p-3 rounded-full mr-4 mt-1">
-                <FaWhatsapp className="text-green-600 text-2xl" />
-              </div>
-              <div>
-                <p className="text-base text-gray-500 font-body">{t.whatsapp}</p>
-                <Link 
-                  href="https://wa.me/593994006471" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-lg font-medium text-gray-700 hover:text-green-600 transition-colors font-body flex items-center"
-                >
-                  +593 99 400 6471 <FaExternalLinkAlt className="ml-2 text-sm text-green-600" />
-                </Link>
-              </div>
-            </div>
-            
-            {/* Email */}
-            <div className="flex items-start">
-              <div className="bg-green-50 p-3 rounded-full mr-4 mt-1">
-                <MdEmail className="text-amber-800 text-2xl" />
-              </div>
-              <div>
-                <p className="text-base text-gray-500 font-body">{t.email}</p>
-                <Link 
-                  href="mailto:jonathan.sanchez@pacchar.com" 
-                  className="text-lg font-medium text-gray-700 hover:text-amber-800 transition-colors font-body"
-                >
-                  jonathan.sanchez@pacchar.com
-                </Link>
-              </div>
-            </div>
-          </motion.div>
+          
+        
         </motion.div>
         
         {/* Botón para volver */}

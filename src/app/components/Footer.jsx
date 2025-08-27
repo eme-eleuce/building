@@ -49,19 +49,7 @@ const Footer = ({ dict }) => {
                                 </p>
                             </div>
 
-                            {/* Dirección Quito */}
-                            <div>
-                                <div className="flex items-center mb-3">
-                                    <FaMapMarkerAlt className="text-green-700 mr-2 text-xl" />
-                                    <h4 className="text-lg font-bold text-gray-800 font-title">Quito</h4>
-                                </div>
-                                <p className="text-base text-gray-700 font-body">
-                                    Av. De Los Shyris E9-38 y Bélgica
-                                </p>
-                                <p className="text-base text-gray-700 font-body">
-                                    Edificio Shyris Century, Piso 12, Oficina 12 B
-                                </p>
-                            </div>
+                        
                         </div>
                     </div>
 
@@ -82,19 +70,7 @@ const Footer = ({ dict }) => {
                             </p>
                         </div>
 
-                        {/* Dirección Quito */}
-                        <div>
-                            <div className="flex items-center mb-3">
-                                <FaMapMarkerAlt className="text-yellow-700 mr-2 text-xl" />
-                                <h4 className="text-lg font-bold text-gray-800 font-title">Quito</h4>
-                            </div>
-                            <p className="text-base text-gray-700 font-body">
-                                Av. De Los Shyris E9-38 y Bélgica
-                            </p>
-                            <p className="text-base text-gray-700 font-body">
-                                Edificio Shyris Century, Piso 12, Oficina 12 B
-                            </p>
-                        </div>
+                        
                     </div>
 
                     {/* Redes sociales (centrado) */}
