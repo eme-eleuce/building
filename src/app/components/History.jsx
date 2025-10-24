@@ -46,7 +46,7 @@ const texts = {
       },
       {
         year: "2025",
-        title: "Inicio y Expansión",
+        title: "Expansión",
         description: "Certificación de Captura de Carbono. Agregación de productos y Servicios. Reconocimiento de 2do lugar Cumbre de sostenibilidad. Emprendimientos con idea de negocio validada.",
         image: img2025
       },
@@ -88,7 +88,7 @@ const texts = {
       },
       {
         year: "2025",
-        title: "Start and Expansion",
+        title: "Expansion",
         description: "Carbon Capture Certification. Product and Service aggregation. Recognition of 2nd place Sustainability Summit. Entrepreneurships with validated business idea.",
         image: img2025
       },

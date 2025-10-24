@@ -11,6 +11,7 @@ import CarlosImage from '../../../../public/team/carlosg.jpg';
 import GabrielImage from '../../../../public/team/gabriel.jpg';
 import davidImage from '../../../../public/team/david.jpg';
 import victorImage from '../../../../public/team/victor.jpg';
+import veronicaImage from '../../../../public/team/veronica.jpg';
 
 const Team = ({ params }) => {
   // Detectar el idioma desde la ruta
@@ -50,6 +51,12 @@ const Team = ({ params }) => {
           position: "COO / Business Developer Animal Nutrition",
           linkedin: "",
           image: davidImage
+        },
+        {
+          name: "Veronica Solá Defranc",
+          position: "Head of Sustainable Business Innovation",
+          linkedin: "https://www.linkedin.com/in/ver%C3%B3nica-sola-defranc-a4697514a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3Br%2FctsaG1SkeDz0VbmiD9YA%3D%3D",
+          image: veronicaImage
         }
       ]
     },
@@ -81,6 +88,12 @@ const Team = ({ params }) => {
           position: "COO / Business Developer Animal Nutrition",
           linkedin: "",
           image: davidImage
+        },
+        {
+          name: "Veronica Solá Defranc",
+          position: "Head of Sustainable Business Innovation",
+          linkedin: "https://www.linkedin.com/in/ver%C3%B3nica-sola-defranc-a4697514a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3Br%2FctsaG1SkeDz0VbmiD9YA%3D%3D",
+          image: veronicaImage
         }
       ]
     }

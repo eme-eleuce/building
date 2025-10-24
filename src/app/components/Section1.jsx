@@ -14,7 +14,6 @@ import Aliado from '../../../public/photos/aliado.jpg';
 // Importando todos los logos
 import artiLogo from '../../../public/photos/logos/arti.jpg';
 import campoTrackLogo from '../../../public/photos/logos/campo-track.jpg';
-import reLogo from '../../../public/photos/logos/re.png';
 import cuencaLogo from '../../../public/photos/logos/cuenca.png';
 import ibarraLogo from '../../../public/photos/logos/ibarra.png';
 import gyeLogo from '../../../public/photos/logos/logo-gye.png';
@@ -548,7 +547,6 @@ const Section1 = () => {
                   {[
                     { src: artiLogo, alt: "Arti" },
                     { src: campoTrackLogo, alt: "Campo Track" },
-                    { src: reLogo, alt: "RE" },
                     { src: cuencaLogo, alt: "Cuenca" },
                     { src: ibarraLogo, alt: "Ibarra" },
                     { src: gyeLogo, alt: "Guayaquil" },
@@ -584,7 +582,6 @@ const Section1 = () => {
                   {[
                     { src: artiLogo, alt: "Arti" },
                     { src: campoTrackLogo, alt: "Campo Track" },
-                    { src: reLogo, alt: "RE" },
                     { src: cuencaLogo, alt: "Cuenca" },
                     { src: ibarraLogo, alt: "Ibarra" },
                     { src: gyeLogo, alt: "Guayaquil" },

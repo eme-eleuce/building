@@ -331,24 +331,9 @@ const Removal = () => {
                   priority
                 />
                 <div className="absolute inset-0 flex flex-col items-center justify-center p-6 md:p-10">
-                  <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-8 md:mb-10 font-title text-center max-w-3xl">
+                  <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white font-title text-center max-w-3xl">
                     {isEnglish ? "Ready to offset your carbon footprint?" : "¿Listo para compensar su huella de carbono?"}
                   </h2>
-                  <motion.div
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="inline-block"
-                  >
-                    <Link 
-                      href={`/${isEnglish ? 'en' : 'es'}/nosotros/rainforest-enterprise`}
-                      className="bg-yellow-900 hover:bg-yellow-950 text-white font-bold py-2 px-10 rounded-full transition-all duration-300 font-body text-xl flex items-center"
-                    >
-                      {isEnglish ? "Learn about our alliance" : "Conoce nuestra alianza"}
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 ml-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                      </svg>
-                    </Link>
-                  </motion.div>
                 </div>
               </div>
             </motion.div>
