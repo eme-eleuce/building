@@ -102,11 +102,30 @@ const Footer = ({ dict }) => {
                         </div>
                     </div>
 
-                    {/* Copyright */}
+                    {/* Copyright y Creado por */}
                     <div className="border-t border-gray-200 mt-2">
-                        <p className="text-sm text-gray-600 pt-2 font-body text-center">
-                            &copy; {currentYear} Pacchar. {lang === 'es' ? 'Todos los derechos reservados.' : 'All rights reserved.'}
-                        </p>
+                        <div className="flex flex-col sm:flex-row justify-center items-center gap-2 sm:gap-4 pt-2">
+                            {/* Copyright */}
+                            <p className="text-sm text-gray-600 font-body text-center">
+                                &copy; {currentYear} Pacchar. {lang === 'es' ? 'Todos los derechos reservados.' : 'All rights reserved.'}
+                            </p>
+                            
+                            {/* Separator */}
+                            <span className="hidden sm:inline text-gray-400 text-lg">|</span>
+                            
+                            {/* Creado por */}
+                            <div className="text-[#0a0a0a] text-sm mb-4 md:mb-0 font-body">
+                                <span>{lang === 'es' ? 'desarrollado por ' : 'developed by '}</span>
+                                <a
+                                    href="https://www.eme-eleuce.com/work/websites"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className=" text-green-700 font-bold underline"
+                                >
+                                    luis eme
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
